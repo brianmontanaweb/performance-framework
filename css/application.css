@@ -14,7 +14,7 @@
   position: absolute;
   width: 1px; }
 
-.panel--centered, .panel--padded--centered, [class^="btn--"] {
+.panel--centered, .panel--padded--centered, [class^="btn-"] {
   text-align: center; }
 
 .icn--nav-toggle:before {
@@ -221,13 +221,10 @@ h3 {
   font-size: 1.125em; }
 
 h4 {
-  margin-top: 1.57143em;
-  margin-bottom: 2.28571em;
-  color: #999da1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 400;
-  font-size: 0.875em; }
+  font-size: 1em; }
+
+h5 {
+  font-size: 0.75em; }
 
 a {
   color: #656a6e;
@@ -418,7 +415,13 @@ h2, .headline-secondary, .headline-secondary--grouped {
   font-size: 1.5em;
   font-family: "Merriweather", Helvetica, Arial, sans-serif; }
 
-.form__btn, [class^="btn--"] {
+h3, h4, h5 {
+  color: #999da1;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-family: "Merriweather", Helvetica, Arial, sans-serif; }
+
+.form__btn, [class^="btn-"] {
   padding: 15px 30px;
   border: 0;
   color: #fff;
@@ -428,7 +431,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
   font-weight: 700;
   transition: opacity 0.3s;
   display: block; }
-  .form__btn:active, [class^="btn--"]:active {
+  .form__btn:active, [class^="btn-"]:active {
     opacity: initial; }
 
 .icn--nav-toggle {
@@ -459,7 +462,7 @@ h2, .headline-secondary, .headline-secondary--grouped {
   display: block;
   margin-bottom: 0.625em; }
 .form__input {
-  font-size: 1.125em;
+  font-size: 1em;
   margin-bottom: 1.11111em;
   border: 2px solid #d6d7d9;
   background: #ebecec;
@@ -472,171 +475,312 @@ h2, .headline-secondary, .headline-secondary--grouped {
 .form__btn {
   background: #008acd; }
 
-.btn--default-special {
-  background-color: #008acd;
-  border: solid transparent 2px;
+.btn-primary--default-special {
+  box-shadow: 0 0 0 2px #008acd;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  position: relative; }
-  .btn--default-special:hover {
-    border: solid #008acd 2px;
-    color: #008acd;
-    background-color: transparent; }
-.btn--default {
-  background-color: #3c84a8;
-  border: solid transparent 2px;
+  position: relative;
+  overflow: hidden;
+  color: #008acd;
+  background-color: transparent; }
+  .btn-primary--default-special span {
+    position: relative;
+    z-index: 10; }
+  .btn-primary--default-special:after {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #008acd; }
+  .btn-primary--default-special:hover {
+    box-shadow: 0 0 0 2px #008acd;
+    color: white; }
+    .btn-primary--default-special:hover:after {
+      height: 100%; }
+.btn-primary--default {
+  box-shadow: 0 0 0 2px #3c84a8;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  position: relative; }
-  .btn--default:hover {
-    border: solid #3c84a8 2px;
-    color: #3c84a8;
-    background-color: transparent; }
-.btn--default-alt {
-  background-color: #054a6c;
-  border: solid transparent 2px;
+  position: relative;
+  overflow: hidden;
+  color: #3c84a8;
+  background-color: transparent; }
+  .btn-primary--default span {
+    position: relative;
+    z-index: 10; }
+  .btn-primary--default:after {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #3c84a8; }
+  .btn-primary--default:hover {
+    box-shadow: 0 0 0 2px #3c84a8;
+    color: white; }
+    .btn-primary--default:hover:after {
+      height: 100%; }
+.btn-primary--default-alt {
+  box-shadow: 0 0 0 2px #054a6c;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  position: relative; }
-  .btn--default-alt:hover {
-    border: solid #054a6c 2px;
-    color: #054a6c;
-    background-color: transparent; }
-.btn--success {
-  background-color: #189b50;
-  border: solid transparent 2px;
+  position: relative;
+  overflow: hidden;
+  color: #054a6c;
+  background-color: transparent; }
+  .btn-primary--default-alt span {
+    position: relative;
+    z-index: 10; }
+  .btn-primary--default-alt:after {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #054a6c; }
+  .btn-primary--default-alt:hover {
+    box-shadow: 0 0 0 2px #054a6c;
+    color: white; }
+    .btn-primary--default-alt:hover:after {
+      height: 100%; }
+.btn-primary--success {
+  box-shadow: 0 0 0 2px #189b50;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  position: relative; }
-  .btn--success:hover {
-    border: solid #189b50 2px;
-    color: #189b50;
-    background-color: transparent; }
-.btn--error {
-  background-color: #ee232d;
-  border: solid transparent 2px;
+  position: relative;
+  overflow: hidden;
+  color: #189b50;
+  background-color: transparent; }
+  .btn-primary--success span {
+    position: relative;
+    z-index: 10; }
+  .btn-primary--success:after {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #189b50; }
+  .btn-primary--success:hover {
+    box-shadow: 0 0 0 2px #189b50;
+    color: white; }
+    .btn-primary--success:hover:after {
+      height: 100%; }
+.btn-primary--error {
+  box-shadow: 0 0 0 2px #ee232d;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  position: relative; }
-  .btn--error:hover {
-    border: solid #ee232d 2px;
-    color: #ee232d;
-    background-color: transparent; }
-.btn--warning {
-  background-color: #FF7604;
-  border: solid transparent 2px;
+  position: relative;
+  overflow: hidden;
+  color: #ee232d;
+  background-color: transparent; }
+  .btn-primary--error span {
+    position: relative;
+    z-index: 10; }
+  .btn-primary--error:after {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #ee232d; }
+  .btn-primary--error:hover {
+    box-shadow: 0 0 0 2px #ee232d;
+    color: white; }
+    .btn-primary--error:hover:after {
+      height: 100%; }
+.btn-primary--warning {
+  box-shadow: 0 0 0 2px #FF7604;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  position: relative; }
-  .btn--warning:hover {
-    border: solid #FF7604 2px;
-    color: #FF7604;
-    background-color: transparent; }
-.btn--info {
-  background-color: #87003F;
-  border: solid transparent 2px;
+  position: relative;
+  overflow: hidden;
+  color: #FF7604;
+  background-color: transparent; }
+  .btn-primary--warning span {
+    position: relative;
+    z-index: 10; }
+  .btn-primary--warning:after {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #FF7604; }
+  .btn-primary--warning:hover {
+    box-shadow: 0 0 0 2px #FF7604;
+    color: white; }
+    .btn-primary--warning:hover:after {
+      height: 100%; }
+.btn-primary--info {
+  box-shadow: 0 0 0 2px #87003F;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  position: relative; }
-  .btn--info:hover {
-    border: solid #87003F 2px;
-    color: #87003F;
-    background-color: transparent; }
-.btn:hover--default-special {
-  background-color: #008acd;
-  border: solid transparent 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative; }
-  .btn:hover--default-special:hover {
-    border: solid #008acd 2px;
-    color: #008acd;
-    background-color: transparent; }
-.btn:hover--default {
-  background-color: #3c84a8;
-  border: solid transparent 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative; }
-  .btn:hover--default:hover {
-    border: solid #3c84a8 2px;
-    color: #3c84a8;
-    background-color: transparent; }
-.btn:hover--default-alt {
-  background-color: #054a6c;
-  border: solid transparent 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative; }
-  .btn:hover--default-alt:hover {
-    border: solid #054a6c 2px;
-    color: #054a6c;
-    background-color: transparent; }
-.btn:hover--success {
-  background-color: #189b50;
-  border: solid transparent 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative; }
-  .btn:hover--success:hover {
-    border: solid #189b50 2px;
-    color: #189b50;
-    background-color: transparent; }
-.btn:hover--error {
-  background-color: #ee232d;
-  border: solid transparent 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative; }
-  .btn:hover--error:hover {
-    border: solid #ee232d 2px;
-    color: #ee232d;
-    background-color: transparent; }
-.btn:hover--warning {
-  background-color: #FF7604;
-  border: solid transparent 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative; }
-  .btn:hover--warning:hover {
-    border: solid #FF7604 2px;
-    color: #FF7604;
-    background-color: transparent; }
-.btn:hover--info {
-  background-color: #87003F;
-  border: solid transparent 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  position: relative; }
-  .btn:hover--info:hover {
-    border: solid #87003F 2px;
-    color: #87003F;
-    background-color: transparent; }
+  position: relative;
+  overflow: hidden;
+  color: #87003F;
+  background-color: transparent; }
+  .btn-primary--info span {
+    position: relative;
+    z-index: 10; }
+  .btn-primary--info:after {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: #87003F; }
+  .btn-primary--info:hover {
+    box-shadow: 0 0 0 2px #87003F;
+    color: white; }
+    .btn-primary--info:hover:after {
+      height: 100%; }
 
-[class^="btn--"] {
+.btn-secondary--default-special {
+  background-color: transparent;
+  border: solid #008acd 2px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #008acd;
+  overflow: hidden; }
+  .btn-secondary--default-special:hover {
+    border-color: transparent;
+    color: white;
+    background-color: #008acd; }
+.btn-secondary--default {
+  background-color: transparent;
+  border: solid #3c84a8 2px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #3c84a8;
+  overflow: hidden; }
+  .btn-secondary--default:hover {
+    border-color: transparent;
+    color: white;
+    background-color: #3c84a8; }
+.btn-secondary--default-alt {
+  background-color: transparent;
+  border: solid #054a6c 2px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #054a6c;
+  overflow: hidden; }
+  .btn-secondary--default-alt:hover {
+    border-color: transparent;
+    color: white;
+    background-color: #054a6c; }
+.btn-secondary--success {
+  background-color: transparent;
+  border: solid #189b50 2px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #189b50;
+  overflow: hidden; }
+  .btn-secondary--success:hover {
+    border-color: transparent;
+    color: white;
+    background-color: #189b50; }
+.btn-secondary--error {
+  background-color: transparent;
+  border: solid #ee232d 2px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #ee232d;
+  overflow: hidden; }
+  .btn-secondary--error:hover {
+    border-color: transparent;
+    color: white;
+    background-color: #ee232d; }
+.btn-secondary--warning {
+  background-color: transparent;
+  border: solid #FF7604 2px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #FF7604;
+  overflow: hidden; }
+  .btn-secondary--warning:hover {
+    border-color: transparent;
+    color: white;
+    background-color: #FF7604; }
+.btn-secondary--info {
+  background-color: transparent;
+  border: solid #87003F 2px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  color: #87003F;
+  overflow: hidden; }
+  .btn-secondary--info:hover {
+    border-color: transparent;
+    color: white;
+    background-color: #87003F; }
+
+[class^="btn-"] {
   margin-bottom: 1.42857em; }
   @media (min-width: 1px) and (max-width: 768px) {
-    [class^="btn--"] {
+    [class^="btn-"] {
       width: 100%; } }
   @media (min-width: 769px) {
-    [class^="btn--"] {
+    [class^="btn-"] {
       width: auto;
       display: inline-block; }
-      [class^="btn--"] + [class^="btn--"] {
+      [class^="btn-"] + [class^="btn-"] {
         margin-left: 20px; } }
 
 .navbar {

@@ -39,6 +39,12 @@
   font-size: em(24px);
   font-family: $font-family--secondary;
 }
+%hdln-rest{
+  color: palette(grey, light);
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--thin;
+  font-family: $font-family--secondary;
+}
 
 // Buttons
 

@@ -18,17 +18,54 @@
 
 // Generate modifier color classes
 
-@mixin button-colors($map) {
+@mixin button-colors--primary($map) {
   @each $theme, $color in $map {
     &--#{$theme} {
-      background-color: $color;
-      border: solid transparent 2px;
+      box-shadow: 0 0 0 2px $color;
       @include transition(all 0.5s ease);
       position: relative;
+      overflow: hidden;
+      color: $color;
+      background-color: transparent;
+      span{
+        position: relative;
+        z-index: 10;
+      }
+      &:after{
+        @include transition(all 0.5s ease);
+        content:"";
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        background-color: $color;
+      }
       &:hover {
-        border: solid $color 2px;
-        color: $color;
-        background-color: transparent;
+        box-shadow: 0 0 0 2px $color;
+        color: white;
+        &:after{
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@mixin button-colors--secondary($map) {
+  @each $theme, $color in $map {
+    &--#{$theme} {
+      background-color: transparent;
+      border: solid $color 2px;
+      @include transition(all 0.5s ease);
+      position: relative;
+      color: $color;
+      overflow: hidden;
+      &:hover {
+        border-color: transparent;
+        color: white;
+        background-color: $color;
       }
     }
   }

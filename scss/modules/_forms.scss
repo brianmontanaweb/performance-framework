@@ -12,7 +12,7 @@
   }
 
   @include element(input) {
-    font-size: em(18px);
+    font-size: em(16px);
     margin-bottom: em(20px, 18px);
     border: 2px solid palette(grey, x-light);
     background: palette(grey, xx-light);
