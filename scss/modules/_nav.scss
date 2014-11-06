@@ -1,0 +1,63 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.menu-toggle{
+  border-top: solid em(2px) palette(grey);
+  border-bottom: solid em(2px) palette(grey);
+  height: em(20px);
+  width: em(24px);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  @media (min-width: 600px){
+    display: none;
+  }
+  &:after {
+    display: inline-block;
+    content: " ";
+    width: 100%;
+    border-bottom: em(2px) palette(grey) solid;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: em(-1px);
+  }
+}
+
+.nav {
+  margin-bottom: em(30px);
+  @media (min-width: 601px) and (max-width: 800px) {
+    font-size:  .8em;
+  }
+  @media (max-width: 600px){
+    display: none;
+  }
+  @media (min-width: 601px){
+    display: block !important;
+  }
+
+  @include element(item) {
+    @extend %nav-item-disp;
+    @media (min-width: 1px) and (max-width: 600px) {
+      display: block;
+    }
+    a {
+      @extend %nav-item-link;
+      color: palette(grey);
+      @include transition(all .5s ease);
+      &:hover {
+        @extend %nav-item-on;
+        @include transition(all .5s ease);
+      }
+    }
+    @include modifier(current) {
+      @extend %nav-item-disp;
+      a {
+        @extend %nav-item-link;
+        @extend %nav-item-on;
+      }
+    }
+  }
+}

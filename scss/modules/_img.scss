@@ -1,0 +1,18 @@
+// ==========================================================================
+// Images
+// ==========================================================================
+
+.img {
+  @include modifier(wrap) {
+    border: 1px solid palette(grey, x-light);
+    padding: em(12px);
+  }
+  @include modifier(avatar) {
+    display: block;
+    border-radius: $br--round;
+    margin-top: em(24px);
+  }
+  @include modifier(hero) {
+    margin-bottom: em(42px);
+  }
+}

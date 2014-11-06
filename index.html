@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Style Guide</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+<div class="grid">
+    <header class="grid__col--12 panel--centered" role="banner">
+        <nav class="navbar" role="navigation">
+          <span class="menu-toggle">
+            <b class="srt">Menu Toggle</b>
+          </span>
+            <ul class="nav">
+                <li class="nav__item"><a href="#">Typography</a></li>
+                <li class="nav__item"><a href="#">Buttons</a></li>
+                <li class="nav__item"><a href="#">Forms</a></li>
+                <li class="nav__item"><a href="#">Images</a></li>
+                <li class="nav__item"><a href="#">Grid</a></li>
+                <li class="nav__item--current"><a href="#">Navigation</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<div class="grid">
+    <div class="grid__col--12 panel--centered">
+        <a class="site-logo" href="/">
+            <div class="srt">Digital Style Guide</div>
+        </a>
+        <img class="img--hero" src="img/hero-chicago.jpg" alt="Digital Style Guide Hero Image">
+    </div>
+</div>
+
+<h4 class="grid">Typography</h4>
+
+<div class="grid">
+    <div class="centered grid__col--8">
+        <h1 class="headline-primary--grouped">Take a look at this h1 grouped element!</h1>
+
+        <h2 class="headline-secondary--grouped">This is the h2 grouped element</h2>
+
+        <h1>This is a h1 element!</h1>
+
+        <h2>This is a h2 element!</h2>
+
+        <h3>This is a h3 element!</h3>
+        <h4>This is a h4 element!</h4>
+        <h5>This is a h5 element!</h5>
+    </div>
+</div>
+
+<h4 class="grid">Text</h4>
+
+<div class="grid">
+    <div class="centered grid__col--8">
+        <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is
+            <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u>,
+            this is code: <code>for (;;) { ... }</code> and this is computer response <samp>"Hello world!"</samp>.
+            Finally, <a href="#">this is a link</a>.</p>
+        This is keyboard input: <kbd>Shift</kbd>.
+        <pre>
+          This  is preformatted text block
+
+          f
+        </pre>
+        <blockquote class="quote-left">You know what really gets me going? A really nice set of block quotes. That's right, block quotes
+            that say, "Hey, I'm an article you want to read and nurture."
+        </blockquote>
+        <blockquote class="quote-right">You know what really gets me going? A really nice set of block quotes. That's right, block quotes
+            that say, "Hey, I'm an article you want to read and nurture."
+        </blockquote>
+    </div>
+</div>
+
+<h4 class="grid">Buttons</h4>
+
+<div class="grid">
+    <div class="grid__col--12 panel--centered">
+        <a class="btn--default-special" href="#">Default Special</a>
+        <a class="btn--default" href="#">Default</a>
+        <a class="btn--default-alt" href="#">Default Alt</a>
+    </div>
+    <div class="grid__col--12 panel--centered">
+        <a class="btn--success" href="#">Success</a>
+        <a class="btn--error" href="#">Error</a>
+        <button class="btn--warning">Warning</button>
+        <button class="btn--info">Info</button>
+    </div>
+</div>
+
+<h4 class="grid">Lists</h4>
+
+<div class="grid">
+    <div class="grid__col--6">
+        <h5>Ordered list</h5>
+        <ol class="ordered-list">
+            <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
+            <li class="ordered-list__item ordered-list__item--active">This is an active ordered list item.</li>
+            <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
+        </ol>
+    </div>
+    <div class="grid__col--6">
+        <h5>Unordered list</h5>
+        <ul class="unordered-list">
+            <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li class="unordered-list__item unordered-list__item--active">Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit.
+            </li>
+            <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
+            <li class="unordered-list__item">Lorem ipsum dolor.</li>
+            <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
+        </ul>
+    </div>
+    <div class="grid__col--8">
+        <h5>Alternate list</h5>
+        <ul class="alternate-list">
+            <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipis</li>
+            <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adip</li>
+            <li class="alternate-list__item alternate-list__item--active">Lorem ipsum dolor sit amet,</li>
+            <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
+                debiti
+            </li>
+            <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur ad</li>
+        </ul>
+    </div>
+    <div class="grid__col--12">
+    </div>
+</div>
+
+<h4 class="grid">Form Elements</h4>
+
+<div class="grid">
+    <div class="grid__col--12">
+        <form class="form">
+            <label class="form__label" for="name">Name:</label>
+            <input class="form__input" type="text" id="name" placeholder="Name">
+
+            <label class="form__label" for="email">Email:</label>
+            <input class="form__input" type="email" id="email" placeholder="email@website.com">
+
+            <label class="form__label" for="msg">Message:</label>
+            <textarea class="form__input" id="msg" placeholder="Message..." rows="6"></textarea>
+
+            <input class="btn--default" type="submit" value="Submit">
+            <input class="btn--warning" type="reset" value="Reset">
+        </form>
+    </div>
+</div>
+
+<h4 class="grid">Tables</h4>
+
+<div class="grid">
+    <div class="grid__col--12 panel--padded">
+        <table class="green-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Item One</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Two</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Three</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Four</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Five</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>2.99</td>
+            </tr>
+            <tr>
+                <td>Item six</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>2.99</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td>100.00</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="grid__col--12 panel--padded">
+        <table class="blue-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Item One</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Two</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Three</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Four</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Five</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>2.99</td>
+            </tr>
+            <tr>
+                <td>Item six</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>2.99</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td>100.00</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="grid__col--12 panel--padded">
+        <table class="alternate-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Item One</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Two</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Three</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Four</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>9.99</td>
+            </tr>
+            <tr>
+                <td>Item Five</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>2.99</td>
+            </tr>
+            <tr>
+                <td>Item six</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                <td>2.99</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td>100.00</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<h4 class="grid">Media</h4>
+
+<div class="grid">
+    <div class="grid__col--5">
+        <img src="img/sample-chicago.jpg" alt="sample image">
+    </div>
+    <div class="grid__col--5">
+        <img class="img--wrap" src="img/sample-chicago.jpg" alt="sample image">
+    </div>
+    <div class="grid__col--2">
+        <img class="img--avatar" src="img/avatar-chicago.jpg" alt="Avatar">
+    </div>
+</div>
+
+<h4 class="grid">Footer</h4>
+
+<div class="grid">
+    <footer class="grid__col--12 panel--padded--centered" role="contentinfo">
+        <a class="site-logo" href="#">
+            <b class="srt">Poly - UI Toolkit</b>
+        </a>
+
+        <p>Digital Style Guide</p>
+    </footer>
+</div>
+</body>
+</html>

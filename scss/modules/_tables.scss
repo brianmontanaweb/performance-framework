@@ -1,0 +1,4 @@
+// Table styles
+@include table-colors("green", $bc-mountain-meadow, $white);
+@include table-colors("blue", $bc-orient, $white);
+@include table-colors("alternate", palette(grey), $white);

@@ -1,0 +1,133 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// BEM selectors
+
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Generate modifier color classes
+
+@mixin button-colors($map) {
+  @each $theme, $color in $map {
+    &--#{$theme} {
+      background-color: $color;
+      border: solid transparent 2px;
+      @include transition(all 0.5s ease);
+      position: relative;
+      &:hover {
+        border: solid $color 2px;
+        color: $color;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@mixin list-maker($list-type, $active-color: $bc-siren-dark, $list-style: null) {
+  .#{$list-type}-list {
+    @if $list-style == "none" {
+      padding-left: 0;
+    } @else {
+      padding-left: em(16px);
+    }
+    list-style: $list-style;
+    @include element(item) {
+      @if $list-style == "none" {
+        &:nth-child(even) {
+          background-color: darken($white, 5%);
+        }
+      }
+      padding-bottom: em(4px);
+      @include modifier(active) {
+        color: $active-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Generating :before or :after pseudo-element shapes
+
+@mixin p-el($el,
+$el-w: null,
+$el-h: null) {
+  @if $el == "before" or $el == "after" {
+    &:#{$el} {
+    @extend %pseudos;
+    width: $el-w;
+    height: $el-h;
+    @content;
+  }
+  } @else {
+    @error "`#{$el}` is not a valid pseudo-element.";
+  }
+}
+
+// Image replacement
+
+@mixin img-replace($img, $w, $h, $disp: block) {
+  background-image: url('#{$path--rel}/#{$img}');
+  background-repeat: no-repeat;
+  width: $w;
+  height: $h;
+  display: $disp;
+}
+
+// Adjacent sibling margins
+
+@mixin doubly($margin: 1em) {
+  & + & {
+    margin-left: $margin;
+    @content;
+  }
+}
+
+// Table setup Mixin
+@mixin table-colors($table-type, $main-color, $copy-color) {
+  .#{$table-type}-table {
+    td, th {
+      @if $table-type == "alternate"{
+        border:none;
+      }@else{
+        border-color: $copy-color;
+      }
+    }
+    thead {
+      th {
+        color: $copy-color;
+        background-color: $main-color;
+      }
+    }
+    tbody {
+      tr {
+        @if $table-type == "alternate" {
+          border-top: solid em(2px) $main-color;
+        } @else {
+          &:nth-child(even) {
+            background-color: lighten($main-color, 50%);
+          }
+          &:nth-child(odd) {
+            background-color: $copy-color;
+          }
+        }
+      }
+    }
+    tfoot {
+      tr {
+        color: $copy-color;
+        background-color: $main-color;
+      }
+    }
+  }
+}

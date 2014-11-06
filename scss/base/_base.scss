@@ -1,0 +1,171 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  color: palette(grey);
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  line-height: ($base__line/$base__font-size);
+}
+
+// Text
+
+h1 {
+  @extend %hdln-prim;
+}
+
+h2 {
+  @extend %hdln-sec;
+}
+
+h3 {
+  font-size: em(18px);
+}
+
+h4 {
+  margin-top: em(22px, 14px);
+  margin-bottom: em(32px, 14px);
+  color: palette(grey, light);
+  text-transform: uppercase;
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--medium;
+  font-size: em(14px);
+}
+
+a {
+  color: palette(grey, dark);
+  text-decoration: none;
+  font-weight: $font-weight--medium;
+}
+b{
+  font-weight: 600;
+}
+code{
+  background-color: palette(gray, xx-light);
+  padding: em(4px, 16px);
+  border-radius: em(4px, 16px);
+  box-shadow: 0 0 0px 1px palette(gray, x-dark);
+  margin: 0 em(4px, 16px);
+}
+kbd{
+  background-color: palette(gray, xx-light);
+  padding: em(2px, 16px) em(8px, 16px);
+  border-radius: em(4px, 16px);
+  box-shadow: 0 em(2px, 16px) 0px 1px palette(gray, light), 0 em(4px, 16px) 10px 0px palette(gray, x-light);
+  margin: 0 em(4px, 16px);
+}
+pre{
+  background-color: #ebecec;
+  padding: .5em;
+  border-radius: 10px;
+}
+samp{
+
+}
+strong{
+  font-weight: bold;
+}
+i{
+  font-style: italic;
+}
+em{
+  font-style: italic;
+  font-weight: bold;
+}
+p {
+  margin: 0 0 em(24px, 16px);
+  font-weight: $font-weight--light;
+  font-size: em(16px);
+  line-height: (24px/16px);
+  font-family: $font-family--secondary;
+}
+
+blockquote {
+  @media (min-width: 769px) {
+    font-size: em(20px);
+  }
+  font-weight: $font-weight--light;
+  font-style: italic;
+  font-size: em(18px);
+}
+
+// Lists
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+// Images
+
+img {
+  margin-bottom: em(24px);
+  max-width: 100%;
+  height: auto;
+}
+
+// Form elements
+
+input,
+textarea {
+  display: block;
+  padding: 15px;
+  width: 100%;
+  outline: 0;
+  border: 0;
+}
+
+input:focus,
+textarea:focus {
+  transition: $trns_duration;
+}
+
+// Button
+
+button {
+  outline: 0;
+}
+
+// Layout
+
+footer {
+  border-top: 1px solid palette(grey, xx-light);
+  p {
+    font-size: em(16px);
+    margin-top: em(22px, 16px);
+  }
+}
+
+// Table style
+
+table {
+  width:100%;
+  color: palette(grey, x-dark);
+  td, th{
+    border-width: em(2px);
+    border-style: solid;
+    padding: em(8px, 16px);
+  }
+  thead {
+    th {
+      color: $white;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(even) {
+      }
+    }
+  }
+  tfoot {
+    tr {
+    }
+  }
+}
