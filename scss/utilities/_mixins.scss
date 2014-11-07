@@ -2,6 +2,22 @@
 // Mixins
 // ==========================================================================
 
+//Before or After background
+
+@mixin pseudo-b-a($pseudo-before-after) {
+  &:#{$pseudo-before-after} {
+    @include transition(all 0.5s ease);
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    @content;
+  }
+}
+
 // BEM selectors
 
 @mixin element($element) {
@@ -20,32 +36,24 @@
 
 @mixin button-colors--primary($map) {
   @each $theme, $color in $map {
-    &--#{$theme} {
+    @include modifier($theme) {
       box-shadow: 0 0 0 2px $color;
       @include transition(all 0.5s ease);
       position: relative;
       overflow: hidden;
       color: $color;
       background-color: transparent;
-      span{
+      span {
         position: relative;
         z-index: 10;
       }
-      &:after{
-        @include transition(all 0.5s ease);
-        content:"";
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 0;
+      @include pseudo-b-a(after) {
         background-color: $color;
       }
       &:hover {
         box-shadow: 0 0 0 2px $color;
         color: white;
-        &:after{
+        &:after {
           height: 100%;
         }
       }
@@ -56,16 +64,14 @@
 @mixin button-colors--secondary($map) {
   @each $theme, $color in $map {
     &--#{$theme} {
-      background-color: transparent;
-      border: solid $color 2px;
-      @include transition(all 0.5s ease);
+      @include transition(all 0.25s ease);
+      background-color: $color;
+      color: white;
       position: relative;
-      color: $color;
       overflow: hidden;
+      box-shadow: 0 0 0 0 #{$color}, 0 0 4px 0 rgba(palette(grey, x-dark), .75);
       &:hover {
-        border-color: transparent;
-        color: white;
-        background-color: $color;
+        box-shadow: 0 0 0 4px #{$color}, 0 10px 20px 4px rgba(palette(grey, x-dark), .75);
       }
     }
   }
@@ -101,11 +107,11 @@ $el-w: null,
 $el-h: null) {
   @if $el == "before" or $el == "after" {
     &:#{$el} {
-    @extend %pseudos;
-    width: $el-w;
-    height: $el-h;
-    @content;
-  }
+      @extend %pseudos;
+      width: $el-w;
+      height: $el-h;
+      @content;
+    }
   } @else {
     @error "`#{$el}` is not a valid pseudo-element.";
   }
@@ -134,9 +140,9 @@ $el-h: null) {
 @mixin table-colors($table-type, $main-color, $copy-color) {
   .#{$table-type}-table {
     td, th {
-      @if $table-type == "alternate"{
-        border:none;
-      }@else{
+      @if $table-type == "alternate" {
+        border: none;
+      } @else {
         border-color: $copy-color;
       }
     }

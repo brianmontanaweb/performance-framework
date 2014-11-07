@@ -680,96 +680,82 @@ h3, h4, h5 {
       height: 100%; }
 
 .btn-secondary--default-special {
-  background-color: transparent;
-  border: solid #008acd 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: #008acd;
+  color: white;
   position: relative;
-  color: #008acd;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #008acd, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
   .btn-secondary--default-special:hover {
-    border-color: transparent;
-    color: white;
-    background-color: #008acd; }
+    box-shadow: 0 0 0 4px #008acd, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
 .btn-secondary--default {
-  background-color: transparent;
-  border: solid #3c84a8 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: #3c84a8;
+  color: white;
   position: relative;
-  color: #3c84a8;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #3c84a8, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
   .btn-secondary--default:hover {
-    border-color: transparent;
-    color: white;
-    background-color: #3c84a8; }
+    box-shadow: 0 0 0 4px #3c84a8, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
 .btn-secondary--default-alt {
-  background-color: transparent;
-  border: solid #054a6c 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: #054a6c;
+  color: white;
   position: relative;
-  color: #054a6c;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #054a6c, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
   .btn-secondary--default-alt:hover {
-    border-color: transparent;
-    color: white;
-    background-color: #054a6c; }
+    box-shadow: 0 0 0 4px #054a6c, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
 .btn-secondary--success {
-  background-color: transparent;
-  border: solid #189b50 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: #189b50;
+  color: white;
   position: relative;
-  color: #189b50;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #189b50, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
   .btn-secondary--success:hover {
-    border-color: transparent;
-    color: white;
-    background-color: #189b50; }
+    box-shadow: 0 0 0 4px #189b50, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
 .btn-secondary--error {
-  background-color: transparent;
-  border: solid #ee232d 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: #ee232d;
+  color: white;
   position: relative;
-  color: #ee232d;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #ee232d, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
   .btn-secondary--error:hover {
-    border-color: transparent;
-    color: white;
-    background-color: #ee232d; }
+    box-shadow: 0 0 0 4px #ee232d, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
 .btn-secondary--warning {
-  background-color: transparent;
-  border: solid #FF7604 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: #FF7604;
+  color: white;
   position: relative;
-  color: #FF7604;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #FF7604, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
   .btn-secondary--warning:hover {
-    border-color: transparent;
-    color: white;
-    background-color: #FF7604; }
+    box-shadow: 0 0 0 4px #FF7604, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
 .btn-secondary--info {
-  background-color: transparent;
-  border: solid #87003F 2px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  background-color: #87003F;
+  color: white;
   position: relative;
-  color: #87003F;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #87003F, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
   .btn-secondary--info:hover {
-    border-color: transparent;
-    color: white;
-    background-color: #87003F; }
+    box-shadow: 0 0 0 4px #87003F, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
 
 [class^="btn-"] {
   margin-bottom: 1.42857em; }
