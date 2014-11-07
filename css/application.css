@@ -328,7 +328,9 @@ table {
   padding-bottom: 2.125em; }
 
 .grid {
-  width: 90%; }
+  width: 90%;
+  position: relative;
+  z-index: 2; }
   [class*="grid__col--"] > .grid {
     width: 100%; }
   @media (min-width: 1100px) {
@@ -445,8 +447,19 @@ h3, h4, h5 {
   display: block;
   border-radius: 50%;
   margin-top: 1.5em; }
-.img--hero {
-  margin-bottom: 2.625em; }
+.img__full {
+  margin-bottom: 2.625em;
+  position: relative;
+  min-height: 30em; }
+  .img__full--hero {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-size: cover;
+    z-index: 1;
+    background-color: #fde0e2; }
 
 .headline-primary {
   margin-bottom: 1.66667em; }
@@ -687,9 +700,9 @@ h3, h4, h5 {
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 0 #008acd, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
+  box-shadow: 0 0 0 0px #008acd, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--default-special:hover {
-    box-shadow: 0 0 0 4px #008acd, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
+    box-shadow: 0 0 0 6px #008acd, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--default {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -698,9 +711,9 @@ h3, h4, h5 {
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 0 #3c84a8, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
+  box-shadow: 0 0 0 0px #3c84a8, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--default:hover {
-    box-shadow: 0 0 0 4px #3c84a8, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
+    box-shadow: 0 0 0 6px #3c84a8, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--default-alt {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -709,9 +722,9 @@ h3, h4, h5 {
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 0 #054a6c, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
+  box-shadow: 0 0 0 0px #054a6c, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--default-alt:hover {
-    box-shadow: 0 0 0 4px #054a6c, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
+    box-shadow: 0 0 0 6px #054a6c, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--success {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -720,9 +733,9 @@ h3, h4, h5 {
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 0 #189b50, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
+  box-shadow: 0 0 0 0px #189b50, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--success:hover {
-    box-shadow: 0 0 0 4px #189b50, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
+    box-shadow: 0 0 0 6px #189b50, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--error {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -731,9 +744,9 @@ h3, h4, h5 {
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 0 #ee232d, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
+  box-shadow: 0 0 0 0px #ee232d, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--error:hover {
-    box-shadow: 0 0 0 4px #ee232d, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
+    box-shadow: 0 0 0 6px #ee232d, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--warning {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -742,9 +755,9 @@ h3, h4, h5 {
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 0 #FF7604, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
+  box-shadow: 0 0 0 0px #FF7604, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--warning:hover {
-    box-shadow: 0 0 0 4px #FF7604, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
+    box-shadow: 0 0 0 6px #FF7604, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--info {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -753,9 +766,9 @@ h3, h4, h5 {
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 0 #87003F, 0 0 4px 0 rgba(82, 85, 89, 0.75); }
+  box-shadow: 0 0 0 0px #87003F, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--info:hover {
-    box-shadow: 0 0 0 4px #87003F, 0 10px 20px 4px rgba(82, 85, 89, 0.75); }
+    box-shadow: 0 0 0 6px #87003F, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 
 [class^="btn-"] {
   margin-bottom: 1.42857em; }

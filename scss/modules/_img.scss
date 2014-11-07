@@ -12,7 +12,19 @@
     border-radius: $br--round;
     margin-top: em(24px);
   }
-  @include modifier(hero) {
+  @include element(full) {
     margin-bottom: em(42px);
+    position: relative;
+    min-height: 30em;
+    @include modifier(hero){
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-size: cover;
+      z-index: 1;
+      background-color: lighten($bc-carnation, 40%);
+    }
   }
 }

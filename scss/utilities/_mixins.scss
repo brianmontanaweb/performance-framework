@@ -4,7 +4,7 @@
 
 //Before or After background
 
-@mixin pseudo-b-a($pseudo-before-after) {
+@mixin background-slider($pseudo-before-after) {
   &:#{$pseudo-before-after} {
     @include transition(all 0.5s ease);
     content: "";
@@ -31,6 +31,14 @@
     @content;
   }
 }
+// Button distance setup
+
+@mixin box-shadow--distance($base-value, $final-value, $box-color, $shadow-color: rgba(palette(grey, x-dark), .75)){
+  box-shadow: 0 0 0 ($base-value + 0px) #{$box-color}, 0 ($base-value + 0px) ($base-value + 4px) ($base-value + 0px) $shadow-color;
+  &:hover {
+    box-shadow: 0 0 0 ($base-value + $final-value) #{$box-color}, 0 ($final-value * 3) ($final-value * 4) ($final-value) $shadow-color;
+  }
+}
 
 // Generate modifier color classes
 
@@ -47,7 +55,7 @@
         position: relative;
         z-index: 10;
       }
-      @include pseudo-b-a(after) {
+      @include background-slider(after) {
         background-color: $color;
       }
       &:hover {
@@ -69,10 +77,7 @@
       color: white;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 0 0 0 #{$color}, 0 0 4px 0 rgba(palette(grey, x-dark), .75);
-      &:hover {
-        box-shadow: 0 0 0 4px #{$color}, 0 10px 20px 4px rgba(palette(grey, x-dark), .75);
-      }
+      @include box-shadow--distance(0px, 6px, #{$color});
     }
   }
 }
