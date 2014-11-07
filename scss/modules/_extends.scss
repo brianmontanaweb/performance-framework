@@ -25,7 +25,6 @@
 // Headlines
 
 %hdln-prim {
-  color: palette(grey, x-dark);
   font-weight: $font-weight--light;
   font-size: em(42px);
   line-height: (46px/42px);
@@ -33,7 +32,6 @@
 }
 
 %hdln-sec {
-  color: palette(grey, light);
   letter-spacing: $letter-space;
   font-weight: $font-weight--thin;
   font-size: em(24px);

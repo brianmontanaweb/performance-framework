@@ -404,14 +404,12 @@ table {
   border-color: #0b0b0b; }
 
 h1, .headline-primary, .headline-primary--grouped {
-  color: #525559;
   font-weight: 300;
   font-size: 2.625em;
   line-height: 1.09524;
   margin-top: 0; }
 
 h2, .headline-secondary, .headline-secondary--grouped {
-  color: #999da1;
   letter-spacing: 1px;
   font-weight: 100;
   font-size: 1.5em;
@@ -462,12 +460,16 @@ h3, h4, h5 {
     background-color: #fde0e2; }
 
 .headline-primary {
+  color: #525559;
   margin-bottom: 1.66667em; }
   .headline-primary--grouped {
+    color: #d05e00;
     margin-bottom: 0; }
 .headline-secondary {
-  margin-bottom: 0.91667em; }
+  margin-bottom: 0.91667em;
+  color: #999da1; }
   .headline-secondary--grouped {
+    color: #00689a;
     margin-top: 0.41667em;
     margin-bottom: 2.25em; }
 
