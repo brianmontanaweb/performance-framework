@@ -6,7 +6,6 @@
 
 @mixin background-slider($pseudo-before-after) {
   &:#{$pseudo-before-after} {
-    @include transition(all 0.5s ease);
     content: "";
     width: 100%;
     position: absolute;
@@ -46,17 +45,18 @@
   @each $theme, $color in $map {
     @include modifier($theme) {
       box-shadow: 0 0 0 2px $color;
-      @include transition(all 0.5s ease);
       position: relative;
       overflow: hidden;
       color: $color;
       background-color: transparent;
+      @include transition(all 0.25s ease-in);
       span {
         position: relative;
         z-index: 10;
       }
       @include background-slider(after) {
         background-color: $color;
+        @include transition(all 0.25s ease-in);
       }
       &:hover {
         box-shadow: 0 0 0 2px $color;

@@ -492,20 +492,17 @@ h3, h4, h5 {
 
 .btn-primary--default-special {
   box-shadow: 0 0 0 2px #008acd;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   color: #008acd;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .btn-primary--default-special span {
     position: relative;
     z-index: 10; }
   .btn-primary--default-special:after {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     content: "";
     width: 100%;
     position: absolute;
@@ -513,7 +510,10 @@ h3, h4, h5 {
     left: 0;
     right: 0;
     height: 0;
-    background-color: #008acd; }
+    background-color: #008acd;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
   .btn-primary--default-special:hover {
     box-shadow: 0 0 0 2px #008acd;
     color: white; }
@@ -521,20 +521,17 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--default {
   box-shadow: 0 0 0 2px #3c84a8;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   color: #3c84a8;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .btn-primary--default span {
     position: relative;
     z-index: 10; }
   .btn-primary--default:after {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     content: "";
     width: 100%;
     position: absolute;
@@ -542,7 +539,10 @@ h3, h4, h5 {
     left: 0;
     right: 0;
     height: 0;
-    background-color: #3c84a8; }
+    background-color: #3c84a8;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
   .btn-primary--default:hover {
     box-shadow: 0 0 0 2px #3c84a8;
     color: white; }
@@ -550,20 +550,17 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--default-alt {
   box-shadow: 0 0 0 2px #054a6c;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   color: #054a6c;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .btn-primary--default-alt span {
     position: relative;
     z-index: 10; }
   .btn-primary--default-alt:after {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     content: "";
     width: 100%;
     position: absolute;
@@ -571,7 +568,10 @@ h3, h4, h5 {
     left: 0;
     right: 0;
     height: 0;
-    background-color: #054a6c; }
+    background-color: #054a6c;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
   .btn-primary--default-alt:hover {
     box-shadow: 0 0 0 2px #054a6c;
     color: white; }
@@ -579,20 +579,17 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--success {
   box-shadow: 0 0 0 2px #189b50;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   color: #189b50;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .btn-primary--success span {
     position: relative;
     z-index: 10; }
   .btn-primary--success:after {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     content: "";
     width: 100%;
     position: absolute;
@@ -600,7 +597,10 @@ h3, h4, h5 {
     left: 0;
     right: 0;
     height: 0;
-    background-color: #189b50; }
+    background-color: #189b50;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
   .btn-primary--success:hover {
     box-shadow: 0 0 0 2px #189b50;
     color: white; }
@@ -608,20 +608,17 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--error {
   box-shadow: 0 0 0 2px #ee232d;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   color: #ee232d;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .btn-primary--error span {
     position: relative;
     z-index: 10; }
   .btn-primary--error:after {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     content: "";
     width: 100%;
     position: absolute;
@@ -629,7 +626,10 @@ h3, h4, h5 {
     left: 0;
     right: 0;
     height: 0;
-    background-color: #ee232d; }
+    background-color: #ee232d;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
   .btn-primary--error:hover {
     box-shadow: 0 0 0 2px #ee232d;
     color: white; }
@@ -637,20 +637,17 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--warning {
   box-shadow: 0 0 0 2px #FF7604;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   color: #FF7604;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .btn-primary--warning span {
     position: relative;
     z-index: 10; }
   .btn-primary--warning:after {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     content: "";
     width: 100%;
     position: absolute;
@@ -658,7 +655,10 @@ h3, h4, h5 {
     left: 0;
     right: 0;
     height: 0;
-    background-color: #FF7604; }
+    background-color: #FF7604;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
   .btn-primary--warning:hover {
     box-shadow: 0 0 0 2px #FF7604;
     color: white; }
@@ -666,20 +666,17 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--info {
   box-shadow: 0 0 0 2px #87003F;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   color: #87003F;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .btn-primary--info span {
     position: relative;
     z-index: 10; }
   .btn-primary--info:after {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     content: "";
     width: 100%;
     position: absolute;
@@ -687,7 +684,10 @@ h3, h4, h5 {
     left: 0;
     right: 0;
     height: 0;
-    background-color: #87003F; }
+    background-color: #87003F;
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in; }
   .btn-primary--info:hover {
     box-shadow: 0 0 0 2px #87003F;
     color: white; }
