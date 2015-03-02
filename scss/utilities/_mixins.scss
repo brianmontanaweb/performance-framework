@@ -6,13 +6,7 @@
 
 @mixin background-slider($pseudo-before-after) {
   &:#{$pseudo-before-after} {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
+    @extend %btn__after;
     @content;
   }
 }
@@ -45,11 +39,8 @@
   @each $theme, $color in $map {
     @include modifier($theme) {
       box-shadow: 0 0 0 2px $color;
-      position: relative;
-      overflow: hidden;
       color: $color;
-      background-color: transparent;
-      @include transition(all 0.25s ease-in);
+      @extend %btn__primary;
       span {
         position: relative;
         z-index: 10;
@@ -72,11 +63,8 @@
 @mixin button-colors--secondary($map) {
   @each $theme, $color in $map {
     &--#{$theme} {
-      @include transition(all 0.25s ease);
+      @extend %btn__secondary;
       background-color: $color;
-      color: white;
-      position: relative;
-      overflow: hidden;
       @include box-shadow--distance(0px, 6px, #{$color});
     }
   }

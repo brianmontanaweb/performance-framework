@@ -434,6 +434,31 @@ h3, h4, h5 {
   .form__btn:active, [class^="btn-"]:active {
     opacity: initial; }
 
+.btn-primary--default-special, .btn-primary--default, .btn-primary--default-alt, .btn-primary--success, .btn-primary--error, .btn-primary--warning, .btn-primary--info {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
+
+.btn-secondary--default-special, .btn-secondary--default, .btn-secondary--default-alt, .btn-secondary--success, .btn-secondary--error, .btn-secondary--warning, .btn-secondary--info {
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  color: white;
+  position: relative;
+  overflow: hidden; }
+
+.btn-primary--default-special:after, .btn-primary--default:after, .btn-primary--default-alt:after, .btn-primary--success:after, .btn-primary--error:after, .btn-primary--warning:after, .btn-primary--info:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0; }
+
 .icn--nav-toggle {
   line-height: 0;
   cursor: pointer; }
@@ -492,24 +517,11 @@ h3, h4, h5 {
 
 .btn-primary--default-special {
   box-shadow: 0 0 0 2px #008acd;
-  position: relative;
-  overflow: hidden;
-  color: #008acd;
-  background-color: transparent;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  color: #008acd; }
   .btn-primary--default-special span {
     position: relative;
     z-index: 10; }
   .btn-primary--default-special:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
     background-color: #008acd;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
@@ -521,24 +533,11 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--default {
   box-shadow: 0 0 0 2px #3c84a8;
-  position: relative;
-  overflow: hidden;
-  color: #3c84a8;
-  background-color: transparent;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  color: #3c84a8; }
   .btn-primary--default span {
     position: relative;
     z-index: 10; }
   .btn-primary--default:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
     background-color: #3c84a8;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
@@ -550,24 +549,11 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--default-alt {
   box-shadow: 0 0 0 2px #054a6c;
-  position: relative;
-  overflow: hidden;
-  color: #054a6c;
-  background-color: transparent;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  color: #054a6c; }
   .btn-primary--default-alt span {
     position: relative;
     z-index: 10; }
   .btn-primary--default-alt:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
     background-color: #054a6c;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
@@ -579,24 +565,11 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--success {
   box-shadow: 0 0 0 2px #189b50;
-  position: relative;
-  overflow: hidden;
-  color: #189b50;
-  background-color: transparent;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  color: #189b50; }
   .btn-primary--success span {
     position: relative;
     z-index: 10; }
   .btn-primary--success:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
     background-color: #189b50;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
@@ -608,24 +581,11 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--error {
   box-shadow: 0 0 0 2px #ee232d;
-  position: relative;
-  overflow: hidden;
-  color: #ee232d;
-  background-color: transparent;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  color: #ee232d; }
   .btn-primary--error span {
     position: relative;
     z-index: 10; }
   .btn-primary--error:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
     background-color: #ee232d;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
@@ -637,24 +597,11 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--warning {
   box-shadow: 0 0 0 2px #FF7604;
-  position: relative;
-  overflow: hidden;
-  color: #FF7604;
-  background-color: transparent;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  color: #FF7604; }
   .btn-primary--warning span {
     position: relative;
     z-index: 10; }
   .btn-primary--warning:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
     background-color: #FF7604;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
@@ -666,24 +613,11 @@ h3, h4, h5 {
       height: 100%; }
 .btn-primary--info {
   box-shadow: 0 0 0 2px #87003F;
-  position: relative;
-  overflow: hidden;
-  color: #87003F;
-  background-color: transparent;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  color: #87003F; }
   .btn-primary--info span {
     position: relative;
     z-index: 10; }
   .btn-primary--info:after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0;
     background-color: #87003F;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
@@ -695,79 +629,37 @@ h3, h4, h5 {
       height: 100%; }
 
 .btn-secondary--default-special {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   background-color: #008acd;
-  color: white;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0 0 0px #008acd, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--default-special:hover {
     box-shadow: 0 0 0 6px #008acd, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--default {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   background-color: #3c84a8;
-  color: white;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0 0 0px #3c84a8, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--default:hover {
     box-shadow: 0 0 0 6px #3c84a8, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--default-alt {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   background-color: #054a6c;
-  color: white;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0 0 0px #054a6c, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--default-alt:hover {
     box-shadow: 0 0 0 6px #054a6c, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--success {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   background-color: #189b50;
-  color: white;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0 0 0px #189b50, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--success:hover {
     box-shadow: 0 0 0 6px #189b50, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--error {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   background-color: #ee232d;
-  color: white;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0 0 0px #ee232d, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--error:hover {
     box-shadow: 0 0 0 6px #ee232d, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--warning {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   background-color: #FF7604;
-  color: white;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0 0 0px #FF7604, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--warning:hover {
     box-shadow: 0 0 0 6px #FF7604, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 .btn-secondary--info {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
   background-color: #87003F;
-  color: white;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0 0 0px #87003F, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
   .btn-secondary--info:hover {
     box-shadow: 0 0 0 6px #87003F, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }

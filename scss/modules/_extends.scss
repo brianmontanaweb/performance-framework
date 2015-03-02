@@ -60,7 +60,27 @@
     opacity: initial;
   }
 }
-
+%btn__primary{
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  @include transition(all 0.25s ease-in);
+}
+%btn__secondary{
+  @include transition(all 0.25s ease);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+%btn__after{
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+}
 // Icons
 
 %icn--ui {
