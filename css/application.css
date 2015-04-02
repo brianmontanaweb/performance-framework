@@ -501,6 +501,10 @@ h3, h4, h5 {
 .form__label {
   display: block;
   margin-bottom: 0.625em; }
+  .form__label--checkbox {
+    position: relative;
+    padding-left: 1em;
+    display: block; }
 .form__input {
   font-size: 1em;
   margin-bottom: 1.11111em;
@@ -514,6 +518,11 @@ h3, h4, h5 {
     border-color: #008acd; }
 .form__btn {
   background: #008acd; }
+.form__checkbox {
+  display: inline-block;
+  position: relative;
+  left: -0.75em;
+  width: auto; }
 
 .btn-primary--default-special {
   box-shadow: 0 0 0 2px #008acd;
