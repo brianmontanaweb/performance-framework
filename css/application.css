@@ -434,7 +434,7 @@ h3, h4, h5 {
   .form__btn:active, [class^="btn-"]:active {
     opacity: initial; }
 
-.btn-primary--default-special, .btn-primary--default, .btn-primary--default-alt, .btn-primary--success, .btn-primary--error, .btn-primary--warning, .btn-primary--info {
+.btn__default-special, .btn__default, .btn__default-alt, .btn__success, .btn__error, .btn__warning, .btn__info {
   position: relative;
   overflow: hidden;
   background-color: transparent;
@@ -442,7 +442,7 @@ h3, h4, h5 {
   -moz-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in; }
 
-.btn-secondary--default-special, .btn-secondary--default, .btn-secondary--default-alt, .btn-secondary--success, .btn-secondary--error, .btn-secondary--warning, .btn-secondary--info {
+.btn__default-special, .btn__default, .btn__default-alt, .btn__success, .btn__error, .btn__warning, .btn__info {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -450,7 +450,7 @@ h3, h4, h5 {
   position: relative;
   overflow: hidden; }
 
-.btn-primary--default-special:after, .btn-primary--default:after, .btn-primary--default-alt:after, .btn-primary--success:after, .btn-primary--error:after, .btn-primary--warning:after, .btn-primary--info:after {
+.btn__default-special:after, .btn__default:after, .btn__default-alt:after, .btn__success:after, .btn__error:after, .btn__warning:after, .btn__info:after {
   content: "";
   width: 100%;
   position: absolute;
@@ -524,153 +524,153 @@ h3, h4, h5 {
   left: -0.75em;
   width: auto; }
 
-.btn-primary--default-special {
+.btn__default-special {
   box-shadow: 0 0 0 2px #008acd;
   color: #008acd; }
-  .btn-primary--default-special span {
+  .btn__default-special span {
     position: relative;
     z-index: 10; }
-  .btn-primary--default-special:after {
+  .btn__default-special:after {
     background-color: #008acd;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
-  .btn-primary--default-special:hover {
+  .btn__default-special:hover {
     box-shadow: 0 0 0 2px #008acd;
     color: white; }
-    .btn-primary--default-special:hover:after {
+    .btn__default-special:hover:after {
       height: 100%; }
-.btn-primary--default {
+.btn__default {
   box-shadow: 0 0 0 2px #3c84a8;
   color: #3c84a8; }
-  .btn-primary--default span {
+  .btn__default span {
     position: relative;
     z-index: 10; }
-  .btn-primary--default:after {
+  .btn__default:after {
     background-color: #3c84a8;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
-  .btn-primary--default:hover {
+  .btn__default:hover {
     box-shadow: 0 0 0 2px #3c84a8;
     color: white; }
-    .btn-primary--default:hover:after {
+    .btn__default:hover:after {
       height: 100%; }
-.btn-primary--default-alt {
+.btn__default-alt {
   box-shadow: 0 0 0 2px #054a6c;
   color: #054a6c; }
-  .btn-primary--default-alt span {
+  .btn__default-alt span {
     position: relative;
     z-index: 10; }
-  .btn-primary--default-alt:after {
+  .btn__default-alt:after {
     background-color: #054a6c;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
-  .btn-primary--default-alt:hover {
+  .btn__default-alt:hover {
     box-shadow: 0 0 0 2px #054a6c;
     color: white; }
-    .btn-primary--default-alt:hover:after {
+    .btn__default-alt:hover:after {
       height: 100%; }
-.btn-primary--success {
+.btn__success {
   box-shadow: 0 0 0 2px #189b50;
   color: #189b50; }
-  .btn-primary--success span {
+  .btn__success span {
     position: relative;
     z-index: 10; }
-  .btn-primary--success:after {
+  .btn__success:after {
     background-color: #189b50;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
-  .btn-primary--success:hover {
+  .btn__success:hover {
     box-shadow: 0 0 0 2px #189b50;
     color: white; }
-    .btn-primary--success:hover:after {
+    .btn__success:hover:after {
       height: 100%; }
-.btn-primary--error {
+.btn__error {
   box-shadow: 0 0 0 2px #ee232d;
   color: #ee232d; }
-  .btn-primary--error span {
+  .btn__error span {
     position: relative;
     z-index: 10; }
-  .btn-primary--error:after {
+  .btn__error:after {
     background-color: #ee232d;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
-  .btn-primary--error:hover {
+  .btn__error:hover {
     box-shadow: 0 0 0 2px #ee232d;
     color: white; }
-    .btn-primary--error:hover:after {
+    .btn__error:hover:after {
       height: 100%; }
-.btn-primary--warning {
+.btn__warning {
   box-shadow: 0 0 0 2px #FF7604;
   color: #FF7604; }
-  .btn-primary--warning span {
+  .btn__warning span {
     position: relative;
     z-index: 10; }
-  .btn-primary--warning:after {
+  .btn__warning:after {
     background-color: #FF7604;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
-  .btn-primary--warning:hover {
+  .btn__warning:hover {
     box-shadow: 0 0 0 2px #FF7604;
     color: white; }
-    .btn-primary--warning:hover:after {
+    .btn__warning:hover:after {
       height: 100%; }
-.btn-primary--info {
+.btn__info {
   box-shadow: 0 0 0 2px #87003F;
   color: #87003F; }
-  .btn-primary--info span {
+  .btn__info span {
     position: relative;
     z-index: 10; }
-  .btn-primary--info:after {
+  .btn__info:after {
     background-color: #87003F;
     -webkit-transition: all 0.25s ease-in;
     -moz-transition: all 0.25s ease-in;
     transition: all 0.25s ease-in; }
-  .btn-primary--info:hover {
+  .btn__info:hover {
     box-shadow: 0 0 0 2px #87003F;
     color: white; }
-    .btn-primary--info:hover:after {
+    .btn__info:hover:after {
       height: 100%; }
 
-.btn-secondary--default-special {
+.btn__default-special {
   background-color: #008acd;
   box-shadow: 0 0 0 0px #008acd, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
-  .btn-secondary--default-special:hover {
+  .btn__default-special:hover {
     box-shadow: 0 0 0 6px #008acd, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
-.btn-secondary--default {
+.btn__default {
   background-color: #3c84a8;
   box-shadow: 0 0 0 0px #3c84a8, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
-  .btn-secondary--default:hover {
+  .btn__default:hover {
     box-shadow: 0 0 0 6px #3c84a8, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
-.btn-secondary--default-alt {
+.btn__default-alt {
   background-color: #054a6c;
   box-shadow: 0 0 0 0px #054a6c, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
-  .btn-secondary--default-alt:hover {
+  .btn__default-alt:hover {
     box-shadow: 0 0 0 6px #054a6c, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
-.btn-secondary--success {
+.btn__success {
   background-color: #189b50;
   box-shadow: 0 0 0 0px #189b50, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
-  .btn-secondary--success:hover {
+  .btn__success:hover {
     box-shadow: 0 0 0 6px #189b50, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
-.btn-secondary--error {
+.btn__error {
   background-color: #ee232d;
   box-shadow: 0 0 0 0px #ee232d, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
-  .btn-secondary--error:hover {
+  .btn__error:hover {
     box-shadow: 0 0 0 6px #ee232d, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
-.btn-secondary--warning {
+.btn__warning {
   background-color: #FF7604;
   box-shadow: 0 0 0 0px #FF7604, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
-  .btn-secondary--warning:hover {
+  .btn__warning:hover {
     box-shadow: 0 0 0 6px #FF7604, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
-.btn-secondary--info {
+.btn__info {
   background-color: #87003F;
   box-shadow: 0 0 0 0px #87003F, 0 0px 4px 0px rgba(82, 85, 89, 0.75); }
-  .btn-secondary--info:hover {
+  .btn__info:hover {
     box-shadow: 0 0 0 6px #87003F, 0 18px 24px 6px rgba(82, 85, 89, 0.75); }
 
 [class^="btn-"] {

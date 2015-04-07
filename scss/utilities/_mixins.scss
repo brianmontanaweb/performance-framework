@@ -37,7 +37,7 @@
 
 @mixin button-colors--primary($map) {
   @each $theme, $color in $map {
-    @include modifier($theme) {
+    @include element($theme) {
       box-shadow: 0 0 0 2px $color;
       color: $color;
       @extend %btn__primary;
@@ -62,7 +62,7 @@
 
 @mixin button-colors--secondary($map) {
   @each $theme, $color in $map {
-    &--#{$theme} {
+    @include element($theme) {
       @extend %btn__secondary;
       background-color: $color;
       @include box-shadow--distance(0px, 6px, #{$color});

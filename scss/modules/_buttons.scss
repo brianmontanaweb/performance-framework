@@ -5,11 +5,11 @@
 %btn-small{
 
 }
-.btn-primary {
+.btn {
   @include button-colors--primary($ui-colors);
 }
 
-.btn-secondary {
+.btn {
   @include button-colors--secondary($ui-colors);
 }
 
