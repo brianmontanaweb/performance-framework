@@ -3,11 +3,11 @@
 // ==========================================================================
 
 .img {
-  @include modifier(wrap) {
+  @include element(wrap) {
     border: 1px solid palette(grey, x-light);
     padding: em(12px);
   }
-  @include modifier(avatar) {
+  @include element(avatar) {
     display: block;
     border-radius: $br--round;
     margin-top: em(24px);

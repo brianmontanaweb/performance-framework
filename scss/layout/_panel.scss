@@ -5,12 +5,12 @@
 .panel {
   @extend %panel-default;
 
-  @include modifier(centered) {
+  @include element(centered) {
     @extend %panel-default;
     @extend %center-align;
   }
 
-  @include modifier(padded) {
+  @include element(padded) {
     @extend %panel-padding;
 
     @include modifier(centered) {

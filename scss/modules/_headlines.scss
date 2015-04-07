@@ -1,28 +1,25 @@
 // ==========================================================================
 // Headlines
 // ==========================================================================
-
-.headline {
-
-  &-primary {
+[class^="headline-primary"]{
     @extend %hdln-prim;
+}
+[class^="headline-secondary"]{
+    @extend %hdln-sec;
+}
+.headline {
+  &-primary {
     color: palette(grey, x-dark);
     margin-bottom: em(70px, 42px);
-
-    @include modifier(grouped) {
-      @extend %hdln-prim;
+    @include element(grouped) {
       color: darken($color-secondary, 10%);
       margin-bottom: 0;
     }
   }
-
   &-secondary {
-    @extend %hdln-sec;
     margin-bottom: em(22px, 24px);
     color: palette(grey, light);
-
-    @include modifier(grouped) {
-      @extend %hdln-sec;
+    @include element(grouped) {
       color: darken($color-primary, 10%);
       margin-top: em(10px, 24px);
       margin-bottom: em(54px, 24px);

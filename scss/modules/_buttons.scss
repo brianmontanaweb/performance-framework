@@ -5,15 +5,15 @@
 %btn-small{
 
 }
-.btn {
+.btn-primary {
   @include button-colors--primary($ui-colors);
 }
 
-.btn {
+.btn-secondary {
   @include button-colors--secondary($ui-colors);
 }
 
-[class^="btn-"] {
+[class^="btn"] {
   @extend %center-align;
   @extend %btn;
   margin-bottom: em(20px, 14px);

@@ -10,12 +10,14 @@
 }
 
 // UI
+[class^="icn"]{
+    @extend %icn--ui;
+}
 
 .icn {
 
   // Nav Toggle
-  @include modifier(nav-toggle) {
-    @extend %icn--ui;
+  @include element(nav-toggle) {
     width: 25px;
     height: 17px;
     border-top: solid 3px palette(grey);
