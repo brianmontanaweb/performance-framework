@@ -89,7 +89,7 @@ p {
 }
 
 blockquote {
-  @media (min-width: 769px) {
+  @include medium{
     font-size: em(20px);
   }
   font-weight: $font-weight--light;

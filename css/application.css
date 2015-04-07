@@ -274,7 +274,7 @@ blockquote {
   font-weight: 300;
   font-style: italic;
   font-size: 1.125em; }
-  @media (min-width: 769px) {
+  @media only screen and (min-width: 769px) {
     blockquote {
       font-size: 1.25em; } }
 
@@ -337,7 +337,7 @@ table {
     .grid {
       max-width: 1050px; } }
 
-@media (min-width: 769px) {
+@media only screen and (min-width: 769px) {
   .grid__col--1 {
     width: 6.5%; }
 
@@ -377,7 +377,7 @@ table {
   [class^="grid__col--"] {
     margin-top: 0.75em;
     margin-bottom: 0.75em; } }
-@media (min-width: 769px) {
+@media only screen and (min-width: 769px) {
   [class^="grid__col--"] {
     float: left;
     min-height: 1px;
