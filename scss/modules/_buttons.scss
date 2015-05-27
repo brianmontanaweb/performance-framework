@@ -5,14 +5,8 @@
 %btn-small{
 
 }
-.btn-primary {
-  @include button-colors--primary($ui-colors);
-}
 
-.btn-secondary {
-  @include button-colors--secondary($ui-colors);
-}
-
+//This is general styling for buttons so it loosely hits anything with btn class
 [class^="btn"] {
   @extend %center-align;
   @extend %btn;
@@ -25,4 +19,12 @@
     display: inline-block;
     @include doubly(20px);
   }
+}
+
+//Styles to overwrite default button styles
+[class*="btn-primary"] {
+  @include button-colors--primary($ui-colors);
+}
+[class*="btn-secondary"] {
+  @include button-colors--secondary($ui-colors);
 }
