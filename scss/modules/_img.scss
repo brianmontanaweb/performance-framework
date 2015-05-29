@@ -3,20 +3,20 @@
 // ==========================================================================
 
 .img {
-  @include element(wrap) {
+  &__wrap {
     border: 1px solid palette(grey, x-light);
     padding: em(12px);
   }
-  @include element(avatar) {
+  &__avatar {
     display: block;
     border-radius: $br--round;
     margin-top: em(24px);
   }
-  @include element(full) {
+  &__full {
     margin-bottom: em(42px);
     position: relative;
     min-height: 30em;
-    @include modifier(hero){
+    &--hero {
       position: absolute;
       top: 0;
       bottom: 0;

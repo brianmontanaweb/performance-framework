@@ -22,9 +22,9 @@
 }
 
 //Styles to overwrite default button styles
-[class*="btn-primary"] {
+.btn-primary {
   @include button-colors--primary($ui-colors);
 }
-[class*="btn-secondary"] {
+.btn-secondary {
   @include button-colors--secondary($ui-colors);
 }

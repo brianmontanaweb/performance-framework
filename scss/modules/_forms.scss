@@ -5,20 +5,20 @@
   
 }
 .form {
-  @include element(label) {
-    @include modifier(checkbox) {
+  &__label {
+    &--checkbox {
       position: relative;
       padding-left: em(16px, 16px);
       display: block;
     }
-    @include modifier(hidden) {
+    &--hidden {
       @extend .srt;
     }
     display: block;
     margin-bottom: em(10px);
   }
 
-  @include element(input) {
+  &__input {
     font-size: em(16px);
     margin-bottom: em(20px, 18px);
     border: 2px solid palette(grey, x-light);
@@ -33,11 +33,11 @@
     }
   }
 
-  @include element(btn) {
+  &__btn {
     @extend %btn;
     background: $color-primary;
   }
-  @include element(checkbox) {
+  &__checkbox {
     display: inline-block;
     position: relative;
     left: em(-12px, 16px);

@@ -38,7 +38,7 @@
     display: block !important;
   }
 
-  @include element(item) {
+  &__item {
     @extend %nav-item-disp;
     @media (min-width: 1px) and (max-width: 600px) {
       display: block;
@@ -52,7 +52,7 @@
         @include transition(all .5s ease);
       }
     }
-    @include modifier(current) {
+    &--current {
       @extend %nav-item-disp;
       a {
         @extend %nav-item-link;

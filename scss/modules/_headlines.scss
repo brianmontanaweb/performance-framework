@@ -11,7 +11,7 @@
   &-primary {
     color: palette(grey, x-dark);
     margin-bottom: em(70px, 42px);
-    @include element(grouped) {
+    &__grouped {
       color: darken($color-secondary, 10%);
       margin-bottom: 0;
     }
@@ -19,7 +19,7 @@
   &-secondary {
     margin-bottom: em(22px, 24px);
     color: palette(grey, light);
-    @include element(grouped) {
+    &__grouped {
       color: darken($color-primary, 10%);
       margin-top: em(10px, 24px);
       margin-bottom: em(54px, 24px);

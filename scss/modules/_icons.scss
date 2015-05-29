@@ -17,7 +17,7 @@
 .icn {
 
   // Nav Toggle
-  @include element(nav-toggle) {
+  &__nav-toggle {
     width: 25px;
     height: 17px;
     border-top: solid 3px palette(grey);
