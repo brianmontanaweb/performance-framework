@@ -1,3 +1,5 @@
-.idea/
-/.sass-cache/
-/scss/bourbon
+node_modules
+dist
+.tmp
+app.yaml
+app/styles/bourbon/
