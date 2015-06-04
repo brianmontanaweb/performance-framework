@@ -43,7 +43,6 @@ gulp.task('images', function () {
 gulp.task('copy', function () {
   return gulp.src([
     'app/*',
-    '!app/*.html',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -73,7 +72,7 @@ gulp.task('styles', function () {
     'app/**/*.scss',
     'app/styles/**/*.css'
   ])
-    .pipe($.changed('.tmp/styles', {extension: '.css'}))
+    .pipe($.changed('.tmp/styles', {extension: '*.css'}))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10
@@ -100,24 +99,10 @@ gulp.task('scripts', function () {
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', function () {
-  var assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  var assets = $.useref.assets({searchPath: '{.tmp,dist}'});
 
-  return gulp.src('app/**/**/*.html')
+  return gulp.src('dist/**/**/*.html')
     .pipe(assets)
-    // Remove any unused CSS
-    // Note: If not using the Style Guide, you can delete it from
-    // the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html'
-      ],
-      // CSS Selectors for UnCSS to ignore
-      ignore: [
-        /.navdrawer-container.open/,
-        /.app-bar.open/
-      ]
-    })))
-
     // Concatenate and minify styles
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.csso()))
@@ -131,16 +116,31 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
+//Copy styles for criticalCSS
+gulp.task('copystyles', function () {
+    return gulp.src(['dist/styles/styles.css'])
+        .pipe($.rename({
+            basename: "critical" // critical.css
+        }))
+        .pipe(gulp.dest('dist/styles'));
+});
+
 //Create critical css
-gulp.task('critical', ['styles'], function () {
+gulp.task('critical', ['copystyles'], function () {
   critical.generate({
-      base: './',
-      src: 'app/index.html',
-      css: 'dist/styles/application.css',
-      dest: 'dist/styles/critical.css',
-      width: 800,
-      height: 600,
+    base: 'dist/',
+    src: 'index.html',
+    dest: 'styles/critical.css',
+    width: 320,
+    height: 480,
+    minify: true
+  }, function (err, output) {
+    critical.inline({
+      base: 'dist/',
+      src: 'index.html',
+      dest: 'index.html',
       minify: true
+    });
   });
 });
 
@@ -165,8 +165,9 @@ gulp.task('serve', ['default'], function () {
 gulp.task('default', ['clean'], function (cb) {
   runSequence(
     'styles',
-    ['jshint', 'html', 'scripts', 'images', 'copy'],
+    'copy',
     'critical',
+    ['jshint', 'html', 'scripts', 'images'],
     'generate-service-worker',
     cb);
 });

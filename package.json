@@ -16,6 +16,7 @@
     "gulp-jshint": "^1.6.3",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-html": "0.1.5",
+    "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.3",
     "gulp-sass": "^2.0.0",
     "gulp-size": "^1.0.0",
