@@ -5,7 +5,6 @@
 // Logo
 
 .site-logo {
-  @include img-replace("logo-chicago.jpg", 154px, 96px, inline-block);
   background-size:100%;
 }
 
