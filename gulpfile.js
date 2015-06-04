@@ -1,19 +1,6 @@
-/**
+/*
  *
  *  Web Starter Kit
- *  Copyright 2015 Google Inc. All rights reserved.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      https://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License
  *
  */
 
@@ -26,7 +13,6 @@ var critical = require('critical');
 var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
-var pagespeed = require('psi');
 var reload = browserSync.reload;
 var swPrecache = require('sw-precache');
 var fs = require('fs');
@@ -161,27 +147,8 @@ gulp.task('critical', ['styles'], function () {
 // Clean output directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
-// Watch files for changes & reload
-gulp.task('serve', ['styles'], function () {
-  browserSync({
-    notify: false,
-    // Customize the BrowserSync console logging prefix
-    logPrefix: 'WSK',
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: ['.tmp', 'app']
-  });
-
-  gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/images/**/*'], reload);
-});
-
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+gulp.task('serve', ['default'], function () {
   browserSync({
     notify: false,
     logPrefix: 'WSK',
@@ -199,21 +166,10 @@ gulp.task('default', ['clean'], function (cb) {
   runSequence(
     'styles',
     ['jshint', 'html', 'scripts', 'images', 'copy'],
+    'critical',
     'generate-service-worker',
     cb);
 });
-
-// Run PageSpeed Insights
-gulp.task('pagespeed', function (cb) {
-  // Update the below URL to the public URL of your site
-  pagespeed.output('replace-me.io', {
-    strategy: 'mobile',
-    // By default we use the PageSpeed Insights free (no API key) tier.
-    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
-    // key: 'YOUR_API_KEY'
-  }, cb);
-});
-
 
 // See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for
 // an in-depth explanation of what service workers are and why you should care.
@@ -227,12 +183,6 @@ gulp.task('generate-service-worker', function (callback) {
     // Used to avoid cache conflicts when serving on localhost.
     cacheId: packageJson.name || 'web-starter-kit',
     // URLs that don't directly map to single static files can be defined here.
-    // If any of the files a URL depends on changes, then the URL's cache entry
-    // is invalidated and it will be refetched.
-    // Generally, URLs that depend on multiple files (such as layout templates)
-    // should list all the files; a change in any will invalidate the cache.
-    // In this case, './' is the top-level relative URL, and its response
-    // depends on the contents of the file 'dist/index.html'.
     dynamicUrlToDependencies: {
       './': [path.join(rootDir, 'index.html')]
     },
@@ -258,6 +208,3 @@ gulp.task('generate-service-worker', function (callback) {
     });
   });
 });
-
-// Load custom tasks from the `tasks` directory
-// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
