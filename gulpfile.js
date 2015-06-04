@@ -22,6 +22,7 @@
 // Include gulp & tools we'll use
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var critical = require('critical');
 var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
@@ -144,6 +145,19 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
+//Create critical css
+gulp.task('critical', ['styles'], function () {
+  critical.generate({
+      base: './',
+      src: 'app/index.html',
+      css: 'dist/styles/application.css',
+      dest: 'dist/styles/critical.css',
+      width: 800,
+      height: 600,
+      minify: true
+  });
+});
+
 // Clean output directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
@@ -192,7 +206,7 @@ gulp.task('default', ['clean'], function (cb) {
 // Run PageSpeed Insights
 gulp.task('pagespeed', function (cb) {
   // Update the below URL to the public URL of your site
-  pagespeed.output('example.com', {
+  pagespeed.output('replace-me.io', {
     strategy: 'mobile',
     // By default we use the PageSpeed Insights free (no API key) tier.
     // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
