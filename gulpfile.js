@@ -1,6 +1,6 @@
 /*
  *
- *  Web Starter Kit
+ *  Web Starter Kit with own changes
  *
  */
 
@@ -42,8 +42,7 @@ gulp.task('images', function () {
 // Copy all files at the root level (app)
 gulp.task('copy', function () {
   return gulp.src([
-    'app/*',
-    'node_modules/apache-server-configs/dist/.htaccess'
+    'app/*'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'))
@@ -152,10 +151,10 @@ gulp.task('serve', ['default'], function () {
   browserSync({
     notify: false,
     logPrefix: 'WSK',
-    server: ['.tmp', 'dist']
+    server: 'dist'
   });
 
-  gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['app/**/*.html'], ['htmlwatch', reload]);
   gulp.watch(['app/styles/**/*.{scss, css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
@@ -171,6 +170,17 @@ gulp.task('default', ['clean'], function (cb) {
     'jshint',
     ['html', 'images', 'scripts'],
     'generate-service-worker',
+    cb);
+});
+
+//When html file is udpated this task runs
+gulp.task('htmlwatch', function (cb) {
+  runSequence(
+    'styles',
+    'copy',
+    'critical',
+    'jshint',
+    'html',
     cb);
 });
 
