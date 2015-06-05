@@ -14,7 +14,6 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var swPrecache = require('sw-precache');
 var fs = require('fs');
 var path = require('path');
 var packageJson = require('./package.json');
@@ -169,7 +168,6 @@ gulp.task('default', ['clean'], function (cb) {
     'critical',
     'jshint',
     ['html', 'images', 'scripts'],
-    'generate-service-worker',
     cb);
 });
 
@@ -179,45 +177,6 @@ gulp.task('htmlwatch', function (cb) {
     'styles',
     'copy',
     'critical',
-    'jshint',
     'html',
     cb);
-});
-
-// See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for
-// an in-depth explanation of what service workers are and why you should care.
-// Generate a service worker file that will provide offline functionality for
-// local resources. This should only be done for the 'dist' directory, to allow
-// live reload to work as expected when serving from the 'app' directory.
-gulp.task('generate-service-worker', function (callback) {
-  var rootDir = 'dist';
-
-  swPrecache({
-    // Used to avoid cache conflicts when serving on localhost.
-    cacheId: packageJson.name || 'web-starter-kit',
-    // URLs that don't directly map to single static files can be defined here.
-    dynamicUrlToDependencies: {
-      './': [path.join(rootDir, 'index.html')]
-    },
-    staticFileGlobs: [
-      // Add/remove glob patterns to match your directory setup.
-      rootDir + '/images/**/*',
-      rootDir + '/scripts/**/*.js',
-      rootDir + '/styles/**/*.css',
-      rootDir + '/*.{html,json}'
-    ],
-    // Translates a static file path to the relative URL that it's served from.
-    stripPrefix: path.join(rootDir, path.sep)
-  }, function (error, serviceWorkerFileContents) {
-    if (error) {
-      return callback(error);
-    }
-    fs.writeFile(path.join(rootDir, 'service-worker.js'),
-      serviceWorkerFileContents, function (error) {
-      if (error) {
-        return callback(error);
-      }
-      callback();
-    });
-  });
 });
