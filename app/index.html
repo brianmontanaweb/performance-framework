@@ -351,21 +351,21 @@
 
     <div class="grid">
       <div class="grid__col--5">
-        <img data-src="/images/sample-chicago.jpg" src="/images/blank.gif" width="1240" height="550" alt="sample image" class="lazy">
+        <img data-src="/images/sample-chicago.jpg" src="/images/blank.gif" alt="sample image" class="lazy">
         <noscript>
-          <img src="/images/sample-chicago.jpg" width="1240" height="550" alt="sample image" class="lazy">
+          <img src="/images/sample-chicago.jpg" width="1240" height="550" alt="sample image">
         </noscript>
       </div>
       <div class="grid__col--5">
-        <img data-src="/images/sample-chicago.jpg" src="/images/blank.gif" width="1240" height="550" alt="sample image" class="img__wrap lazy">
+        <img data-src="/images/sample-chicago.jpg" src="/images/blank.gif" alt="sample image" class="img__wrap lazy">
         <noscript>
-          <img src="/images/sample-chicago.jpg" width="1240" height="550" alt="sample image" class="img__wrap lazy">
+          <img src="/images/sample-chicago.jpg" width="1240" height="550" alt="sample image" class="img__wrap">
         </noscript>
       </div>
       <div class="grid__col--2">
-        <img data-src="/images/avatar-chicago.jpg" src="/images/blank.gif" width="550" height="550" alt="Avatar"class="img__avatar lazy">
+        <img data-src="/images/avatar-chicago.jpg" src="/images/blank.gif" alt="Avatar"class="img__avatar lazy">
         <noscript>
-          <img src="/images/avatar-chicago.jpg" width="550" height="550" alt="Avatar"class="img__avatar lazy">
+          <img src="/images/avatar-chicago.jpg" width="550" height="550" alt="Avatar"class="img__avatar">
         </noscript>
       </div>
     </div>
@@ -380,7 +380,15 @@
 
         <p>Digital Style Guide</p>
       </footer>
-      <script async src="scripts/main.min.js"></script>
+      <noscript>
+        <link rel="stylesheet" href="styles/styles.css" async>
+        <style>
+          .lazy{
+            display: none;
+          }
+        </style>
+      </noscript>
+      <script src="scripts/main.min.js" async></script>
     </div>
   </body>
 </html>
