@@ -155,7 +155,7 @@ gulp.task('serve', ['default'], function () {
 
   gulp.watch(['app/**/*.html'], ['htmlwatch', reload]);
   gulp.watch(['app/styles/**/*.{scss, css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint', 'scripts']);
+  gulp.watch(['app/scripts/**/*.js'], ['scripts']);
   gulp.watch(['app/images/**/*'], reload);
 
 });
@@ -166,7 +166,6 @@ gulp.task('default', ['clean'], function (cb) {
     'styles',
     'copy',
     'critical',
-    'jshint',
     ['html', 'images', 'scripts'],
     cb);
 });
