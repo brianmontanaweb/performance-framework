@@ -78,3 +78,6 @@
     addEventListener('scroll',processScroll);
 
 }(this);​
+//loadCSS code, altered to inject into the bottom of head element
+function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("head")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.appendChild(i,o);setTimeout(function(){i.media=n||"all"})}
+loadCSS('styles/styles.css');
