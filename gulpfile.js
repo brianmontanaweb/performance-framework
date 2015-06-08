@@ -79,7 +79,7 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.csso()))
-    .pipe($.sourcemaps.write())
+    .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
 })
@@ -88,9 +88,11 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   var sources = ['./app/scripts/main.js'];
   return gulp.src(sources)
+    .pipe($.sourcemaps.init())
     .pipe($.concat('main.min.js'))
     .pipe($.uglify({preserveComments: 'some'}))
     // Output files
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('dist/scripts'))
     .pipe($.size({title: 'scripts'}));
 });
