@@ -103,9 +103,6 @@ gulp.task('html', function () {
 
   return gulp.src('dist/**/**/*.html')
     .pipe(assets)
-    // Concatenate and minify styles
-    // In case you are still using useref build blocks
-    .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
 
@@ -116,32 +113,17 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
-//Copy styles for criticalCSS
-gulp.task('copystyles', function () {
-    return gulp.src(['dist/styles/styles.css'])
-        .pipe($.rename({
-            basename: "critical" // critical.css
-        }))
-        .pipe(gulp.dest('dist/styles'));
-});
 
 //Create critical css
-gulp.task('critical', ['copystyles'], function () {
-  critical.generate({
+gulp.task('critical', function () {
+  critical.generateInline({
     base: 'dist/',
     src: 'index.html',
-    dest: 'styles/critical.css',
-    width: 640,
-    height: 960,
-    minify: true
-  }, function (err, output) {
-    critical.inline({
-      base: 'dist/',
-      src: 'index.html',
-      dest: 'index.html',
-      rel: 'critical',
-      minify: true
-    });
+    inlineImages: false,
+    width: 320,
+    height: 480,
+    extract: true,
+    htmlTarget: 'index.html'
   });
 });
 
@@ -169,7 +151,8 @@ gulp.task('default', ['clean'], function (cb) {
     'styles',
     'copy',
     'critical',
-    ['html', 'images', 'scripts'],
+    ['images', 'scripts'],
+    'html',
     cb);
 });
 
