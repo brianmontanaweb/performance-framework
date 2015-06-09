@@ -131,14 +131,15 @@ gulp.task('critical', ['copystyles'], function () {
     base: 'dist/',
     src: 'index.html',
     dest: 'styles/critical.css',
-    width: 320,
-    height: 480,
+    width: 640,
+    height: 960,
     minify: true
   }, function (err, output) {
     critical.inline({
       base: 'dist/',
       src: 'index.html',
       dest: 'index.html',
+      rel: 'critical',
       minify: true
     });
   });
