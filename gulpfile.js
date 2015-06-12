@@ -71,7 +71,6 @@ gulp.task('styles', function () {
     'app/styles/**/*.css'
   ])
     .pipe($.changed('.tmp/styles', {extension: '*.css'}))
-    .pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10
     }).on('error', $.sass.logError))
@@ -79,7 +78,6 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp'))
     // Concatenate and minify styles
     .pipe($.if('*.css', $.csso()))
-    .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
 })
@@ -88,11 +86,9 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   var sources = ['./app/scripts/main.js'];
   return gulp.src(sources)
-    .pipe($.sourcemaps.init())
     .pipe($.concat('main.min.js'))
     .pipe($.uglify({preserveComments: 'some'}))
     // Output files
-    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('dist/scripts'))
     .pipe($.size({title: 'scripts'}));
 });
@@ -102,9 +98,6 @@ gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,dist}'});
 
   return gulp.src('dist/**/**/*.html')
-    .pipe(assets)
-    .pipe(assets.restore())
-    .pipe($.useref())
 
     // Minify any HTML
     .pipe($.if('*.html', $.minifyHtml()))
@@ -119,10 +112,8 @@ gulp.task('critical', function () {
   critical.generateInline({
     base: 'dist/',
     src: 'index.html',
-    inlineImages: false,
     width: 320,
     height: 480,
-    extract: true,
     htmlTarget: 'index.html'
   });
 });
@@ -134,7 +125,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true})
 gulp.task('serve', ['default'], function () {
   browserSync({
     notify: false,
-    logPrefix: 'WSK',
+    logPrefix: 'Montana',
     server: 'dist'
   });
 

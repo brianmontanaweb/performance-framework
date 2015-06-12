@@ -2,7 +2,7 @@
 // Form Elements
 // ==========================================================================
 [class^="form"]{
-  
+
 }
 .form {
   &__label {
@@ -10,6 +10,7 @@
       position: relative;
       padding-left: em(16px, 16px);
       display: block;
+      margin-bottom: 1em;
     }
     &--hidden {
       @extend .srt;
