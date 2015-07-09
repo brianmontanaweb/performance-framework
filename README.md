@@ -1,4 +1,4 @@
-montana-style
+Performance Framework
 =============
 
 #Montana's Site Performance Guideline
@@ -7,4 +7,4 @@ The goal of this project was to create a custom Sass style guide for projects th
 
 The foundation of this project started while exploring Google's Web Starter Kit and Guil Hernandez's Sass tutorials for advanced techniques.
 
-`npm install`
+I'll update this coming weekend after my talk.

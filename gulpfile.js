@@ -18,15 +18,6 @@ var fs = require('fs');
 var path = require('path');
 var packageJson = require('./package.json');
 
-// Lint JavaScript
-gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-});
-
 // Optimize images
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')

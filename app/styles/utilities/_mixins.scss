@@ -186,3 +186,81 @@ $el-h: null) {
     }
   }
 }
+
+// Transition mixin
+@mixin transition($properties...) {
+  // Fix for vendor-prefix transform property
+  $needs-prefixes: false;
+  $webkit: ();
+  $moz: ();
+  $spec: ();
+
+  // Create lists for vendor-prefixed transform
+  @each $list in $properties {
+    @if nth($list, 1) == "transform" {
+      $needs-prefixes: true;
+      $list1: -webkit-transform;
+      $list2: -moz-transform;
+      $list3: ();
+
+      @each $var in $list {
+        $list3: join($list3, $var);
+
+        @if $var != "transform" {
+          $list1: join($list1, $var);
+          $list2: join($list2, $var);
+        }
+      }
+
+      $webkit: append($webkit, $list1);
+      $moz:    append($moz,    $list2);
+      $spec:   append($spec,   $list3);
+    } @else {
+      $webkit: append($webkit, $list, comma);
+      $moz:    append($moz,    $list, comma);
+      $spec:   append($spec,   $list, comma);
+    }
+  }
+
+  @if $needs-prefixes {
+    -webkit-transition: $webkit;
+       -moz-transition: $moz;
+            transition: $spec;
+  } @else {
+    @if length($properties) >= 1 {
+      @include prefixer(transition, $properties, webkit moz spec);
+    } @else {
+      $properties: all 0.15s ease-out 0s;
+      @include prefixer(transition, $properties, webkit moz spec);
+    }
+  }
+}
+
+//Mixin prefixer
+@mixin prefixer($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-for-webkit {
+        -webkit-#{$property}: $value;
+      }
+    } @else if $prefix == moz {
+      @if $prefix-for-mozilla {
+        -moz-#{$property}: $value;
+      }
+    } @else if $prefix == ms {
+      @if $prefix-for-microsoft {
+        -ms-#{$property}: $value;
+      }
+    } @else if $prefix == o {
+      @if $prefix-for-opera {
+        -o-#{$property}: $value;
+      }
+    } @else if $prefix == spec {
+      @if $prefix-for-spec {
+        #{$property}: $value;
+      }
+    } @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
