@@ -1,10 +1,19 @@
 Performance Framework
 =============
 
-#Montana's Site Performance Guideline
+#Montana's Site Performance Framework
 
-The goal of this project was to create a custom Sass style guide for projects that focus on component design. Since then I've positioned the project towards site performance as a guide for my own projects in delivering a site with specific methodology that addresses that process.
+I've turned this project into a peformance framework for best practice for a static page website. It's a continually evolving git so create an issue or fork and let me know how to best improve it!
 
-The foundation of this project started while exploring Google's Web Starter Kit and Guil Hernandez's Sass tutorials for advanced techniques.
+I address multiple issues that arise from testing my site with [Google Page Speed](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fbrianmontana.net) and [Pingdom Website Speed Test](http://tools.pingdom.com/fpt/#!/cnnmtP/http://brianmontana.net/)
 
-I'll update this coming weekend after my talk.
+I'm using vanilla JavaScript to request images when the user gets close to the image instead of requesting everything at once. Relying on a noscript fallback 
+
+*No page redirects
+*Eliminated render blocking JavaScript and CSS
+*Enable compression(gzip)
+*Leverage browser caching(using .htaccess)
+*Minify CSS, HTML and JavaScript
+*Optimize images(Imagemin)
+*Prioritize visible content(critical)
+*Reduce server response time
