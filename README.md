@@ -9,11 +9,11 @@ I address multiple issues that arise from testing my site with [Google Page Spee
 
 I'm using vanilla JavaScript to request images when the user gets close to the image instead of requesting everything at once. Relying on a noscript fallback 
 
-*No page redirects
-*Eliminated render blocking JavaScript and CSS
-*Enable compression(gzip)
-*Leverage browser caching(using .htaccess)
-*Minify CSS, HTML and JavaScript
-*Optimize images(Imagemin)
-*Prioritize visible content(critical)
-*Reduce server response time
+* No page redirects
+* Eliminated render blocking JavaScript and CSS
+* Enable compression(gzip)
+* Leverage browser caching(using .htaccess)
+* Minify CSS, HTML and JavaScript
+* Optimize images(Imagemin)
+* Prioritize visible content(critical)
+* Reduce server response time
