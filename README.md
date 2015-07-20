@@ -1,7 +1,7 @@
 Performance Framework
 =============
 
-#Montana's Site Performance Framework
+#Site Performance Framework
 
 I've turned this project into a peformance framework for best practice for a static page website. It's a continually evolving git so create an issue or fork and let me know how to best improve it!
 

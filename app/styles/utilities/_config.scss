@@ -22,6 +22,10 @@ $medium: 769px;
 $wide: 1024px;
 $huge: 1400px;
 
+//Default em value
+
+$em-base: 16px !default;
+
 //Prefixer variables
 
 $prefix-for-webkit:    true !default;

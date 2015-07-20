@@ -14,3 +14,17 @@
   $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
   @return $g-context;
 }
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
