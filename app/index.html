@@ -355,19 +355,19 @@
 
     <div class="grid">
       <div class="grid__col--5">
-        <img data-src="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="lazy">
+        <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="lazy">
         <noscript>
           <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image">
         </noscript>
       </div>
       <div class="grid__col--5">
-        <img data-src="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="img__wrap lazy">
+        <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="img__wrap lazy">
         <noscript>
           <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image" class="img__wrap">
         </noscript>
       </div>
       <div class="grid__col--2">
-        <img data-src="images/avatar-chicago.jpg" src="images/blank.gif" alt="Avatar"class="img__avatar lazy">
+        <img data-original="images/avatar-chicago.jpg" src="images/blank.gif" alt="Avatar"class="img__avatar lazy">
         <noscript>
           <img src="images/avatar-chicago.jpg" width="550" height="550" alt="Avatar"class="img__avatar">
         </noscript>
@@ -392,6 +392,10 @@
         }
       </style>
     </noscript>
-    <script src="scripts/main.min.js" async></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- build:js(app/) ../../scripts/main.min.js -->
+    <script src="scripts/main.js" async></script>
+    <!-- endbuild -->
+
   </body>
 </html>
