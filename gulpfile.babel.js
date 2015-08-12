@@ -126,19 +126,17 @@ gulp.task('html', () => {
 
 //Create critical CSS
 gulp.task('critical', () => {
-  return gulp.src('./dist/*.html')
+  return gulp.src('dist/**/*.html')
   .pipe(critical({
     inline: true,
     minify: true,
     base: './dist',
     css: './dist/styles/styles.css',
-    src: 'index.html',
-    dest: 'index.html',
     width: 800,
     height: 600,
     ignore: ['@font-face', '/url\(/']
   }))
-  .pipe(gulp.dest('./dist'));
+  .pipe(gulp.dest('dist'));
 });
 
 // Clean output directory
