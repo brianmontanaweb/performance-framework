@@ -114,16 +114,8 @@ gulp.task('scripts', () => {
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
-  const assets = $.useref.assets({searchPath: '{.tmp,dist}'});
 
   return gulp.src('dist/**/*.html')
-    .pipe(assets)
-
-    // Concatenate and minify styles
-    // In case you are still using useref build blocks
-    .pipe($.if('*.css', $.minifyCss()))
-    .pipe(assets.restore())
-    .pipe($.useref())
 
     // Minify any HTML
     .pipe($.if('*.html', $.minifyHtml()))
@@ -134,19 +126,19 @@ gulp.task('html', () => {
 
 //Create critical CSS
 gulp.task('critical', () => {
-  return gulp.src('dist/*.html')
+  return gulp.src('./dist/*.html')
   .pipe(critical({
     inline: true,
     minify: true,
-    base: './',
-    css: 'dist/styles/styles.css',
-    src: 'dist/index.html',
-    dest: 'dist/index.html',
+    base: './dist',
+    css: './dist/styles/styles.css',
+    src: 'index.html',
+    dest: 'index.html',
     width: 800,
     height: 600,
     ignore: ['@font-face', '/url\(/']
   }))
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('./dist'));
 });
 
 // Clean output directory
