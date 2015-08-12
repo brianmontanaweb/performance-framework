@@ -32,6 +32,7 @@ import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
+var critical = require('critical').stream;
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -60,7 +61,7 @@ gulp.task('images', () => {
 gulp.task('copy', () => {
   return gulp.src([
     'app/*',
-    '!app/*.html',
+    'app/*.html',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -113,23 +114,10 @@ gulp.task('scripts', () => {
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
-  const assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  const assets = $.useref.assets({searchPath: '{.tmp,dist}'});
 
-  return gulp.src('app/**/*.html')
+  return gulp.src('dist/**/*.html')
     .pipe(assets)
-    // Remove any unused CSS
-    // Note: If not using the Style Guide, you can delete it from
-    // the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html'
-      ],
-      // CSS Selectors for UnCSS to ignore
-      ignore: [
-        /.navdrawer-container.open/,
-        /.app-bar.open/
-      ]
-    })))
 
     // Concatenate and minify styles
     // In case you are still using useref build blocks
@@ -142,6 +130,23 @@ gulp.task('html', () => {
     // Output files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
+});
+
+//Create critical CSS
+gulp.task('critical', () => {
+  return gulp.src('dist/*.html')
+  .pipe(critical({
+    inline: true,
+    minify: true,
+    base: './',
+    css: 'dist/styles/styles.css',
+    src: 'dist/index.html',
+    dest: 'dist/index.html',
+    width: 800,
+    height: 600,
+    ignore: ['@font-face', '/url\(/']
+  }))
+  .pipe(gulp.dest('dist'));
 });
 
 // Clean output directory
@@ -184,7 +189,9 @@ gulp.task('serve:dist', ['default'], () => {
 gulp.task('default', ['clean'], cb => {
   runSequence(
     'styles',
-    ['jshint', 'html', 'scripts', 'images', 'copy'],
+    'copy',
+    'critical',
+    ['jshint', 'scripts', 'html', 'images'],
     'generate-service-worker',
     cb
   );
