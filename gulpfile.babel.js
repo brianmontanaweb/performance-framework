@@ -48,7 +48,7 @@ gulp.task('jshint', () => {
 
 // Optimize images
 gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
+  return gulp.src('app/images/**/*.{svg,png,jpg,gif}')
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
@@ -182,7 +182,6 @@ gulp.task('default', ['clean'], cb => {
     'copy',
     'critical',
     ['jshint', 'scripts', 'html', 'images'],
-    'generate-service-worker',
     cb
   );
 });
