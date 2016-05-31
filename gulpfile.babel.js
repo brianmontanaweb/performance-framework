@@ -144,7 +144,8 @@ gulp.task('critical', () => {
 gulp.task('clean', cb => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}, cb));
 
 // Watch files for changes & reload
-gulp.task('serve', () => {
+gulp.task('serve', ['clean'], cb => {
+  runSequence('default');
   browserSync.init({
     server: {
       baseDir: './dist'
@@ -152,23 +153,9 @@ gulp.task('serve', () => {
     open: false
   });
   gulp.watch('app/scripts/*.js', ['jshint', 'scripts']);
-  gulp.watch('app/styles/*.css', ['default']);
+  gulp.watch('app/styles/**/*.scss', ['default']);
   gulp.watch('app/*.html', ['default']);
   gulp.watch('app/images/**/*.{svg,png,jpg,gif}', ['images']);
-});
-
-// Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], () => {
-  browserSync({
-    notify: false,
-    logPrefix: 'WSK',
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: 'dist',
-    baseDir: 'dist'
-  });
 });
 
 // Build production files, the default task
