@@ -17,8 +17,8 @@
 
 </head>
 <body>
-  <div class="grid">
-    <header class="grid__col--12 panel__centered" role="banner">
+  <div class="grid__row">
+    <header class="grid__column--12 panel__centered" role="banner">
       <nav class="navbar" role="navigation">
         <span class="menu-toggle">
           <b class="srt">Menu Toggle</b>
@@ -36,15 +36,15 @@
   </div>
   <div class="img__full">
     <div class="img__full--hero"></div>
-    <div class="grid">
-      <div class="grid__col--12 panel__centered">
+    <div class="grid__row">
+      <div class="grid__column--12 panel__centered">
         <a class="site-logo" href="/">
           <div class="srt">Digital Style Guide</div>
         </a>
       </div>
     </div>
-    <div class="grid">
-      <div class="grid__col--12 panel__centered">
+    <div class="grid__row">
+      <div class="grid__column--12 panel__centered">
         <h1 class="headline-primary__grouped">Take a look at this h1 grouped element!</h1>
 
         <h2 class="headline-secondary__grouped">This is the h2 grouped element</h2>
@@ -52,10 +52,10 @@
     </div>
   </div>
 
-  <h4 class="grid">Typography</h4>
+  <h4 class="grid__row">Typography</h4>
 
-  <div class="grid">
-    <div class="centered grid__col--12">
+  <div class="grid__row">
+    <div class="centered grid__column--12">
       <h1 class="headline-primary__grouped">Take a look at this h1 grouped element!</h1>
 
       <h2 class="headline-secondary__grouped">This is the h2 grouped element</h2>
@@ -70,10 +70,10 @@
     </div>
   </div>
 
-  <h4 class="grid">Text</h4>
+  <h4 class="grid__row">Text</h4>
 
-  <div class="grid">
-    <div class="centered grid__col--12">
+  <div class="grid__row">
+    <div class="centered grid__column--12">
       <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is
         <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u>,
         this is code: <code>for (;;) { ... }</code> and this is computer response <samp>&quot;Hello world!&quot;</samp>.
@@ -95,25 +95,142 @@
       </div>
     </div>
 
-    <h4 class="grid" id="buttons">Buttons</h4>
+    <h2>Grid</h2>
 
-    <div class="grid">
-      <div class="grid__col--12 panel__centered">
+    <div class="grid__row" id="layout">
+      <div class="grid__column--1 -style-guide">
+        <p>col 1</p>
+      </div>
+      <div class="grid__column--11 -style-guide">
+        <p>column 11</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+      <div class="grid__column--10 -style-guide">
+        <p>column 10</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--3 -style-guide">
+        <p>column 3</p>
+      </div>
+      <div class="grid__column--9 -style-guide">
+        <p>column 9</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--4 -style-guide">
+        <p>column 4</p>
+      </div>
+      <div class="grid__column--8 -style-guide">
+        <p>column 8</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--5 -style-guide">
+        <p>column 5</p>
+      </div>
+      <div class="grid__column--7 -style-guide">
+        <p>column 7</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--6 -style-guide">
+        <p>column 6</p>
+      </div>
+      <div class="grid__column--6 -style-guide">
+        <p>column 6</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--2 grid__push--4 -style-guide">
+        <p>column 2</p>
+      </div>
+      <div class="grid__column--4 -style-guide">
+        <p>column 4</p>
+      </div>
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+      <div class="grid__column--4 grid__push--4 -style-guide">
+        <p>column 4</p>
+      </div>
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+      <div class="grid__column--4 -style-guide">
+        <p>column 4</p>
+      </div>
+      <div class="grid__column--2 grid__push--4 -style-guide">
+        <p>column 2</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--2 grid__pull--4 -style-guide">
+        <p>column 2</p>
+      </div>
+      <div class="grid__column--4 -style-guide">
+        <p>column 4</p>
+      </div>
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+      <div class="grid__column--4 grid__pull--4 -style-guide">
+        <p>column 4</p>
+      </div>
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+    </div>
+    <div class="grid__row">
+      <div class="grid__column--2 -style-guide">
+        <p>column 2</p>
+      </div>
+      <div class="grid__column--4 -style-guide">
+        <p>column 4</p>
+      </div>
+      <div class="grid__column--2 grid__pull--4 -style-guide">
+        <p>column 2</p>
+      </div>
+    </div>
+
+    <h4 class="grid__row" id="buttons">Buttons</h4>
+
+    <div class="grid__row">
+      <div class="grid__column--12 panel__centered">
         <a class="btn-primary__default-special" href="#"><span>Default Special</span></a>
         <a class="btn-primary__default" href="#"><span>Default</span></a>
         <a class="btn-primary__default-alt" href="#"><span>Default Alt</span></a>
       </div>
     </div>
-    <div class="grid">
-      <div class="grid__col--12 panel__centered">
+    <div class="grid__row">
+      <div class="grid__column--12 panel__centered">
         <a class="btn-primary__success" href="#"><span>Success</span></a>
         <a class="btn-primary__error" href="#"><span>Error</span></a>
         <a class="btn-primary__warning" href="#"><span>Warning</span></a>
         <a class="btn-primary__info" href="#"><span>Info</span></a>
       </div>
     </div>
-    <div class="grid">
-      <div class="grid__col--12 panel__centered">
+    <div class="grid__row">
+      <div class="grid__column--12 panel__centered">
         <a class="btn-secondary__success" href="#">Success</a>
         <a class="btn-secondary__error" href="#">Error</a>
         <a class="btn-secondary__warning" href="#">Warning</a>
@@ -121,10 +238,10 @@
       </div>
     </div>
 
-    <h4 class="grid">Lists</h4>
+    <h4 class="grid__row">Lists</h4>
 
-    <div class="grid">
-      <div class="grid__col--6">
+    <div class="grid__row">
+      <div class="grid__column--6">
         <h5>Ordered list</h5>
         <ol class="ordered-list">
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -134,7 +251,7 @@
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
         </ol>
       </div>
-      <div class="grid__col--6">
+      <div class="grid__column--6">
         <h5>Unordered list</h5>
         <ul class="unordered-list">
           <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
@@ -147,8 +264,8 @@
         </ul>
       </div>
     </div>
-    <div class="grid">
-      <div class="grid__col--12">
+    <div class="grid__row">
+      <div class="grid__column--12">
         <h5>Alternate list</h5>
         <ul class="alternate-list">
           <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipis</li>
@@ -162,10 +279,10 @@
       </div>
     </div>
 
-    <h4 class="grid">Form Elements</h4>
+    <h4 class="grid__row">Form Elements</h4>
 
-    <div class="grid">
-      <div class="grid__col--12">
+    <div class="grid__row">
+      <div class="grid__column--12">
         <form class="form">
           <label class="form__label" for="name">Name:</label>
           <input class="form__input" type="text" id="name" placeholder="Name">
@@ -182,8 +299,8 @@
       </div>
     </div>
 
-    <div class="grid">
-      <div class="grid__col--12">
+    <div class="grid__row">
+      <div class="grid__column--12">
         <label for="check1" class="form__label--checkbox"><input id="check1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
         <label for="check2" class="form__label--checkbox"><input id="check2" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
         <label for="check3" class="form__label--checkbox"><input id="check3" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
@@ -193,10 +310,10 @@
       </div>
     </div>
 
-    <h4 class="grid">Tables</h4>
+    <h4 class="grid__row">Tables</h4>
 
-    <div class="grid">
-      <div class="grid__col--12 panel__padded">
+    <div class="grid__row">
+      <div class="grid__column--12 panel__padded">
         <table class="green-table">
           <thead>
             <tr>
@@ -247,8 +364,8 @@
       </div>
     </div>
 
-    <div class="grid">
-      <div class="grid__col--12 panel__padded">
+    <div class="grid__row">
+      <div class="grid__column--12 panel__padded">
         <table class="blue-table">
           <thead>
             <tr>
@@ -299,8 +416,8 @@
       </div>
     </div>
 
-    <div class="grid">
-      <div class="grid__col--12 panel__padded">
+    <div class="grid__row">
+      <div class="grid__column--12 panel__padded">
         <table class="alternate-table">
           <thead>
             <tr>
@@ -351,22 +468,22 @@
       </div>
     </div>
 
-    <h4 class="grid">Media</h4>
+    <h4 class="grid__row">Media</h4>
 
-    <div class="grid">
-      <div class="grid__col--5">
+    <div class="grid__row">
+      <div class="grid__column--5">
         <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="lazy">
         <noscript>
           <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image">
         </noscript>
       </div>
-      <div class="grid__col--5">
+      <div class="grid__column--5">
         <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="img__wrap lazy">
         <noscript>
           <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image" class="img__wrap">
         </noscript>
       </div>
-      <div class="grid__col--2">
+      <div class="grid__column--2">
         <img data-original="images/avatar-chicago.jpg" src="images/blank.gif" alt="Avatar"class="img__avatar lazy">
         <noscript>
           <img src="images/avatar-chicago.jpg" width="550" height="550" alt="Avatar"class="img__avatar">
@@ -374,10 +491,10 @@
       </div>
     </div>
 
-    <h4 class="grid">Footer1</h4>
+    <h4 class="grid__row">Footer1</h4>
 
-    <div class="grid">
-      <footer class="grid__col--12 panel__padded--centered" role="contentinfo">
+    <div class="grid__row">
+      <footer class="grid__column--12 panel__padded--centered" role="contentinfo">
         <a class="site-logo" href="#">
           <b class="srt">Poly - UI Toolkit</b>
         </a>
@@ -385,6 +502,7 @@
         <p>Digital Style Guide</p>
       </footer>
     </div>
+
     <noscript>
       <style>
         .lazy{
@@ -392,9 +510,10 @@
         }
       </style>
     </noscript>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- build:js(app/) ../../scripts/main.min.js -->
-    <script src="scripts/main.js" async></script>
+    <!-- build:js(dist/) /scripts/main.min.js -->
+    <script src="scripts/main.min.js" async></script>
     <!-- endbuild -->
 
   </body>

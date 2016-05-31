@@ -1,0 +1,345 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Font Stacks
+
+$font-url--google: 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Merriweather:400,300italic,300,400italic,700,700italic,900,900italic' !default;
+$font-family--primary: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family--secondary: "Merriweather", Helvetica, Arial, sans-serif !default;
+
+// Font Weights
+
+$font-weight--thin: 100 !default;
+$font-weight--light: 300 !default;
+$font-weight--medium: 400 !default;
+$font-weight--bold: 700 !default;
+$font-weight--ultra-bold: 900 !default;
+
+//Media query sizes
+$small: 600px !default;
+$medium: 769px !default;
+$wide: 1024px !default;
+$huge: 1400px !default;
+
+//Default em value
+
+$em-base: 16px !default !default;
+
+//Prefixer variables
+
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default;
+
+// Descriptive Base Colors
+
+$white: #fff !default;
+$black: #0b0b0b !default;
+$grey: #797e83 !default;
+
+$bc-lochmara: #008acd !default;
+$bc-mountain-meadow: #189b50 !default;
+$bc-carnation: #ee232d !default;
+$bc-candycorn: #FF7604 !default;
+$bc-siren: #87003F !default;
+$bc-siren-dark: darken($bc-siren, 10%) !default;
+$bc-orient: #005287 !default;
+
+// Color Usage
+
+$color-primary: $bc-lochmara !default;
+$color-secondary: $bc-candycorn !default;
+$color-accent: $bc-mountain-meadow !default;
+$color-shadow: rgba($black, .2) !default;
+
+// Color Palette Modifiers
+
+$color-palettes: (
+        grey: (
+                xx-light : lighten($grey, 43%),
+                x-light : lighten($grey, 35%),
+                light : lighten($grey, 12%),
+                base : $grey,
+                dark : darken($grey, 8%),
+                x-dark : darken($grey, 16%),
+                xx-dark : darken($grey, 32%)
+        ),
+        black: (
+                light : lighten($black, 10%),
+                base : $black,
+                dark : darken($black, 10%)
+        )
+) !default;
+// UI Colors
+
+$ui-colors: (
+        default-special : $bc-lochmara,
+        default : mix($bc-lochmara, $grey),
+        default-alt : mix($bc-lochmara, $black),
+        success : $bc-mountain-meadow,
+        error : $bc-carnation,
+        warning : $bc-candycorn,
+        info : $bc-siren
+) !default;
+
+$list-colors: (ordered-list, unordered-list, alternate-list) !default;
+
+// Text
+
+$base__font-size: 16px !default;
+$base__line: 24px !default;
+$letter-space: 1px !default;
+
+// Border radius
+
+$br--default: .4em !default;
+$br--round: 50% !default;
+
+// Transitions
+
+$trns-duration: .3s !default;
+
+// Path to Assets
+
+$path--rel: "../images" !default;
+
+// Grid
+
+$column-width: 65px !default;
+$column-gutter-width: 20px !default;
+$column-count: 12 !default;
+$column-max-width: 1050px !default;
+
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+// Call the color palette modifiers in color values
+
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($color-palettes, $palette), $shade);
+}
+
+// Set the "context" width for the grid
+
+@function gutter-context($column-width, $column-count, $column-gutter-width) {
+  $g-context: ($column-width * $column-count) + ($column-gutter-width * ($column-count - 1));
+  @return $g-context;
+}
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+// ==========================================================================
+// Helpers
+// ==========================================================================
+
+// Clearfix
+
+.cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Screen reader text
+
+.srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Center alignment
+
+%center-align {
+  text-align: center;
+}
+
+// Center elements
+
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+//Before or After background
+
+@mixin background-slider($pseudo-before-after) {
+  &:#{$pseudo-before-after} {
+    @extend %btn__after;
+    @content;
+  }
+}
+
+// Button distance setup
+
+@mixin box-shadow--distance($base-value, $final-value, $box-color, $shadow-color: rgba(palette(grey, x-dark), .75)){
+  box-shadow: 0 0 0 ($base-value + 0px) #{$box-color}, 0 ($base-value + 0px) ($base-value + 4px) ($base-value + 0px) $shadow-color;
+  &:hover {
+    box-shadow: 0 0 0 ($base-value + $final-value) #{$box-color}, 0 ($final-value * 3) ($final-value * 4) ($final-value) $shadow-color;
+  }
+}
+
+// Generate modifier color classes
+
+@mixin button-colors--primary($map) {
+  @each $theme, $color in $map {
+    &__#{$theme} {
+      box-shadow: 0 0 0 2px $color;
+      color: $color;
+      @extend %btn__primary;
+      span {
+        position: relative;
+        z-index: 10;
+      }
+      @include background-slider(after) {
+        background-color: $color;
+        transition: all 0.25s ease-in;
+      }
+      &:hover {
+        box-shadow: 0 0 0 2px $color;
+        color: white;
+        &:after {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@mixin button-colors--secondary($map) {
+  @each $theme, $color in $map {
+    &__#{$theme} {
+      @extend %btn__secondary;
+      background-color: $color;
+      @include box-shadow--distance(0px, 6px, #{$color});
+    }
+  }
+}
+
+@mixin list-maker($list-type, $active-color: $bc-siren-dark, $list-style: null) {
+  .#{$list-type}-list {
+    @if $list-style == "none" {
+      padding-left: 0;
+    } @else {
+      padding-left: em(16px);
+    }
+    list-style: $list-style;
+    &__item {
+      @if $list-style == "none" {
+        &:nth-child(even) {
+          background-color: darken($white, 5%);
+        }
+      }
+      padding-bottom: em(4px);
+      &--active {
+        color: $active-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Generating :before or :after pseudo-element shapes
+
+@mixin p-el($el,
+$el-w: null,
+$el-h: null) {
+  @if $el == "before" or $el == "after" {
+    &:#{$el} {
+      content: '';
+      display: block;
+      width: $el-w;
+      height: $el-h;
+      position: absolute;
+      @content;
+    }
+  } @else {
+    @error "`#{$el}` is not a valid pseudo-element.";
+  }
+}
+
+// Image replacement
+
+@mixin img-replace($img, $w, $h, $disp: block) {
+  background-image: url('#{$path--rel}/#{$img}');
+  background-repeat: no-repeat;
+  width: $w;
+  height: $h;
+  display: $disp;
+}
+
+// Adjacent sibling margins
+
+@mixin doubly($margin: 1em) {
+  & + & {
+    margin-left: $margin;
+    @content;
+  }
+}
+
+// Table setup Mixin
+@mixin table-colors($table-type, $main-color, $copy-color) {
+  .#{$table-type}-table {
+    td, th {
+      @if $table-type == "alternate" {
+        border: none;
+      } @else {
+        border-color: $copy-color;
+      }
+    }
+    thead {
+      th {
+        color: $copy-color;
+        background-color: $main-color;
+      }
+    }
+    tbody {
+      tr {
+        @if $table-type == "alternate" {
+          border-top: solid em(2px) $main-color;
+        } @else {
+          &:nth-child(even) {
+            background-color: lighten($main-color, 50%);
+          }
+          &:nth-child(odd) {
+            background-color: $copy-color;
+          }
+        }
+      }
+    }
+    tfoot {
+      tr {
+        color: $copy-color;
+        background-color: $main-color;
+      }
+    }
+  }
+}

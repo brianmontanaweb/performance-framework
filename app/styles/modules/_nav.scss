@@ -2,6 +2,26 @@
 // Nav
 // ==========================================================================
 
+// Nav Item helpers
+
+%nav-item-disp {
+  display: inline-block;
+  margin: 0 em(12px);
+}
+
+%nav-item-link {
+  font-size: em(18px);
+  font-weight: $font-weight--light;
+  display: block;
+  padding: em(8px, 18px);
+  border: 1px solid transparent;
+}
+
+%nav-item-on {
+  color: palette(black);
+  border-color: $black;
+}
+
 .menu-toggle{
   border-top: solid em(2px) palette(grey);
   border-bottom: solid em(2px) palette(grey);
@@ -46,10 +66,10 @@
     a {
       @extend %nav-item-link;
       color: palette(grey);
-      @include transition(all .5s ease);
+      transition: all 0.5s ease-in;
       &:hover {
         @extend %nav-item-on;
-        @include transition(all .5s ease);
+        transition: all 0.5s ease-in;
       }
     }
     &--current {
@@ -60,4 +80,9 @@
       }
     }
   }
+}
+
+.navbar {
+  position: relative;
+  margin-bottom: 0;
 }

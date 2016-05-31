@@ -2,6 +2,47 @@
 // Buttons
 // ==========================================================================
 
+// Button helpers
+
+%btn {
+  padding: 15px 30px;
+  border: 0;
+  color: $white;
+  text-transform: uppercase;
+  font-size: em(14px);
+  letter-spacing: 1px;
+  font-weight: $font-weight--bold;
+  transition: opacity $trns-duration;
+  display: block;
+  &:active {
+    opacity: initial;
+  }
+}
+
+%btn__primary{
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: all 0.25s ease-in;
+}
+
+%btn__secondary{
+  transition: all 0.25s ease-in;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+%btn__after{
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+}
+
 %btn-small{
 
 }

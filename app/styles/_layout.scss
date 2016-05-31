@@ -1,0 +1,110 @@
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+//Layout works for IE8
+
+.grid__row {
+  @extend .cf;
+  margin: 0 auto 1em;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  // Make nested grid 100%
+  [class*="grid__column--"] > & {
+    width: 100%;
+  }
+
+  // Set a max-width for grid container
+  @media (min-width: 1100px) {
+    max-width: $column-max-width;
+  }
+}
+
+[class*="grid__column--"] {
+  @media (max-width: 800px) {
+    margin-top: 2.5em;
+  }
+  @media (min-width: 801px) {
+    margin-left: percentage($column-gutter-width / $column-max-width);
+    float: left;
+  }
+}
+
+[class*="grid__column--"]:first-child {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+[class*="grid__column--"]:last-child {
+  float: right;
+}
+
+@for $i from 1 through $column-count {
+  $context: gutter-context($column-width, $column-count, $column-gutter-width) !global;
+  $target: ($column-width * $i) + ($column-gutter-width * ($i - 1));
+
+  // Generate column modifier classes that are compiled based on algorithms
+  .grid__column--#{$i} {
+    width: 100%;
+    @media (min-width: 801px) {
+      width: percentage($target / $context);
+    }
+  }
+  //Margin left like an actual div is there
+  .grid__pull--#{$i} {
+    @media (min-width: 801px) {
+      margin-right: percentage($target / $context) + percentage($column-gutter-width / $context);
+    }
+  }
+  .grid__push--#{$i} {
+    @media (min-width: 801px) {
+      &:first-child {
+        margin-left: percentage($target / $context) + percentage($column-gutter-width / $context);
+      }
+      //Updates variable for push value to include gutter it's missing
+      $target: ($column-width * $i) + ($column-gutter-width * ($i));
+      margin-left: percentage($target / $context) + percentage($column-gutter-width / $context);
+    }
+  }
+}
+
+//Just for visual display of grid layout
+[class*="grid__column--"].-style-guide {
+  text-align: center;
+  padding: 1em 0;
+  background-color: aliceblue;
+}
+
+// ==========================================================================
+// Panels
+// ==========================================================================
+// Panel
+
+%panel-default {
+  padding-top: em(30px);
+  padding-bottom: em(20px);
+}
+
+%panel-padding {
+  padding-top: em(80px);
+  padding-bottom: em(34px);
+}
+
+.panel {
+  @extend %panel-default;
+
+  &__centered {
+    @extend %panel-default;
+    @extend %center-align;
+  }
+
+  &__padded {
+    @extend %panel-padding;
+
+    &--centered {
+      @extend %center-align;
+      @extend %panel-padding;
+    }
+  }
+}

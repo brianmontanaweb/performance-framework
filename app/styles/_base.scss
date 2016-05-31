@@ -89,12 +89,12 @@ p {
 }
 
 blockquote {
-  @include medium{
-    font-size: em(20px);
-  }
   font-weight: $font-weight--light;
   font-style: italic;
   font-size: em(18px);
+  @media (min-width: 769px) {
+    font-size: em(20px);
+  }
 }
 
 // Lists

@@ -1,12 +1,38 @@
 // ==========================================================================
 // Headlines
 // ==========================================================================
+
+// Headline helpers
+
+%hdln-prim {
+  font-weight: $font-weight--light;
+  font-size: em(42px);
+  line-height: (46px/42px);
+  margin-top: 0;
+}
+
+%hdln-sec {
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--thin;
+  font-size: em(24px);
+  font-family: $font-family--secondary;
+}
+
+%hdln-rest{
+  color: palette(grey, light);
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--thin;
+  font-family: $font-family--secondary;
+}
+
 [class^="headline-primary"]{
     @extend %hdln-prim;
 }
+
 [class^="headline-secondary"]{
     @extend %hdln-sec;
 }
+
 .headline {
   &-primary {
     color: palette(grey, x-dark);
