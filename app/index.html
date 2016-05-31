@@ -17,23 +17,26 @@
 
 </head>
 <body>
-  <div class="grid__row">
-    <header class="grid__column--12 panel__centered" role="banner">
-      <nav class="navbar" role="navigation">
-        <span class="menu-toggle">
-          <b class="srt">Menu Toggle</b>
-        </span>
-        <ul class="nav">
-          <li class="nav__item"><a href="#">Typography</a></li>
-          <li class="nav__item"><a href="#">Buttons</a></li>
-          <li class="nav__item"><a href="#">Forms</a></li>
-          <li class="nav__item"><a href="#">Images</a></li>
-          <li class="nav__item"><a href="#">Grid</a></li>
-          <li class="nav__item -current"><a href="#">Navigation</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
+
+  <header class="panel__centered navbar" role="banner">
+    <nav role="navigation">
+      <span class="menu-toggle">
+        <b class="srt">Menu Toggle</b>
+      </span>
+      <input id="menu-toggle" class="srt" type="checkbox" name="menu-collection">
+      <label class="menu-label" name="menu-collection" for="menu-toggle">
+      </label>
+      <ul class="nav">
+        <li class="nav__item"><a href="#">Typography</a></li>
+        <li class="nav__item"><a href="#">Buttons</a></li>
+        <li class="nav__item"><a href="#">Forms</a></li>
+        <li class="nav__item"><a href="#">Images</a></li>
+        <li class="nav__item"><a href="#">Grid</a></li>
+        <li class="nav__item -current"><a href="#">Navigation</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <div class="img__full">
     <div class="img__full -hero"></div>
     <div class="grid__row">
