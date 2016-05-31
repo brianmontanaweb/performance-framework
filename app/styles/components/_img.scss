@@ -2,29 +2,30 @@
 // Images
 // ==========================================================================
 
-.img {
-  &__wrap {
-    border: 1px solid palette(grey, x-light);
-    padding: em(12px);
-  }
-  &__avatar {
-    display: block;
-    border-radius: $br--round;
-    margin-top: em(24px);
-  }
-  &__full {
-    margin-bottom: em(42px);
-    position: relative;
-    min-height: 30em;
-    &--hero {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background-size: cover;
-      z-index: 1;
-      background-color: lighten($bc-carnation, 40%);
-    }
-  }
+.img__wrap {
+  border: 1px solid palette(grey, x-light);
+  padding: em(12px);
+}
+
+.img__avatar {
+  display: block;
+  border-radius: $border-radius-round;
+  margin-top: em(24px);
+}
+
+.img__full {
+  margin-bottom: em(42px);
+  position: relative;
+  min-height: 30em;
+}
+
+.img__full.-hero {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-size: cover;
+  z-index: 1;
+  background-color: lighten($bc-carnation, 40%);
 }

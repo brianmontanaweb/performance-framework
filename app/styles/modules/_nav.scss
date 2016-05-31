@@ -11,7 +11,7 @@
 
 %nav-item-link {
   font-size: em(18px);
-  font-weight: $font-weight--light;
+  font-weight: $font-weight-light;
   display: block;
   padding: em(8px, 18px);
   border: 1px solid transparent;
@@ -57,28 +57,29 @@
   @media (min-width: 601px){
     display: block !important;
   }
+}
 
-  &__item {
-    @extend %nav-item-disp;
-    @media (min-width: 1px) and (max-width: 600px) {
-      display: block;
-    }
-    a {
-      @extend %nav-item-link;
-      color: palette(grey);
+.nav__item {
+  @extend %nav-item-disp;
+  @media (min-width: 1px) and (max-width: 600px) {
+    display: block;
+  }
+  a {
+    @extend %nav-item-link;
+    color: palette(grey);
+    transition: all 0.5s ease-in;
+    &:hover {
+      @extend %nav-item-on;
       transition: all 0.5s ease-in;
-      &:hover {
-        @extend %nav-item-on;
-        transition: all 0.5s ease-in;
-      }
     }
-    &--current {
-      @extend %nav-item-disp;
-      a {
-        @extend %nav-item-link;
-        @extend %nav-item-on;
-      }
-    }
+  }
+}
+
+.nav__item.-current {
+  @extend %nav-item-disp;
+  a {
+    @extend %nav-item-link;
+    @extend %nav-item-on;
   }
 }
 

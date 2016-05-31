@@ -29,13 +29,13 @@
           <li class="nav__item"><a href="#">Forms</a></li>
           <li class="nav__item"><a href="#">Images</a></li>
           <li class="nav__item"><a href="#">Grid</a></li>
-          <li class="nav__item--current"><a href="#">Navigation</a></li>
+          <li class="nav__item -current"><a href="#">Navigation</a></li>
         </ul>
       </nav>
     </header>
   </div>
   <div class="img__full">
-    <div class="img__full--hero"></div>
+    <div class="img__full -hero"></div>
     <div class="grid__row">
       <div class="grid__column--12 panel__centered">
         <a class="site-logo" href="/">
@@ -95,7 +95,7 @@
       </div>
     </div>
 
-    <h2>Grid</h2>
+    <h4 class="grid__row">Grid</h4>
 
     <div class="grid__row" id="layout">
       <div class="grid__column--1 -style-guide">
@@ -247,7 +247,7 @@
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
-          <li class="ordered-list__item ordered-list__item--active">This is an active ordered list item.</li>
+          <li class="ordered-list__item ordered-list__item -active">This is an active ordered list item.</li>
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
         </ol>
       </div>
@@ -255,7 +255,7 @@
         <h5>Unordered list</h5>
         <ul class="unordered-list">
           <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-          <li class="unordered-list__item unordered-list__item--active">Lorem ipsum dolor sit amet, consectetur
+          <li class="unordered-list__item unordered-list__item -active">Lorem ipsum dolor sit amet, consectetur
             adipisicing elit.
           </li>
           <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
@@ -264,13 +264,15 @@
         </ul>
       </div>
     </div>
+
+    <h4 class="grid__row">Alternate list</h4>
+
     <div class="grid__row">
       <div class="grid__column--12">
-        <h5>Alternate list</h5>
         <ul class="alternate-list">
           <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipis</li>
           <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adip</li>
-          <li class="alternate-list__item alternate-list__item--active">Lorem ipsum dolor sit amet,</li>
+          <li class="alternate-list__item alternate-list__item -active">Lorem ipsum dolor sit amet,</li>
           <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
             debiti
           </li>
@@ -293,20 +295,32 @@
           <label class="form__label" for="msg">Message:</label>
           <textarea class="form__input" id="msg" placeholder="Message..." rows="6"></textarea>
 
-          <input class="btn__default" type="submit" value="Submit">
-          <input class="btn__warning" type="reset" value="Reset">
+          <input class="btn-secondary__default" type="submit" value="Submit">
+          <input class="btn-secondary__warning" type="reset" value="Reset">
         </form>
       </div>
     </div>
 
     <div class="grid__row">
       <div class="grid__column--12">
-        <label for="check1" class="form__label--checkbox"><input id="check1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
-        <label for="check2" class="form__label--checkbox"><input id="check2" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
-        <label for="check3" class="form__label--checkbox"><input id="check3" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
-        <label for="radio_select" class="form__label--checkbox"><input id="radio_select" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
-        <label for="radio_select" class="form__label--checkbox"><input id="radio_select" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
-        <label for="radio_select" class="form__label--checkbox"><input id="radio_select" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.</label>
+        <label for="check1" class="form__label -checkbox">
+          <input id="check1" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
+        </label>
+        <label for="check2" class="form__label -checkbox">
+          <input id="check2" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
+        </label>
+        <label for="check3" class="form__label -checkbox">
+          <input id="check3" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
+        </label>
+        <label for="radio_select1" class="form__label -checkbox">
+          <input id="radio_select1" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
+        </label>
+        <label for="radio_select2" class="form__label -checkbox">
+          <input id="radio_select2" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
+        </label>
+        <label for="radio_select3" class="form__label -checkbox">
+          <input id="radio_select3" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
+        </label>
       </div>
     </div>
 
@@ -489,18 +503,6 @@
           <img src="images/avatar-chicago.jpg" width="550" height="550" alt="Avatar"class="img__avatar">
         </noscript>
       </div>
-    </div>
-
-    <h4 class="grid__row">Footer1</h4>
-
-    <div class="grid__row">
-      <footer class="grid__column--12 panel__padded--centered" role="contentinfo">
-        <a class="site-logo" href="#">
-          <b class="srt">Poly - UI Toolkit</b>
-        </a>
-
-        <p>Digital Style Guide</p>
-      </footer>
     </div>
 
     <noscript>

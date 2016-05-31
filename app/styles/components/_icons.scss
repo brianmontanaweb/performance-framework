@@ -2,36 +2,25 @@
 // Icons
 // ==========================================================================
 
-// Icon helpers
-
-%icn--ui {
-  line-height: 0;
-  cursor: pointer;
-}
-
 // Logo
 
 .site-logo {
   background-size:100%;
 }
 
-// UI
-[class^="icn"]{
-    @extend %icn--ui;
+.icon {
+  line-height: 0;
+  cursor: pointer;
 }
 
-.icn {
-
-  // Nav Toggle
-  &__nav-toggle {
-    width: 25px;
-    height: 17px;
-    border-top: solid 3px palette(grey);
-    border-bottom: solid 3px palette(grey);
-    position: relative;
-    @include p-el(before, 25px, 3px) {
-      background: palette(grey, light);
-      top: 4px;
-    }
+.icon__nav-toggle {
+  width: 25px;
+  height: 17px;
+  border-top: solid 3px palette(grey);
+  border-bottom: solid 3px palette(grey);
+  position: relative;
+  @include p-el(before, 25px, 3px) {
+    background: palette(grey, light);
+    top: 4px;
   }
 }

@@ -11,9 +11,10 @@
   text-transform: uppercase;
   font-size: em(14px);
   letter-spacing: 1px;
-  font-weight: $font-weight--bold;
-  transition: opacity $trns-duration;
+  font-weight: $font-weight-bold;
+  transition: opacity 0.15s ease;
   display: block;
+  cursor: pointer;
   &:active {
     opacity: initial;
   }
@@ -23,11 +24,11 @@
   position: relative;
   overflow: hidden;
   background-color: transparent;
-  transition: all 0.25s ease-in;
+  transition: all 0.15s ease;
 }
 
 %btn__secondary{
-  transition: all 0.25s ease-in;
+  transition: all 0.15s ease;
   color: white;
   position: relative;
   overflow: hidden;
@@ -51,21 +52,26 @@
 [class^="btn"] {
   @extend %center-align;
   @extend %btn;
-  margin-bottom: em(20px, 14px);
-  @media (min-width: 1px) and (max-width: 768px) {
+  margin: 0 1.25rem;
+  @media (max-width: 768px) {
     width: 100%;
   }
   @media (min-width: 769px) {
     width: auto;
     display: inline-block;
-    @include doubly(20px);
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
   }
 }
 
 //Styles to overwrite default button styles
 .btn-primary {
-  @include button-colors--primary($ui-colors);
+  @include button-colors-primary($ui-colors);
 }
 .btn-secondary {
-  @include button-colors--secondary($ui-colors);
+  @include button-colors-secondary($ui-colors);
 }

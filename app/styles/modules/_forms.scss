@@ -1,47 +1,46 @@
 // ==========================================================================
 // Form Elements
 // ==========================================================================
-[class^="form"]{
 
+.form__label {
+  display: block;
+  margin-bottom: em(10px);
 }
-.form {
-  &__label {
-    &--checkbox {
-      position: relative;
-      padding-left: em(16px, 16px);
-      display: block;
-      margin-bottom: 1em;
-    }
-    &--hidden {
-      @extend .srt;
-    }
-    display: block;
-    margin-bottom: em(10px);
-  }
 
-  &__input {
-    font-size: em(16px);
-    margin-bottom: em(20px, 18px);
-    border: 2px solid palette(grey, x-light);
-    background: palette(grey, xx-light);
-    color: palette(black, dark);
-    font-weight: $font-weight--light;
-    &:hover {
-      border-color: mix($color-primary, $white);
-    }
-    &:focus {
-      border-color: $color-primary;
-    }
-  }
+.form__label.-checkbox {
+  position: relative;
+  padding-left: em(16px, 16px);
+  display: block;
+  margin-bottom: 1em;
+}
 
-  &__btn {
-    @extend %btn;
-    background: $color-primary;
+.form__label.-hidden {
+  @extend .srt;
+}
+
+.form__input {
+  font-size: em(16px);
+  margin-bottom: em(20px, 18px);
+  border: 2px solid palette(grey, x-light);
+  background: palette(grey, xx-light);
+  color: palette(black, dark);
+  font-weight: $font-weight-light;
+  &:hover {
+    border-color: mix($color-primary, $white);
   }
-  &__checkbox {
-    display: inline-block;
-    position: relative;
-    left: em(-12px, 16px);
-    width: auto;
+  &:focus {
+    border-color: $color-primary;
   }
+}
+
+.form__btn {
+  @extend %btn;
+  background: $color-primary;
+}
+
+.form__checkbox {
+  display: inline-block;
+  position: relative;
+  left: em(-12px, 16px);
+  width: auto;
 }

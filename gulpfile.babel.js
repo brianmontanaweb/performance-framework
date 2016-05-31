@@ -3,24 +3,9 @@
  *  Web Starter Kit
  *  Copyright 2015 Google Inc. All rights reserved.
  *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      https://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License
+ *  This has been converted into my own from WSK
  *
  */
-
-// This gulpfile makes use of new JavaScript features.
-// Babel handles this without us having to do anything. It just works.
-// You can read more about the new JavaScript features here:
-// https://babeljs.io/docs/learn-es2015/
 
 import fs from 'fs';
 import path from 'path';
@@ -30,7 +15,6 @@ import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import {output as pagespeed} from 'psi';
 import pkg from './package.json';
 var critical = require('critical').stream;
 
@@ -49,10 +33,7 @@ gulp.task('jshint', () => {
 // Optimize images
 gulp.task('images', () => {
   return gulp.src('app/images/**/*.{svg,png,jpg,gif}')
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
+    .pipe($.cache($.imagemin()))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}));
 });
@@ -66,11 +47,12 @@ gulp.task('copy', () => {
     '!tmp-'
   ], {
     dot: true
-  }).pipe(gulp.dest('dist'))
+  })
+    .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}));
 });
 
-// Compile and automatically prefix stylesheets
+// Compile and automatically prefix stylesheets, postCss can be reviewed for less than modern browser fall backs
 gulp.task('styles', () => {
   const AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
@@ -84,7 +66,7 @@ gulp.task('styles', () => {
     'bb >= 10'
   ];
 
-  // For best performance, don't add Sass partials to `gulp.src`
+  // For best performance, don't add Sass partials to `gulp.src` just globby glob it
   return gulp.src([
     'app/**/*.scss',
     'app/styles/**/*.css'
@@ -92,13 +74,10 @@ gulp.task('styles', () => {
     .pipe($.changed('.tmp/styles', {extension: '.css'}))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
-      precision: 10
+      outputStyle: 'compressed'
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(gulp.dest('.tmp'))
-    // Concatenate and minify styles
-    .pipe($.if('*.css', $.cleanCss({compatibility: 'ie8'})))
-    .pipe($.sourcemaps.write())
+    .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
 });
@@ -113,11 +92,9 @@ gulp.task('scripts', () => {
     .pipe($.size({title: 'scripts'}));
 });
 
-// Scan your HTML for assets & optimize them
+// Scan your HTML for assets & optimize it
 gulp.task('html', () => {
-
   return gulp.src('dist/**/*.html')
-
     // Minify any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output files
@@ -125,7 +102,7 @@ gulp.task('html', () => {
     .pipe($.size({title: 'html'}));
 });
 
-//Create critical CSS
+//Create critical CSS, views site in resolution and spits out only CSS from that view. Decreases visual render time of site
 gulp.task('critical', () => {
   return gulp.src('dist/**/*.html')
   .pipe(critical({
@@ -140,11 +117,11 @@ gulp.task('critical', () => {
   .pipe(gulp.dest('dist'));
 });
 
-// Clean output directory
+// Clean output directory (dist/temp)
 gulp.task('clean', cb => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}, cb));
 
 // Watch files for changes & reload
-gulp.task('serve', ['clean'], cb => {
+gulp.task('serve', cb => {
   runSequence('default');
   browserSync.init({
     server: {
@@ -168,57 +145,3 @@ gulp.task('default', ['clean'], cb => {
     cb
   );
 });
-
-// Run PageSpeed Insights
-gulp.task('pagespeed', cb => {
-  // Update the below URL to the public URL of your site
-  pagespeed('example.com', {
-    strategy: 'mobile',
-    // By default we use the PageSpeed Insights free (no API key) tier.
-    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
-    // key: 'YOUR_API_KEY'
-  }, cb);
-});
-
-// See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for
-// an in-depth explanation of what service workers are and why you should care.
-// Generate a service worker file that will provide offline functionality for
-// local resources. This should only be done for the 'dist' directory, to allow
-// live reload to work as expected when serving from the 'app' directory.
-gulp.task('generate-service-worker', cb => {
-  const rootDir = 'dist';
-
-  swPrecache({
-    // Used to avoid cache conflicts when serving on localhost.
-    cacheId: pkg.name || 'web-starter-kit',
-    staticFileGlobs: [
-      // Add/remove glob patterns to match your directory setup.
-      `${rootDir}/fonts/**/*.woff`,
-      `${rootDir}/images/**/*`,
-      `${rootDir}/scripts/**/*.js`,
-      `${rootDir}/styles/**/*.css`,
-      `${rootDir}/*.{html,json}`
-    ],
-    // Translates a static file path to the relative URL that it's served from.
-    stripPrefix: path.join(rootDir, path.sep)
-  }, (err, swFileContents) => {
-    if (err) {
-      cb(err);
-      return;
-    }
-
-    const filepath = path.join(rootDir, 'service-worker.js');
-
-    fs.writeFile(filepath, swFileContents, err => {
-      if (err) {
-        cb(err);
-        return;
-      }
-
-      cb();
-    });
-  });
-});
-
-// Load custom tasks from the `tasks` directory
-// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }

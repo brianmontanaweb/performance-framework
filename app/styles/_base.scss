@@ -2,6 +2,8 @@
 // Base Styles
 // ==========================================================================
 
+//Focusing on only element level styling for base
+
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -9,45 +11,21 @@
 
 body {
   color: palette(grey);
-  font-size: $base__font-size;
-  font-family: $font-family--primary;
-  line-height: ($base__line/$base__font-size);
-}
-
-// Text
-
-h1 {
-  @extend %hdln-prim;
-}
-
-h2 {
-  @extend %hdln-sec;
-}
-
-h3 {
-  @extend %hdln-rest;
-  font-size: em(18px);
-}
-
-
-h4 {
-  @extend %hdln-rest;
-  font-size: em(16px);
-}
-
-h5 {
-  @extend %hdln-rest;
-  font-size: em(12px);
+  font-size: $base-font-size;
+  font-family: $font-family-primary;
+  line-height: ($base-line/$base-font-size);
 }
 
 a {
   color: palette(grey, dark);
   text-decoration: none;
-  font-weight: $font-weight--medium;
+  font-weight: $font-weight-medium;
 }
+
 b{
   font-weight: 600;
 }
+
 code{
   background-color: palette(gray, xx-light);
   padding: em(4px, 16px);
@@ -55,6 +33,7 @@ code{
   box-shadow: 0 0 0px 1px palette(gray, x-dark);
   margin: 0 em(4px, 16px);
 }
+
 kbd{
   background-color: palette(gray, xx-light);
   padding: em(2px, 16px) em(8px, 16px);
@@ -62,34 +41,32 @@ kbd{
   box-shadow: 0 em(2px, 16px) 0px 1px palette(gray, light), 0 em(4px, 16px) 10px 0px palette(gray, x-light);
   margin: 0 em(4px, 16px);
 }
+
 pre{
   background-color: #ebecec;
   padding: .5em;
   border-radius: 10px;
 }
+
 samp{
 
 }
+
 strong{
   font-weight: bold;
 }
+
 i{
   font-style: italic;
 }
+
 em{
   font-style: italic;
   font-weight: bold;
 }
-p {
-  margin: 0 0 em(24px, 16px);
-  font-weight: $font-weight--light;
-  font-size: em(16px);
-  line-height: (24px/16px);
-  font-family: $font-family--secondary;
-}
 
 blockquote {
-  font-weight: $font-weight--light;
+  font-weight: $font-weight-light;
   font-style: italic;
   font-size: em(18px);
   @media (min-width: 769px) {
@@ -126,7 +103,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  transition: $trns_duration;
+  transition-duration: 0.25s;
 }
 
 // Button

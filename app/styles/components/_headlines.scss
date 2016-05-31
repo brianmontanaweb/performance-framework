@@ -4,52 +4,35 @@
 
 // Headline helpers
 
-%hdln-prim {
-  font-weight: $font-weight--light;
-  font-size: em(42px);
-  line-height: (46px/42px);
-  margin-top: 0;
+.headline-primary {
+  color: palette(grey, x-dark);
+  @extend %headline-primary;
+  margin-bottom: em(70px, 42px);
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-%hdln-sec {
+.headline-primary.-grouped {
+  color: darken($color-secondary, 10%);
+  margin-bottom: 0;
+}
+
+.headline-secondary {
+  @extend %headline-secondary;
   letter-spacing: $letter-space;
-  font-weight: $font-weight--thin;
+  font-weight: $font-weight-thin;
   font-size: em(24px);
-  font-family: $font-family--secondary;
-}
-
-%hdln-rest{
+  font-family: $font-family-secondary;
+  margin-bottom: em(22px, 24px);
   color: palette(grey, light);
-  letter-spacing: $letter-space;
-  font-weight: $font-weight--thin;
-  font-family: $font-family--secondary;
 }
 
-[class^="headline-primary"]{
-    @extend %hdln-prim;
-}
-
-[class^="headline-secondary"]{
-    @extend %hdln-sec;
-}
-
-.headline {
-  &-primary {
-    color: palette(grey, x-dark);
-    margin-bottom: em(70px, 42px);
-    &__grouped {
-      color: darken($color-secondary, 10%);
-      margin-bottom: 0;
-    }
-  }
-  &-secondary {
-    margin-bottom: em(22px, 24px);
-    color: palette(grey, light);
-    &__grouped {
-      color: darken($color-primary, 10%);
-      margin-top: em(10px, 24px);
-      margin-bottom: em(54px, 24px);
-    }
-  }
-
+.headline-secondary.-grouped {
+  color: darken($color-primary, 10%);
+  margin-top: em(10px, 24px);
+  margin-bottom: em(54px, 24px);
 }

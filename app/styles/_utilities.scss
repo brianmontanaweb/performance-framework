@@ -4,17 +4,17 @@
 
 // Font Stacks
 
-$font-url--google: 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Merriweather:400,300italic,300,400italic,700,700italic,900,900italic' !default;
-$font-family--primary: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
-$font-family--secondary: "Merriweather", Helvetica, Arial, sans-serif !default;
+$font-url-google: 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Merriweather:400,300italic,300,400italic,700,700italic,900,900italic' !default;
+$font-family-primary: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-secondary: "Merriweather", Helvetica, Arial, sans-serif !default;
 
 // Font Weights
 
-$font-weight--thin: 100 !default;
-$font-weight--light: 300 !default;
-$font-weight--medium: 400 !default;
-$font-weight--bold: 700 !default;
-$font-weight--ultra-bold: 900 !default;
+$font-weight-thin: 100 !default;
+$font-weight-light: 300 !default;
+$font-weight-medium: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-ultra-bold: 900 !default;
 
 //Media query sizes
 $small: 600px !default;
@@ -24,15 +24,7 @@ $huge: 1400px !default;
 
 //Default em value
 
-$em-base: 16px !default !default;
-
-//Prefixer variables
-
-$prefix-for-webkit:    true !default;
-$prefix-for-mozilla:   true !default;
-$prefix-for-microsoft: true !default;
-$prefix-for-opera:     true !default;
-$prefix-for-spec:      true !default;
+$em-base: 16px !default;
 
 // Descriptive Base Colors
 
@@ -89,22 +81,14 @@ $list-colors: (ordered-list, unordered-list, alternate-list) !default;
 
 // Text
 
-$base__font-size: 16px !default;
-$base__line: 24px !default;
+$base-font-size: 16px !default;
+$base-line: 24px !default;
 $letter-space: 1px !default;
 
 // Border radius
 
-$br--default: .4em !default;
-$br--round: 50% !default;
-
-// Transitions
-
-$trns-duration: .3s !default;
-
-// Path to Assets
-
-$path--rel: "../images" !default;
+$border-radius-default: .4em !default;
+$border-radius-round: 50% !default;
 
 // Grid
 
@@ -126,18 +110,18 @@ $column-max-width: 1050px !default;
 // Set the "context" width for the grid
 
 @function gutter-context($column-width, $column-count, $column-gutter-width) {
-  $g-context: ($column-width * $column-count) + ($column-gutter-width * ($column-count - 1));
-  @return $g-context;
+  $column-context: ($column-width * $column-count) + ($column-gutter-width * ($column-count - 1));
+  @return $column-context;
 }
 
-@function em($pxval, $base: $em-base) {
-  @if not unitless($pxval) {
-    $pxval: strip-units($pxval);
+@function em($pixel-value, $base: $em-base) {
+  @if not unitless($pixel-value) {
+    $pixel-value: strip-units($pixel-value);
   }
   @if not unitless($base) {
     $base: strip-units($base);
   }
-  @return ($pxval / $base) * 1em;
+  @return ($pixel-value / $base) * 1em;
 }
 
 @function strip-units($value) {
@@ -180,9 +164,30 @@ $column-max-width: 1050px !default;
 // Center elements
 
 .centered {
+  text-align: center;
   float: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+%headline-primary {
+  font-weight: $font-weight-light;
+  font-size: em(42px);
+  line-height: (46px/42px);
+}
+
+%headline-secondary {
+  letter-spacing: $letter-space;
+  font-weight: $font-weight-thin;
+  font-size: em(24px);
+  font-family: $font-family-secondary;
+}
+
+%headline-basic {
+  color: palette(grey, light);
+  letter-spacing: $letter-space;
+  font-weight: $font-weight-thin;
+  font-family: $font-family-secondary;
 }
 
 // ==========================================================================
@@ -200,7 +205,7 @@ $column-max-width: 1050px !default;
 
 // Button distance setup
 
-@mixin box-shadow--distance($base-value, $final-value, $box-color, $shadow-color: rgba(palette(grey, x-dark), .75)){
+@mixin box-shadow-distance($base-value, $final-value, $box-color, $shadow-color: rgba(palette(grey, x-dark), .75)){
   box-shadow: 0 0 0 ($base-value + 0px) #{$box-color}, 0 ($base-value + 0px) ($base-value + 4px) ($base-value + 0px) $shadow-color;
   &:hover {
     box-shadow: 0 0 0 ($base-value + $final-value) #{$box-color}, 0 ($final-value * 3) ($final-value * 4) ($final-value) $shadow-color;
@@ -209,7 +214,7 @@ $column-max-width: 1050px !default;
 
 // Generate modifier color classes
 
-@mixin button-colors--primary($map) {
+@mixin button-colors-primary($map) {
   @each $theme, $color in $map {
     &__#{$theme} {
       box-shadow: 0 0 0 2px $color;
@@ -221,7 +226,7 @@ $column-max-width: 1050px !default;
       }
       @include background-slider(after) {
         background-color: $color;
-        transition: all 0.25s ease-in;
+        transition: all 0.15s ease;
       }
       &:hover {
         box-shadow: 0 0 0 2px $color;
@@ -234,17 +239,18 @@ $column-max-width: 1050px !default;
   }
 }
 
-@mixin button-colors--secondary($map) {
+@mixin button-colors-secondary($map) {
   @each $theme, $color in $map {
     &__#{$theme} {
       @extend %btn__secondary;
       background-color: $color;
-      @include box-shadow--distance(0px, 6px, #{$color});
+      @include box-shadow-distance(0px, 2px, #{$color});
     }
   }
 }
 
 @mixin list-maker($list-type, $active-color: $bc-siren-dark, $list-style: null) {
+
   .#{$list-type}-list {
     @if $list-style == "none" {
       padding-left: 0;
@@ -252,18 +258,20 @@ $column-max-width: 1050px !default;
       padding-left: em(16px);
     }
     list-style: $list-style;
-    &__item {
-      @if $list-style == "none" {
-        &:nth-child(even) {
-          background-color: darken($white, 5%);
-        }
-      }
-      padding-bottom: em(4px);
-      &--active {
-        color: $active-color;
-        font-weight: bold;
+  }
+
+  .#{$list-type}-list__item {
+    padding-bottom: em(4px);
+    @if $list-style == "none" {
+      &:nth-child(even) {
+        background-color: darken($white, 5%);
       }
     }
+  }
+
+  .#{$list-type}-list__item.-active {
+    color: $active-color;
+    font-weight: bold;
   }
 }
 
@@ -289,20 +297,11 @@ $el-h: null) {
 // Image replacement
 
 @mixin img-replace($img, $w, $h, $disp: block) {
-  background-image: url('#{$path--rel}/#{$img}');
+  background-image: url(/#{$img});
   background-repeat: no-repeat;
   width: $w;
   height: $h;
   display: $disp;
-}
-
-// Adjacent sibling margins
-
-@mixin doubly($margin: 1em) {
-  & + & {
-    margin-left: $margin;
-    @content;
-  }
 }
 
 // Table setup Mixin
