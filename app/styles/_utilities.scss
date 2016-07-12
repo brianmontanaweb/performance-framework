@@ -306,7 +306,7 @@ $el-h: null) {
 
 // Table setup Mixin
 @mixin table-colors($table-type, $main-color, $copy-color) {
-  .#{$table-type}-table {
+  .table-perf.-#{$table-type} {
     td, th {
       @if $table-type == "alternate" {
         border: none;

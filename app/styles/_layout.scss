@@ -6,11 +6,14 @@
 
 .grid__row {
   @extend .cf;
-  margin: 0 auto 1em;
+  margin: 0 auto;
   width: 90%;
   position: relative;
   z-index: 2;
   // Make nested grid 100%
+  @media (min-width: 801px) {
+    margin-top: 1em;
+  }
   [class*="grid__column--"] > & {
     width: 100%;
   }
@@ -32,12 +35,16 @@
 }
 
 [class*="grid__column--"]:first-child {
-  margin-left: 0;
-  margin-top: 0;
+  @media (min-width: 801px) {
+    margin-left: 0;
+    margin-top: 0;
+  }
 }
 
 [class*="grid__column--"]:last-child {
-  float: right;
+  @media (min-width: 801px) {
+    float: right;
+  }
 }
 
 @for $i from 1 through $column-count {
@@ -46,7 +53,9 @@
 
   // Generate column modifier classes that are compiled based on algorithms
   .grid__column--#{$i} {
-    width: 100%;
+    @media (max-width: 800px) {
+      width: 100%;
+    }
     @media (min-width: 801px) {
       width: percentage($target / $context);
     }

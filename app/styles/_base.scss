@@ -16,6 +16,15 @@ body {
   line-height: ($base-line/$base-font-size);
 }
 
+p {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 a {
   color: palette(grey, dark);
   text-decoration: none;

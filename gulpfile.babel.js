@@ -16,6 +16,7 @@ import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import pkg from './package.json';
+import autoprefixer from 'autoprefixer';
 var critical = require('critical').stream;
 
 const $ = gulpLoadPlugins();
@@ -54,18 +55,6 @@ gulp.task('copy', () => {
 
 // Compile and automatically prefix stylesheets, postCss can be reviewed for less than modern browser fall backs
 gulp.task('styles', () => {
-  const AUTOPREFIXER_BROWSERS = [
-    'ie >= 10',
-    'ie_mob >= 10',
-    'ff >= 30',
-    'chrome >= 34',
-    'safari >= 7',
-    'opera >= 23',
-    'ios >= 7',
-    'android >= 4.4',
-    'bb >= 10'
-  ];
-
   // For best performance, don't add Sass partials to `gulp.src` just globby glob it
   return gulp.src([
     'app/**/*.scss',
@@ -76,7 +65,10 @@ gulp.task('styles', () => {
     .pipe($.sass({
       outputStyle: 'compressed'
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe($.postcss([autoprefixer({
+      add: false,
+      browsers: []
+    })]))
     .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
