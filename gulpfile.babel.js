@@ -29,7 +29,7 @@ gulp.task('jshint', () => {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-// Optimize images
+// Optimize images, only looking at the main four. SVG, PNG, JPG and GIF. SVGs can be optimized further by the designer by reducing paths, etc
 gulp.task('images', () => {
   return gulp.src('app/images/**/*.{svg,png,jpg,gif}')
     .pipe($.cache($.imagemin()))

@@ -65,6 +65,7 @@ $color-palettes: (
                 dark : darken($black, 10%)
         )
 ) !default;
+
 // UI Colors
 
 $ui-colors: (
@@ -275,7 +276,7 @@ $column-max-width: 1050px !default;
   }
 }
 
-// Generating :before or :after pseudo-element shapes
+// Generating :before or :after pseudo-element shapes, probs not needed
 
 @mixin p-el($el,
 $el-w: null,
