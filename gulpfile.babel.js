@@ -11,23 +11,13 @@ import gulp from 'gulp';
 import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
-import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import pkg from './package.json';
-import autoprefixer from 'autoprefixer';
 import critical from 'critical';
+import autoprefixer from 'autoprefixer';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
-
-// Lint JavaScript
-gulp.task('jshint', () => {
-  return gulp.src('app/scripts/**/*.js')
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-});
 
 // Optimize images, only looking at the main four. SVG, PNG, JPG and GIF. SVGs can be optimized further by the designer by reducing paths, etc
 gulp.task('images', () => {
@@ -85,7 +75,7 @@ gulp.task('scripts', () => {
 gulp.task('html', () => {
   return gulp.src('dist/**/*.html')
     // Minify any HTML
-    .pipe($.if('*.html', $.minifyHtml()))
+    .pipe($.if('*.html', $.htmlmin()))
     // Output files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
@@ -117,7 +107,7 @@ gulp.task('serve', cb => {
       baseDir: './dist'
     }
   });
-  gulp.watch('app/scripts/*.js', ['jshint', 'scripts']);
+  gulp.watch('app/scripts/*.js', ['scripts']);
   gulp.watch('app/styles/**/*.scss', ['default']);
   gulp.watch('app/*.html', ['default']);
   gulp.watch('app/images/**/*.{svg,png,jpg,gif}', ['images']);
@@ -129,7 +119,7 @@ gulp.task('default', ['clean'], cb => {
     'styles',
     'copy',
     'critical',
-    ['jshint', 'scripts', 'html', 'images'],
+    ['scripts', 'html', 'images'],
     cb
   );
 });
