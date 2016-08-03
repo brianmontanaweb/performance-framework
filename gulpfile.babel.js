@@ -1,9 +1,7 @@
 /**
  *
- *  Web Starter Kit
- *  Copyright 2015 Google Inc. All rights reserved.
  *
- *  This has been converted into my own from WSK
+ *  This has been converted into my framework from WSK
  *
  */
 
@@ -17,7 +15,7 @@ import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import pkg from './package.json';
 import autoprefixer from 'autoprefixer';
-var critical = require('critical').stream;
+import critical from 'critical';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -53,7 +51,7 @@ gulp.task('copy', () => {
     .pipe($.size({title: 'copy'}));
 });
 
-// Compile and automatically prefix stylesheets, postCss can be reviewed for less than modern browser fall backs
+// Compile and automatically prefix stylesheets, postCSS can be reviewed for less than modern browser fall backs
 gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src` just globby glob it
   return gulp.src([
@@ -65,10 +63,7 @@ gulp.task('styles', () => {
     .pipe($.sass({
       outputStyle: 'compressed'
     }).on('error', $.sass.logError))
-    .pipe($.postcss([autoprefixer({
-      add: false,
-      browsers: []
-    })]))
+    .pipe($.postcss([autoprefixer()]))
     .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
@@ -97,11 +92,11 @@ gulp.task('html', () => {
 //Create critical CSS, views site in resolution and spits out only CSS from that view. Decreases visual render time of site
 gulp.task('critical', () => {
   return gulp.src('dist/**/*.html')
-  .pipe(critical({
+  .pipe(critical.stream({
     inline: true,
     minify: true,
-    base: './dist',
-    css: './dist/styles/styles.css',
+    base: 'dist',
+    css: 'dist/styles/styles.css',
     width: 800,
     height: 600,
     ignore: ['@font-face', '/url\(/']
@@ -118,8 +113,7 @@ gulp.task('serve', cb => {
   browserSync.init({
     server: {
       baseDir: './dist'
-    },
-    open: false
+    }
   });
   gulp.watch('app/scripts/*.js', ['jshint', 'scripts']);
   gulp.watch('app/styles/**/*.scss', ['default']);
