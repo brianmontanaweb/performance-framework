@@ -54,11 +54,13 @@ gulp.task('copy', () => {
 // Compile and automatically prefix stylesheets, postCSS can be reviewed for less than modern browser fall backs
 gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src` just globby glob it
+  //Using postCSS cause it's p cool, right now just using autoprefixer after Sass is compiled
   return gulp.src([
     'app/**/*.scss',
     'app/styles/**/*.css'
   ])
     .pipe($.changed('.tmp/styles', {extension: '.css'}))
+    //Source maps work in Chrome to let you see what partial is being fetched
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'compressed'
