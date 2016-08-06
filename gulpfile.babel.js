@@ -2,22 +2,19 @@
  *
  *
  *  This has been converted into my framework from WSK
+ *  Not a lot is the same but I've kept the concept of WSK
  *
  */
 
-import fs from 'fs';
-import path from 'path';
 import gulp from 'gulp';
 import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import pkg from './package.json';
 import critical from 'critical';
 import autoprefixer from 'autoprefixer';
 
 const $ = gulpLoadPlugins();
-const reload = browserSync.reload;
 
 // Optimize images, only looking at the main four. SVG, PNG, JPG and GIF. SVGs can be optimized further by the designer by reducing paths, etc
 gulp.task('images', () => {
@@ -82,8 +79,9 @@ gulp.task('html', () => {
 });
 
 //Create critical CSS, views site in resolution and spits out only CSS from that view. Decreases visual render time of site
+//Only using critical on the landing page for best performance and easiest to implement
 gulp.task('critical', () => {
-  return gulp.src('dist/**/*.html')
+  return gulp.src('dist/index.html')
   .pipe(critical.stream({
     inline: true,
     minify: true,
@@ -97,29 +95,33 @@ gulp.task('critical', () => {
 });
 
 // Clean output directory (dist/temp)
-gulp.task('clean', cb => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}, cb));
+gulp.task('clean', cb =>
+  del(['.tmp', 'dist/*', '!dist/.git'],
+  {dot: true}, cb));
 
 // Watch files for changes & reload
-gulp.task('serve', cb => {
+gulp.task('serve', () => {
   runSequence('default');
   browserSync.init({
     server: {
       baseDir: './dist'
     }
   });
+  //Each watch task is specific to how to control the direction of tasks
   gulp.watch('app/scripts/*.js', ['scripts']);
-  gulp.watch('app/styles/**/*.scss', ['default']);
-  gulp.watch('app/*.html', ['default']);
+  gulp.watch('app/styles/**/*.scss', ['styles']);
+  //Watch index for any changes to landing page and run scripts
+  gulp.watch('app/index.html', ['default']);
+  gulp.watch('app/**/*.html', ['html']);
   gulp.watch('app/images/**/*.{svg,png,jpg,gif}', ['images']);
 });
 
 // Build production files, the default task
-gulp.task('default', ['clean'], cb => {
+gulp.task('default', ['clean'], () => {
   runSequence(
     'styles',
     'copy',
     'critical',
-    ['scripts', 'html', 'images'],
-    cb
+    ['scripts', 'html', 'images']
   );
 });
