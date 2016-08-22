@@ -14,7 +14,7 @@
   @media (min-width: 801px) {
     margin-top: 1em;
   }
-  [class*="grid__column--"] > & {
+  [class*='grid__column--'] > & {
     width: 100%;
   }
 
@@ -24,7 +24,7 @@
   }
 }
 
-[class*="grid__column--"] {
+[class*='grid__column--'] {
   @media (max-width: 800px) {
     margin-top: 2.5em;
   }
@@ -34,14 +34,14 @@
   }
 }
 
-[class*="grid__column--"]:first-child {
+[class*='grid__column--']:first-child {
   @media (min-width: 801px) {
     margin-left: 0;
     margin-top: 0;
   }
 }
 
-[class*="grid__column--"]:last-child {
+[class*='grid__column--']:last-child {
   @media (min-width: 801px) {
     float: right;
   }
@@ -79,7 +79,7 @@
 }
 
 //Just for visual display of grid layout
-[class*="grid__column--"].-style-guide {
+[class*='grid__column--'].-style-guide {
   text-align: center;
   padding: 1em 0;
   background-color: aliceblue;

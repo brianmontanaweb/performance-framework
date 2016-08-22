@@ -35,7 +35,7 @@
 }
 
 %btn__after{
-  content: "";
+  content: '';
   width: 100%;
   position: absolute;
   top: 0;
@@ -45,7 +45,7 @@
 }
 
 //This is general styling for buttons so it loosely hits anything with btn class
-[class^="btn"] {
+[class^='btn'] {
   @extend %center-align;
   @extend %btn;
   margin: 0 1.25rem;

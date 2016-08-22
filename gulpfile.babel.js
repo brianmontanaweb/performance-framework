@@ -38,6 +38,19 @@ gulp.task('copy', () => {
     .pipe($.size({title: 'copy'}));
 });
 
+//Run Sass Lint before compiling
+//Checks setup of Sass files and confirms they match the standards
+gulp.task('style-lint', () => {
+  return gulp.src('app/**/*.scss')
+    .pipe($.stylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ],
+      debug: true,
+      syntax: 'scss'
+    }))
+});
+
 // Compile and automatically prefix stylesheets, postCSS can be reviewed for less than modern browser fall backs
 gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src` just globby glob it

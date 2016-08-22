@@ -5,7 +5,6 @@
 //Focusing on only element level styling for base
 
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -31,47 +30,47 @@ a {
   font-weight: $font-weight-medium;
 }
 
-b{
+b {
   font-weight: 600;
 }
 
-code{
+code {
   background-color: palette(gray, xx-light);
-  padding: em(4px, 16px);
-  border-radius: em(4px, 16px);
-  box-shadow: 0 0 0px 1px palette(gray, x-dark);
-  margin: 0 em(4px, 16px);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 0.0625rem palette(gray, x-dark);
+  margin: 0 0.25rem;
 }
 
-kbd{
+kbd {
   background-color: palette(gray, xx-light);
-  padding: em(2px, 16px) em(8px, 16px);
-  border-radius: em(4px, 16px);
-  box-shadow: 0 em(2px, 16px) 0px 1px palette(gray, light), 0 em(4px, 16px) 10px 0px palette(gray, x-light);
-  margin: 0 em(4px, 16px);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0 0.0625rem palette(gray, light), 0 0.25rem 0.625rem 0 palette(gray, x-light);
+  margin: 0 0.25rem;
 }
 
-pre{
+pre {
   background-color: #ebecec;
-  padding: .5em;
-  border-radius: 10px;
+  padding: 0.5em;
+  border-radius: 0.625rem;
   white-space: pre-wrap;
   word-wrap: break-word
 }
 
-samp{
+samp {
 
 }
 
-strong{
+strong {
   font-weight: bold;
 }
 
-i{
+i {
   font-style: italic;
 }
 
-em{
+em {
   font-style: italic;
   font-weight: bold;
 }
@@ -79,9 +78,9 @@ em{
 blockquote {
   font-weight: $font-weight-light;
   font-style: italic;
-  font-size: em(18px);
-  @media (min-width: 769px) {
-    font-size: em(20px);
+  font-size: 1.125rem;
+  @media (min-width: 48em) {
+    font-size: 1.25rem;
   }
 }
 
@@ -96,7 +95,7 @@ li {
 // Images
 
 img {
-  margin-bottom: em(24px);
+  margin-bottom: 1.5eem;
   max-width: 100%;
   height: auto;
 }
@@ -106,7 +105,7 @@ img {
 input,
 textarea {
   display: block;
-  padding: 15px;
+  padding: 1em;
   width: 100%;
   outline: 0;
   border: 0;
@@ -126,10 +125,10 @@ button {
 // Layout
 
 footer {
-  border-top: 1px solid palette(grey, xx-light);
+  border-top: 0.0625rem solid palette(grey, xx-light);
   p {
-    font-size: em(16px);
-    margin-top: em(22px, 16px);
+    font-size: 1rem;
+    margin-top: 1.375em;
   }
 }
 
@@ -139,9 +138,9 @@ table {
   width:100%;
   color: palette(grey, x-dark);
   td, th{
-    border-width: em(2px);
+    border-width: 0.125rem;
     border-style: solid;
-    padding: em(8px, 16px);
+    padding: 0.5rem;
   }
   thead {
     th {
