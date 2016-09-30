@@ -121,7 +121,7 @@
   }
 }
 
-.nav__item.-current {
+.nav__item--current {
   @extend %nav-item-disp;
   @media (max-width: 600px) {
     display: block;

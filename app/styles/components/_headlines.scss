@@ -16,7 +16,7 @@
   }
 }
 
-.headline-primary.-grouped {
+.headline-primary--grouped {
   color: darken($color-secondary, 10%);
   margin-bottom: 0;
 }
@@ -31,7 +31,7 @@
   color: palette(grey, light);
 }
 
-.headline-secondary.-grouped {
+.headline-secondary--grouped {
   color: darken($color-primary, 10%);
   margin-top: em(10px, 24px);
   margin-bottom: em(54px, 24px);

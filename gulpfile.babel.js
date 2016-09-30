@@ -11,7 +11,6 @@ import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import critical from 'critical';
 import autoprefixer from 'autoprefixer';
 
 const $ = gulpLoadPlugins();
@@ -91,22 +90,6 @@ gulp.task('html', () => {
     .pipe($.size({title: 'html'}));
 });
 
-//Create critical CSS, views site in resolution and spits out only CSS from that view. Decreases visual render time of site
-//Only using critical on the landing page for best performance and easiest to implement
-gulp.task('critical', () => {
-  return gulp.src('dist/index.html')
-  .pipe(critical.stream({
-    inline: true,
-    minify: true,
-    base: 'dist',
-    css: 'dist/styles/styles.css',
-    width: 800,
-    height: 600,
-    ignore: ['@font-face', '/url\(/']
-  }))
-  .pipe(gulp.dest('dist'));
-});
-
 // Clean output directory (dist/temp)
 gulp.task('clean', cb =>
   del(['.tmp', 'dist/*', '!dist/.git'],
@@ -134,7 +117,6 @@ gulp.task('default', ['clean'], () => {
   runSequence(
     'styles',
     'copy',
-    'critical',
     ['scripts', 'html', 'images']
   );
 });

@@ -115,20 +115,6 @@ $column-max-width: 1050px !default;
   @return $column-context;
 }
 
-@function em($pixel-value, $base: $em-base) {
-  @if not unitless($pixel-value) {
-    $pixel-value: strip-units($pixel-value);
-  }
-  @if not unitless($base) {
-    $base: strip-units($base);
-  }
-  @return ($pixel-value / $base) * 1em;
-}
-
-@function strip-units($value) {
-  @return ($value / ($value * 0 + 1));
-}
-
 // ==========================================================================
 // Helpers
 // ==========================================================================
@@ -199,7 +185,7 @@ $column-max-width: 1050px !default;
 
 @mixin background-slider($pseudo-before-after) {
   &:#{$pseudo-before-after} {
-    @extend %btn__after;
+    @extend %btn-after;
     @content;
   }
 }
@@ -220,7 +206,7 @@ $column-max-width: 1050px !default;
     &__#{$theme} {
       box-shadow: 0 0 0 2px $color;
       color: $color;
-      @extend %btn__primary;
+      @extend %btn-primary;
       span {
         position: relative;
         z-index: 10;
@@ -243,7 +229,7 @@ $column-max-width: 1050px !default;
 @mixin button-colors-secondary($map) {
   @each $theme, $color in $map {
     &__#{$theme} {
-      @extend %btn__secondary;
+      @extend %btn-secondary;
       background-color: $color;
       @include box-shadow-distance(0px, 2px, #{$color});
     }
@@ -270,7 +256,7 @@ $column-max-width: 1050px !default;
     }
   }
 
-  .#{$list-type}-list__item.-active {
+  .#{$list-type}-list__item--active {
     color: $active-color;
     font-weight: bold;
   }
@@ -307,7 +293,7 @@ $el-h: null) {
 
 // Table setup Mixin
 @mixin table-colors($table-type, $main-color, $copy-color) {
-  .table-perf.-#{$table-type} {
+  .table-perf--#{$table-type} {
     td, th {
       @if $table-type == 'alternate' {
         border: none;

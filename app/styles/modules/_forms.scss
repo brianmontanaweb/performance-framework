@@ -7,14 +7,14 @@
   margin-bottom: em(10px);
 }
 
-.form__label.-checkbox {
+.form__label--checkbox {
   position: relative;
   padding-left: em(16px, 16px);
   display: block;
   margin-bottom: 1em;
 }
 
-.form__label.-hidden {
+.form__label--hidden {
   @extend .srt;
 }
 

@@ -20,21 +20,21 @@
   }
 }
 
-%btn__primary{
+%btn-primary{
   position: relative;
   overflow: hidden;
   background-color: transparent;
   transition: all 0.15s ease;
 }
 
-%btn__secondary{
+%btn-secondary{
   transition: all 0.15s ease;
   color: white;
   position: relative;
   overflow: hidden;
 }
 
-%btn__after{
+%btn-after{
   content: '';
   width: 100%;
   position: absolute;

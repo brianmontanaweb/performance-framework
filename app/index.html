@@ -38,7 +38,7 @@
   </header>
 
   <div class="img__full">
-    <div class="img__full -hero"></div>
+    <div class="img__full img__full--hero"></div>
     <div class="grid__row">
       <div class="grid__column--12 panel__centered">
         <a class="site-logo" href="/">
@@ -48,9 +48,9 @@
     </div>
     <div class="grid__row">
       <div class="grid__column--12 panel__centered">
-        <h1 class="headline-primary__grouped">Take a look at this h1 grouped element!</h1>
+        <h1 class="headline-primary headline-primary--grouped">Take a look at this h1 grouped element!</h1>
 
-        <h2 class="headline-secondary__grouped">This is the h2 grouped element</h2>
+        <h2 class="headline-secondary headline-secondary--grouped">This is the h2 grouped element</h2>
       </div>
     </div>
   </div>
@@ -59,9 +59,9 @@
 
   <div class="grid__row">
     <div class="centered grid__column--12">
-      <h1 class="headline-primary__grouped">Take a look at this h1 grouped element!</h1>
+      <h1 class="headline-primary headline-primary--grouped">Take a look at this h1 grouped element!</h1>
 
-      <h2 class="headline-secondary__grouped">This is the h2 grouped element</h2>
+      <h2 class="headline-secondary headline-secondary--grouped">This is the h2 grouped element</h2>
 
       <h1>This is a h1 element!</h1>
 
@@ -87,11 +87,11 @@
 
           f
         </pre>
-        <blockquote class="quote-left">You know what really gets me going? A really nice set of block quotes. That&apos;s
+        <blockquote class="quote quote--left">You know what really gets me going? A really nice set of block quotes. That&apos;s
           right, block quotes
           that say, &quot;Hey, I&apos;m an article you want to read and nurture.&quot;
         </blockquote>
-        <blockquote class="quote-right">You know what really gets me going? A really nice set of block quotes. That&apos;s
+        <blockquote class="quote quote--right">You know what really gets me going? A really nice set of block quotes. That&apos;s
           right, block quotes
           that say, &quot;Hey, I&apos;m an article you want to read and nurture.&quot;
         </blockquote>
@@ -250,7 +250,7 @@
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
-          <li class="ordered-list__item ordered-list__item -active">This is an active ordered list item.</li>
+          <li class="ordered-list__item  ordered-list__item--active">This is an active ordered list item.</li>
           <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
         </ol>
       </div>
@@ -258,7 +258,7 @@
         <h5>Unordered list</h5>
         <ul class="unordered-list">
           <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-          <li class="unordered-list__item unordered-list__item -active">Lorem ipsum dolor sit amet, consectetur
+          <li class="unordered-list__item unordered-list__item--active">Lorem ipsum dolor sit amet, consectetur
             adipisicing elit.
           </li>
           <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
@@ -275,7 +275,7 @@
         <ul class="alternate-list">
           <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipis</li>
           <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adip</li>
-          <li class="alternate-list__item alternate-list__item -active">Lorem ipsum dolor sit amet,</li>
+          <li class="alternate-list__item alternate-list__item--active">Lorem ipsum dolor sit amet,</li>
           <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
             debiti
           </li>
@@ -315,22 +315,22 @@
 
     <div class="grid__row">
       <div class="grid__column--12">
-        <label for="check1" class="form__label -checkbox">
+        <label for="check1" class="form__label form__label--checkbox">
           <input id="check1" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
         </label>
-        <label for="check2" class="form__label -checkbox">
+        <label for="check2" class="form__label form__label--checkbox">
           <input id="check2" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
         </label>
-        <label for="check3" class="form__label -checkbox">
+        <label for="check3" class="form__label form__label--checkbox">
           <input id="check3" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
         </label>
-        <label for="radio_select1" class="form__label -checkbox">
+        <label for="radio_select1" class="form__label form__label--checkbox">
           <input id="radio_select1" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
         </label>
-        <label for="radio_select2" class="form__label -checkbox">
+        <label for="radio_select2" class="form__label form__label--checkbox">
           <input id="radio_select2" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
         </label>
-        <label for="radio_select3" class="form__label -checkbox">
+        <label for="radio_select3" class="form__label form__label--checkbox">
           <input id="radio_select3" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
         </label>
       </div>
@@ -340,7 +340,7 @@
 
     <div class="grid__row">
       <div class="grid__column--12 panel__padded">
-        <table class="table-perf -green">
+        <table class="table-perf table-perf--green">
           <thead>
             <tr>
               <th>Name</th>
@@ -392,7 +392,7 @@
 
     <div class="grid__row">
       <div class="grid__column--12 panel__padded">
-        <table class="table-perf -blue">
+        <table class="table-perf table-perf--blue">
           <thead>
             <tr>
               <th>Name</th>
@@ -444,7 +444,7 @@
 
     <div class="grid__row">
       <div class="grid__column--12 panel__padded">
-        <table class="table-perf -alternate">
+        <table class="table-perf table-perf--alternate">
           <thead>
             <tr>
               <th>Name</th>
