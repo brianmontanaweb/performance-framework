@@ -19,6 +19,7 @@ p {
   &:first-child {
     margin-top: 0;
   }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -95,7 +96,7 @@ li {
 // Images
 
 img {
-  margin-bottom: 1.5eem;
+  margin-bottom: 1.5em;
   max-width: 100%;
   height: auto;
 }
@@ -126,6 +127,7 @@ button {
 
 footer {
   border-top: 0.0625rem solid palette(grey, xx-light);
+
   p {
     font-size: 1rem;
     margin-top: 1.375em;
@@ -135,26 +137,18 @@ footer {
 // Table style
 
 table {
-  width:100%;
+  width: 100%;
   color: palette(grey, x-dark);
+
   td, th{
     border-width: 0.125rem;
     border-style: solid;
     padding: 0.5rem;
   }
+
   thead {
     th {
       color: $white;
-    }
-  }
-  tbody {
-    tr {
-      &:nth-child(even) {
-      }
-    }
-  }
-  tfoot {
-    tr {
     }
   }
 }

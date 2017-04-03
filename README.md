@@ -16,11 +16,3 @@ I'm using LazyLoader to request images when the user gets close to the image ins
 * Optimize images(Imagemin)
 * Prioritize visible content(critical)
 * Reduce server response time
-
-##Methodologies
-
-##Architecture
-
-##Tools
-
-##References and Resources

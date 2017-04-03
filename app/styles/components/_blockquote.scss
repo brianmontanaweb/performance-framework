@@ -3,17 +3,17 @@
 // ==========================================================================
 
 .quote {
-  margin: em(32px, 24px) 0;
+  margin: 1.25rem 0;
 }
 
 .quote--right {
-  border-right: em(8px, 24px) solid palette(grey, xx-light);
+  border-right: 0.25rem solid palette(grey, xx-light);
   padding: 0 5% 0 0;
   text-align: right;
 }
 
 .quote--left {
-  border-left: em(8px, 24px) solid palette(grey, xx-light);
+  border-left: 0.25rem solid palette(grey, xx-light);
   padding: 0 0 0 5%;
   text-align: left;
 }
