@@ -3,10 +3,10 @@
 // ==========================================================================
 
 p {
-  margin: 0 0 em(24px, 16px);
+  margin: 0 0 1.5em;
   font-weight: $font-weight-light;
-  font-size: em(16px);
-  line-height: (24px/16px);
+  font-size: 1rem;
+  line-height: 1.5;
   font-family: $font-family-secondary;
 }
 
@@ -20,16 +20,16 @@ h2 {
 
 h3 {
   @extend %headline-basic;
-  font-size: em(18px);
+  font-size: 1.125rem;
 }
 
 
 h4 {
   @extend %headline-basic;
-  font-size: em(16px);
+  font-size: 1rem;
 }
 
 h5 {
   @extend %headline-basic;
-  font-size: em(12px);
+  font-size: 0.75rem;
 }

@@ -23,13 +23,14 @@
 }
 
 .menu-toggle {
-  border-bottom: solid em(2px) palette(grey);
-  border-top: solid em(2px) palette(grey);
+  border: solid 0.125em palette(grey);
+  border-right: 0;
+  border-left: 0;
   cursor: pointer;
   display: inline-block;
-  height: em(20px);
+  height: 1.25em;
   position: relative;
-  width: em(24px);
+  width: 1.5em;
   @media (min-width: 600px) {
     display: none;
   }
@@ -75,10 +76,10 @@
 }
 
 .nav {
-  margin-bottom: em(30px);
+  margin-bottom: 1.875em;
   transition: all 0.15s ease;
   @media (min-width: 601px) and (max-width: 800px) {
-    font-size:  .8em;
+    font-size: 0.8em;
   }
   @media (max-width: 600px){
     display: none;
@@ -106,10 +107,12 @@
     display: block;
     margin: 0;
   }
+
   a {
     @extend %nav-item-link;
     color: palette(grey);
     transition: all 0.5s ease-in;
+
     &:hover {
       @extend %nav-item-on;
       transition: all 0.5s ease-in;
@@ -127,6 +130,7 @@
     display: block;
     margin: 0;
   }
+
   a {
     @extend %nav-item-link;
     @extend %nav-item-on;

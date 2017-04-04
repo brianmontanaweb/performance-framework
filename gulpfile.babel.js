@@ -105,7 +105,7 @@ gulp.task('serve', () => {
   });
   //Each watch task is specific to how to control the direction of tasks
   gulp.watch('app/scripts/*.js', ['scripts']);
-  gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/styles/**/*.scss', ['styles', 'style-lint']);
   //Watch index for any changes to landing page and run scripts
   gulp.watch('app/index.html', ['default']);
   gulp.watch('app/**/*.html', ['html']);

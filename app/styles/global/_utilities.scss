@@ -159,14 +159,14 @@ $column-max-width: 1050px !default;
 
 %headline-primary {
   font-weight: $font-weight-light;
-  font-size: em(42px);
-  line-height: (46px/42px);
+  font-size: 2.625rem;
+  line-height: 1.1;
 }
 
 %headline-secondary {
   letter-spacing: $letter-space;
   font-weight: $font-weight-thin;
-  font-size: em(24px);
+  font-size: 1.5rem;
   font-family: $font-family-secondary;
 }
 
@@ -194,6 +194,7 @@ $column-max-width: 1050px !default;
 
 @mixin box-shadow-distance($base-value, $final-value, $box-color, $shadow-color: rgba(palette(grey, x-dark), .75)){
   box-shadow: 0 0 0 ($base-value + 0px) #{$box-color}, 0 ($base-value + 0px) ($base-value + 4px) ($base-value + 0px) $shadow-color;
+
   &:hover {
     box-shadow: 0 0 0 ($base-value + $final-value) #{$box-color}, 0 ($final-value * 3) ($final-value * 4) ($final-value) $shadow-color;
   }
@@ -207,6 +208,7 @@ $column-max-width: 1050px !default;
       box-shadow: 0 0 0 2px $color;
       color: $color;
       @extend %btn-primary;
+
       span {
         position: relative;
         z-index: 10;
@@ -215,9 +217,11 @@ $column-max-width: 1050px !default;
         background-color: $color;
         transition: all 0.15s ease;
       }
+
       &:hover {
         box-shadow: 0 0 0 2px $color;
         color: white;
+
         &:after {
           height: 100%;
         }
@@ -237,18 +241,17 @@ $column-max-width: 1050px !default;
 }
 
 @mixin list-maker($list-type, $active-color: $bc-siren-dark, $list-style: null) {
-
   .#{$list-type}-list {
     @if $list-style == 'none' {
       padding-left: 0;
     } @else {
-      padding-left: em(16px);
+      padding-left: 1em;
     }
     list-style: $list-style;
   }
 
   .#{$list-type}-list__item {
-    padding-bottom: em(4px);
+    padding-bottom: 0.25em;
     @if $list-style == 'none' {
       &:nth-child(even) {
         background-color: darken($white, 5%);
@@ -301,26 +304,30 @@ $el-h: null) {
         border-color: $copy-color;
       }
     }
+
     thead {
       th {
         color: $copy-color;
         background-color: $main-color;
       }
     }
+
     tbody {
       tr {
         @if $table-type == 'alternate' {
-          border-top: solid em(2px) $main-color;
+          border-top: solid 0.125rem $main-color;
         } @else {
           &:nth-child(even) {
             background-color: lighten($main-color, 50%);
           }
+
           &:nth-child(odd) {
             background-color: $copy-color;
           }
         }
       }
     }
+
     tfoot {
       tr {
         color: $copy-color;

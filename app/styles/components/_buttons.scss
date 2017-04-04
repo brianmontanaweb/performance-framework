@@ -5,16 +5,17 @@
 // Button helpers
 
 %btn {
-  padding: 15px 30px;
+  padding: 1em 2em;
   border: 0;
   color: $white;
   text-transform: uppercase;
-  font-size: em(14px);
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: 0.0625rem;
   font-weight: $font-weight-bold;
   transition: opacity 0.15s ease;
   display: block;
   cursor: pointer;
+
   &:active {
     opacity: initial;
   }
@@ -52,9 +53,11 @@
   @media (max-width: 768px) {
     width: 100%;
     margin: 0.5em 0;
+
     &:first-child {
       margin-top: 0;
     }
+
     &:last-child {
       margin-top: 0;
     }
@@ -63,9 +66,11 @@
     width: auto;
     display: inline-block;
   }
+
   &:first-child {
     margin-left: 0;
   }
+
   &:last-child {
     margin-right: 0;
   }
@@ -75,6 +80,7 @@
 .btn-primary {
   @include button-colors-primary($ui-colors);
 }
+
 .btn-secondary {
   @include button-colors-secondary($ui-colors);
 }

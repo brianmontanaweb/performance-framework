@@ -4,17 +4,17 @@
 
 .img__wrap {
   border: 1px solid palette(grey, x-light);
-  padding: em(12px);
+  padding: 0.75rem;
 }
 
 .img__avatar {
   display: block;
   border-radius: $border-radius-round;
-  margin-top: em(24px);
+  margin-top: 1.5rem;
 }
 
 .img__full {
-  margin-bottom: em(42px);
+  margin-bottom: 2.625rem;
   position: relative;
   min-height: 30em;
 }
