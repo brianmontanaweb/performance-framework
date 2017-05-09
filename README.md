@@ -1,8 +1,8 @@
-#Performance Framework
+# Performance Framework
 
 Work will start on this beginning this weekend and all references for practices will be linked at the bottom
 
-##About
+## About
 
 A front-end framework to define best performance optimization techniques, linting process and managing a repository; this is the first version and will be linked to a gh-page to measure load times, file weights, methodologies and philosophical reasoning behind them. Leveraging this towards front-end code standards and practices for Blast Radius.
 
