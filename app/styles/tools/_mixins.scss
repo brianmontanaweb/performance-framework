@@ -1,0 +1,159 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+//Before or After background
+
+@mixin background-slider($pseudo-before-after) {
+  &:#{$pseudo-before-after} {
+    @extend %btn-after;
+    @content;
+  }
+}
+
+// Button distance setup
+
+@mixin box-shadow-distance($base-value, $final-value, $box-color, $shadow-color: rgba(palette(grey, x-dark), .75)){
+  box-shadow: 0 0 0 ($base-value + 0px) #{$box-color}, 0 ($base-value + 0px) ($base-value + 4px) ($base-value + 0px) $shadow-color;
+
+  &:hover {
+    box-shadow: 0 0 0 ($base-value + $final-value) #{$box-color}, 0 ($final-value * 3) ($final-value * 4) ($final-value) $shadow-color;
+  }
+}
+
+// Generate modifier color classes
+
+@mixin button-colors-primary($map) {
+  @each $theme, $color in $map {
+    &__#{$theme} {
+      box-shadow: 0 0 0 2px $color;
+      color: $color;
+      @extend %btn-primary;
+
+      span {
+        position: relative;
+        z-index: 10;
+      }
+      @include background-slider(after) {
+        background-color: $color;
+        transition: all 0.15s ease;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 2px $color;
+        color: white;
+
+        &:after {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@mixin button-colors-secondary($map) {
+  @each $theme, $color in $map {
+    &__#{$theme} {
+      @extend %btn-secondary;
+      background-color: $color;
+      @include box-shadow-distance(0px, 2px, #{$color});
+    }
+  }
+}
+
+@mixin list-maker($list-type, $active-color: $bc-siren-dark, $list-style: null) {
+  .#{$list-type}-list {
+    @if $list-style == 'none' {
+      padding-left: 0;
+    } @else {
+      padding-left: 1em;
+    }
+    list-style: $list-style;
+  }
+
+  .#{$list-type}-list__item {
+    padding-bottom: 0.25em;
+    @if $list-style == 'none' {
+      &:nth-child(even) {
+        background-color: darken($white, 5%);
+      }
+    }
+  }
+
+  .#{$list-type}-list__item--active {
+    color: $active-color;
+    font-weight: bold;
+  }
+}
+
+// Generating :before or :after pseudo-element shapes, probs not needed
+
+@mixin p-el($el,
+$el-w: null,
+$el-h: null) {
+  @if $el == 'before' or $el == 'after' {
+    &:#{$el} {
+      content: '';
+      display: block;
+      width: $el-w;
+      height: $el-h;
+      position: absolute;
+      @content;
+    }
+  } @else {
+    @error '`#{$el}` is not a valid pseudo-element.';
+  }
+}
+
+// Image replacement
+
+@mixin img-replace($img, $w, $h, $disp: block) {
+  background-image: url(/#{$img});
+  background-repeat: no-repeat;
+  width: $w;
+  height: $h;
+  display: $disp;
+}
+
+// Table setup Mixin
+@mixin table-colors($table-type, $main-color, $copy-color) {
+  .table-perf--#{$table-type} {
+    td, th {
+      @if $table-type == 'alternate' {
+        border: none;
+      } @else {
+        border-color: $copy-color;
+      }
+    }
+
+    thead {
+      th {
+        color: $copy-color;
+        background-color: $main-color;
+      }
+    }
+
+    tbody {
+      tr {
+        @if $table-type == 'alternate' {
+          border-top: solid 0.125rem $main-color;
+        } @else {
+          &:nth-child(even) {
+            background-color: lighten($main-color, 50%);
+          }
+
+          &:nth-child(odd) {
+            background-color: $copy-color;
+          }
+        }
+      }
+    }
+
+    tfoot {
+      tr {
+        color: $copy-color;
+        background-color: $main-color;
+      }
+    }
+  }
+}

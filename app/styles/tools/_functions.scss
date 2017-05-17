@@ -1,0 +1,17 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+// Call the color palette modifiers in color values
+
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($color-palettes, $palette), $shade);
+}
+
+// Set the 'context' width for the grid
+
+@function gutter-context($column-width, $column-count, $column-gutter-width) {
+  $column-context: ($column-width * $column-count) + ($column-gutter-width * ($column-count - 1));
+  @return $column-context;
+}
+
