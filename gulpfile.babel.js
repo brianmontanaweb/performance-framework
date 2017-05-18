@@ -1,10 +1,8 @@
-/**
- *
- *
- *  This has been converted into my framework from WSK
- *  Not a lot is the same but I've kept the concept of WSK
- *
- */
+/*
+
+  Architecture structure for SCSS with context and content descriptions for how to use specific pieces and vernacular
+
+*/
 
 import gulp from 'gulp';
 import del from 'del';
