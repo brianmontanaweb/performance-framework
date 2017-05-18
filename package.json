@@ -25,6 +25,7 @@
     "gulp-stylelint": "^3.9.0",
     "gulp-uglify": "^2.1.2",
     "run-sequence": "^1.2.2",
-    "stylelint": "^7.10.1"
+    "stylelint": "^7.10.1",
+    "stylelint-order": "^0.4.4"
   }
 }

@@ -18,44 +18,48 @@
 </head>
 <body>
 
-  <header class="panel__centered navbar" role="banner">
-    <nav role="navigation">
+<header class="panel__centered navbar" role="banner">
+  <nav role="navigation">
       <span class="menu-toggle">
         <b class="srt">Menu Toggle</b>
-      </span>
-      <input id="menu-toggle" class="srt menu-toggle__input" type="checkbox" name="menu-collection">
-      <label class="menu-toggle__label" name="menu-collection" for="menu-toggle">
-      </label>
-      <ul class="nav">
-        <li class="nav__item"><a href="#">Typography</a></li>
-        <li class="nav__item"><a href="#">Buttons</a></li>
-        <li class="nav__item"><a href="#">Forms</a></li>
-        <li class="nav__item"><a href="#">Images</a></li>
-        <li class="nav__item"><a href="#">Grid</a></li>
-        <li class="nav__item -current"><a href="#">Navigation</a></li>
-      </ul>
-    </nav>
-  </header>
+      </span> <input id="menu-toggle" class="srt menu-toggle__input" type="checkbox" name="menu-collection">
+    <label class="menu-toggle__label" name="menu-collection" for="menu-toggle"> </label>
+    <ul class="nav">
+      <li class="nav__item"><a href="#">Typography</a></li>
+      <li class="nav__item"><a href="#">Buttons</a></li>
+      <li class="nav__item"><a href="#">Forms</a></li>
+      <li class="nav__item"><a href="#">Images</a></li>
+      <li class="nav__item"><a href="#">Grid</a></li>
+      <li class="nav__item -current"><a href="#">Navigation</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <div class="img__full">
-    <div class="img__full img__full--hero"></div>
-    <div class="grid__row">
-      <div class="grid__column--12 panel__centered">
-        <a class="site-logo" href="/">
-          <div class="srt">Digital Style Guide</div>
-        </a>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--12 panel__centered">
-        <h1 class="headline-primary headline-primary--grouped">Take a look at this h1 grouped element!</h1>
-
-        <h2 class="headline-secondary headline-secondary--grouped">This is the h2 grouped element</h2>
-      </div>
+<div class="img__full">
+  <div class="img__full img__full--hero"></div>
+  <div class="grid__row">
+    <div class="grid__column--12 panel__centered">
+      <a class="site-logo" href="/">
+        <div class="srt">Digital Style Guide</div>
+      </a>
     </div>
   </div>
+  <div class="grid__row">
+    <div class="grid__column--12 panel__centered">
+      <h1 class="headline-primary headline-primary--grouped">Take a look at this h1 grouped element!</h1>
 
-  <h4 class="grid__row">Typography</h4>
+      <h2 class="headline-secondary headline-secondary--grouped">This is the h2 grouped element</h2>
+    </div>
+  </div>
+</div>
+
+<div class="grid__container">
+
+  <h3 class="grid__row">Typography</h3>
+
+</div>
+
+<div class="grid__container">
 
   <div class="grid__row">
     <div class="centered grid__column--12">
@@ -73,462 +77,592 @@
     </div>
   </div>
 
-  <h4 class="grid__row">Text</h4>
+</div>
+
+<div class="grid__container">
+
+  <h3 class="grid__row">Text</h3>
+
+</div>
+
+<div class="grid__container">
 
   <div class="grid__row">
     <div class="centered grid__column--12">
       <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is
-        <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u>,
-        this is code: <code>for (;;) { ... }</code> and this is computer response <samp>&quot;Hello world!&quot;</samp>.
-        Finally, <a href="#">this is a link</a>.</p>
-        This is keyboard input: <kbd>Shift</kbd>.
-        <pre>
+        <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is
+        <u>underlined</u>, this is code: <code>for (;;) { ... }</code> and this is computer response
+        <samp>&quot;Hello world!&quot;</samp>. Finally, <a href="#">this is a link</a>.</p>
+      This is keyboard input: <kbd>Shift</kbd>.
+      <pre>
           This  is preformatted text block
 
           f
         </pre>
-        <blockquote class="quote quote--left">You know what really gets me going? A really nice set of block quotes. That&apos;s
-          right, block quotes
-          that say, &quot;Hey, I&apos;m an article you want to read and nurture.&quot;
-        </blockquote>
-        <blockquote class="quote quote--right">You know what really gets me going? A really nice set of block quotes. That&apos;s
-          right, block quotes
-          that say, &quot;Hey, I&apos;m an article you want to read and nurture.&quot;
-        </blockquote>
-      </div>
+      <blockquote class="quote quote--left">You know what really gets me going? A really nice set of block quotes. That&apos;s right, block quotes that say, &quot;Hey, I&apos;m an article you want to read and nurture.&quot;
+      </blockquote>
+      <blockquote class="quote quote--right">You know what really gets me going? A really nice set of block quotes. That&apos;s right, block quotes that say, &quot;Hey, I&apos;m an article you want to read and nurture.&quot;
+      </blockquote>
     </div>
+  </div>
 
-    <h4 class="grid__row">Grid</h4>
+</div>
 
-    <div class="grid__row" id="layout">
-      <div class="grid__column--1 grid__column--style-guide">
-        <p>col 1</p>
-      </div>
-      <div class="grid__column--11 grid__column--style-guide">
-        <p>column 11</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-      <div class="grid__column--10 grid__column--style-guide">
-        <p>column 10</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--3 grid__column--style-guide">
-        <p>column 3</p>
-      </div>
-      <div class="grid__column--9 grid__column--style-guide">
-        <p>column 9</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--4 grid__column--style-guide">
-        <p>column 4</p>
-      </div>
-      <div class="grid__column--8 grid__column--style-guide">
-        <p>column 8</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--5 grid__column--style-guide">
-        <p>column 5</p>
-      </div>
-      <div class="grid__column--7 grid__column--style-guide">
-        <p>column 7</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--6 grid__column--style-guide">
-        <p>column 6</p>
-      </div>
-      <div class="grid__column--6 grid__column--style-guide">
-        <p>column 6</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--2 grid__push--4 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-      <div class="grid__column--4 grid__column--style-guide">
-        <p>column 4</p>
-      </div>
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-      <div class="grid__column--4 grid__push--4 grid__column--style-guide">
-        <p>column 4</p>
-      </div>
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-      <div class="grid__column--4 grid__column--style-guide">
-        <p>column 4</p>
-      </div>
-      <div class="grid__column--2 grid__push--4 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--2 grid__pull--4 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-      <div class="grid__column--4 grid__column--style-guide">
-        <p>column 4</p>
-      </div>
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-      <div class="grid__column--4 grid__pull--4 grid__column--style-guide">
-        <p>column 4</p>
-      </div>
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-    </div>
-    <div class="grid__row">
-      <div class="grid__column--2 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-      <div class="grid__column--4 grid__column--style-guide">
-        <p>column 4</p>
-      </div>
-      <div class="grid__column--2 grid__pull--4 grid__column--style-guide">
-        <p>column 2</p>
-      </div>
-    </div>
+<div class="grid__container">
 
-    <h4 class="grid__row" id="buttons">Buttons</h4>
+  <h3 class="grid__row">Grid</h3>
 
-    <div class="grid__row">
-      <div class="grid__column--12 panel__centered">
-        <a class="btn-primary__default-special" href="#"><span>Default Special</span></a>
-        <a class="btn-primary__default" href="#"><span>Default</span></a>
-        <a class="btn-primary__default-alt" href="#"><span>Default Alt</span></a>
-      </div>
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row" id="layout">
+    <div class="grid__column--1 grid__column--style-guide">
+      <p>col 1</p>
     </div>
-    <div class="grid__row">
-      <div class="grid__column--12 panel__centered">
-        <a class="btn-primary__success" href="#"><span>Success</span></a>
-        <a class="btn-primary__error" href="#"><span>Error</span></a>
-        <a class="btn-primary__warning" href="#"><span>Warning</span></a>
-        <a class="btn-primary__info" href="#"><span>Info</span></a>
-      </div>
+    <div class="grid__column--11 grid__column--style-guide">
+      <p>column 11</p>
     </div>
-    <div class="grid__row">
-      <div class="grid__column--12 panel__centered">
-        <a class="btn-secondary__success" href="#">Success</a>
-        <a class="btn-secondary__error" href="#">Error</a>
-        <a class="btn-secondary__warning" href="#">Warning</a>
-        <a class="btn-secondary__info" href="#">Info</a>
-      </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
     </div>
-
-    <h4 class="grid__row">Lists</h4>
-
-    <div class="grid__row">
-      <div class="grid__column--6">
-        <h5>Ordered list</h5>
-        <ol class="ordered-list">
-          <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-          <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-          <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
-          <li class="ordered-list__item  ordered-list__item--active">This is an active ordered list item.</li>
-          <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
-        </ol>
-      </div>
-      <div class="grid__column--6">
-        <h5>Unordered list</h5>
-        <ul class="unordered-list">
-          <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-          <li class="unordered-list__item unordered-list__item--active">Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit.
-          </li>
-          <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
-          <li class="unordered-list__item">Lorem ipsum dolor.</li>
-          <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
-        </ul>
-      </div>
+    <div class="grid__column--10 grid__column--style-guide">
+      <p>column 10</p>
     </div>
+  </div>
 
-    <h4 class="grid__row">Alternate list</h4>
+</div>
 
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--3 grid__column--style-guide">
+      <p>column 3</p>
+    </div>
+    <div class="grid__column--9 grid__column--style-guide">
+      <p>column 9</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--4 grid__column--style-guide">
+      <p>column 4</p>
+    </div>
+    <div class="grid__column--8 grid__column--style-guide">
+      <p>column 8</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--5 grid__column--style-guide">
+      <p>column 5</p>
+    </div>
+    <div class="grid__column--7 grid__column--style-guide">
+      <p>column 7</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--6 grid__column--style-guide">
+      <p>column 6</p>
+    </div>
+    <div class="grid__column--6 grid__column--style-guide">
+      <p>column 6</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--2 grid__push--4 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+    <div class="grid__column--4 grid__column--style-guide">
+      <p>column 4</p>
+    </div>
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+    <div class="grid__column--4 grid__push--4 grid__column--style-guide">
+      <p>column 4</p>
+    </div>
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+    <div class="grid__column--4 grid__column--style-guide">
+      <p>column 4</p>
+    </div>
+    <div class="grid__column--2 grid__push--4 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--2 grid__pull--4 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+    <div class="grid__column--4 grid__column--style-guide">
+      <p>column 4</p>
+    </div>
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+    <div class="grid__column--4 grid__pull--4 grid__column--style-guide">
+      <p>column 4</p>
+    </div>
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--2 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+    <div class="grid__column--4 grid__column--style-guide">
+      <p>column 4</p>
+    </div>
+    <div class="grid__column--2 grid__pull--4 grid__column--style-guide">
+      <p>column 2</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <h3 class="grid__row" id="buttons">Buttons</h3>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--12 panel__centered">
+      <a class="btn-primary__default-special" href="#"><span>Default Special</span></a>
+      <a class="btn-primary__default" href="#"><span>Default</span></a>
+      <a class="btn-primary__default-alt" href="#"><span>Default Alt</span></a>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--12 panel__centered">
+      <a class="btn-primary__success" href="#"><span>Success</span></a>
+      <a class="btn-primary__error" href="#"><span>Error</span></a>
+      <a class="btn-primary__warning" href="#"><span>Warning</span></a>
+      <a class="btn-primary__info" href="#"><span>Info</span></a>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--12 panel__centered">
+      <a class="btn-secondary__success" href="#">Success</a> <a class="btn-secondary__error" href="#">Error</a>
+      <a class="btn-secondary__warning" href="#">Warning</a> <a class="btn-secondary__info" href="#">Info</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <h3 class="grid__row">Lists</h3>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--6">
+      <h5>Ordered list</h5>
+      <ol class="ordered-list">
+        <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
+        <li class="ordered-list__item  ordered-list__item--active">This is an active ordered list item.</li>
+        <li class="ordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
+      </ol>
+    </div>
+    <div class="grid__column--6">
+      <h5>Unordered list</h5>
+      <ul class="unordered-list">
+        <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li class="unordered-list__item unordered-list__item--active">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </li>
+        <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur.</li>
+        <li class="unordered-list__item">Lorem ipsum dolor.</li>
+        <li class="unordered-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eos.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <h3 class="grid__row">Alternate list</h3>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--12">
+      <ul class="alternate-list">
+        <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipis</li>
+        <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adip</li>
+        <li class="alternate-list__item alternate-list__item--active">Lorem ipsum dolor sit amet,</li>
+        <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto debiti
+        </li>
+        <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur ad</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <h3 class="grid__row">Form Elements</h3>
+
+</div>
+
+<div class="grid__container">
+
+  <form class="form">
     <div class="grid__row">
       <div class="grid__column--12">
-        <ul class="alternate-list">
-          <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipis</li>
-          <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adip</li>
-          <li class="alternate-list__item alternate-list__item--active">Lorem ipsum dolor sit amet,</li>
-          <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-            debiti
-          </li>
-          <li class="alternate-list__item">Lorem ipsum dolor sit amet, consectetur ad</li>
-        </ul>
+        <label class="form__label" for="name">Name:</label>
+        <input class="form__input" type="text" id="name" placeholder="Name">
       </div>
     </div>
-
-    <h4 class="grid__row">Form Elements</h4>
-
-    <form class="form">
-      <div class="grid__row">
-        <div class="grid__column--12">
-          <label class="form__label" for="name">Name:</label>
-          <input class="form__input" type="text" id="name" placeholder="Name">
-        </div>
-      </div>
-      <div class="grid__row">
-        <div class="grid__column--12">
-          <label class="form__label" for="email">Email:</label>
-          <input class="form__input" type="email" id="email" placeholder="email@website.com">
-        </div>
-      </div>
-      <div class="grid__row">
-        <div class="grid__column--12">
-          <label class="form__label" for="msg">Message:</label>
-          <textarea class="form__input" id="msg" placeholder="Message..." rows="6"></textarea>
-        </div>
-      </div>
-      <div class="grid__row">
-        <div class="grid__column--12">
-          <input class="btn-secondary__default" type="submit" value="Submit">
-          <input class="btn-secondary__warning" type="reset" value="Reset">
-        </div>
-      </div>
-    </form>
-
     <div class="grid__row">
       <div class="grid__column--12">
-        <label for="check1" class="form__label form__label--checkbox">
-          <input id="check1" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
-        </label>
-        <label for="check2" class="form__label form__label--checkbox">
-          <input id="check2" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
-        </label>
-        <label for="check3" class="form__label form__label--checkbox">
-          <input id="check3" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet.
-        </label>
-        <label for="radio_select1" class="form__label form__label--checkbox">
-          <input id="radio_select1" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
-        </label>
-        <label for="radio_select2" class="form__label form__label--checkbox">
-          <input id="radio_select2" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
-        </label>
-        <label for="radio_select3" class="form__label form__label--checkbox">
-          <input id="radio_select3" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
-        </label>
+        <label class="form__label" for="email">Email:</label>
+        <input class="form__input" type="email" id="email" placeholder="email@website.com">
       </div>
     </div>
-
-    <h4 class="grid__row">Tables</h4>
-
     <div class="grid__row">
-      <div class="grid__column--12 panel__padded">
-        <table class="table-perf table-perf--green">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Item One</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Two</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Three</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Four</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Five</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>2.99</td>
-            </tr>
-            <tr>
-              <td>Item six</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>2.99</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2"></td>
-              <td>100.00</td>
-            </tr>
-          </tfoot>
-        </table>
+      <div class="grid__column--12">
+        <label class="form__label" for="msg">Message:</label>
+        <textarea class="form__input" id="msg" placeholder="Message..." rows="6"></textarea>
       </div>
     </div>
-
     <div class="grid__row">
-      <div class="grid__column--12 panel__padded">
-        <table class="table-perf table-perf--blue">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Item One</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Two</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Three</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Four</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Five</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>2.99</td>
-            </tr>
-            <tr>
-              <td>Item six</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>2.99</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2"></td>
-              <td>100.00</td>
-            </tr>
-          </tfoot>
-        </table>
+      <div class="grid__column--12">
+        <input class="btn-secondary__default" type="submit" value="Submit">
+        <input class="btn-secondary__warning" type="reset" value="Reset">
       </div>
     </div>
+  </form>
 
-    <div class="grid__row">
-      <div class="grid__column--12 panel__padded">
-        <table class="table-perf table-perf--alternate">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Item One</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Two</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Three</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Four</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>9.99</td>
-            </tr>
-            <tr>
-              <td>Item Five</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>2.99</td>
-            </tr>
-            <tr>
-              <td>Item six</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-              <td>2.99</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2"></td>
-              <td>100.00</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--12">
+      <label for="check1" class="form__label form__label--checkbox">
+        <input id="check1" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet. </label>
+      <label for="check2" class="form__label form__label--checkbox">
+        <input id="check2" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet. </label>
+      <label for="check3" class="form__label form__label--checkbox">
+        <input id="check3" name="check-set1" type="checkbox" class="form__checkbox">Lorem ipsum dolor sit amet. </label>
+      <label for="radio_select1" class="form__label form__label--checkbox">
+        <input id="radio_select1" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
+      </label> <label for="radio_select2" class="form__label form__label--checkbox">
+      <input id="radio_select2" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
+    </label> <label for="radio_select3" class="form__label form__label--checkbox">
+      <input id="radio_select3" name="radio-set1" type="radio" class="form__checkbox">Lorem ipsum dolor sit amet.
+    </label>
     </div>
+  </div>
 
-    <h4 class="grid__row">Media</h4>
+</div>
 
-    <div class="grid__row">
-      <div class="grid__column--5">
-        <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="lazy">
-        <noscript>
-          <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image">
-        </noscript>
-      </div>
-      <div class="grid__column--5">
-        <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="img__wrap lazy">
-        <noscript>
-          <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image" class="img__wrap">
-        </noscript>
-      </div>
-      <div class="grid__column--2">
-        <img data-original="images/avatar-chicago.jpg" src="images/blank.gif" alt="Avatar"class="img__avatar lazy">
-        <noscript>
-          <img src="images/avatar-chicago.jpg" width="550" height="550" alt="Avatar"class="img__avatar">
-        </noscript>
-      </div>
+<div class="grid__container">
+
+  <h3 class="grid__row">Tables</h3>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--12 panel__padded">
+      <table class="table-perf table-perf--green">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Item One</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Two</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Three</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Four</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Five</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>2.99</td>
+        </tr>
+        <tr>
+          <td>Item six</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>2.99</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="2"></td>
+          <td>100.00</td>
+        </tr>
+        </tfoot>
+      </table>
     </div>
+  </div>
 
-    <noscript>
-      <style>
-        .lazy{
-          display: none;
-        }
-      </style>
-    </noscript>
+</div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- build:js(dist/) /scripts/main.min.js -->
-    <script src="scripts/main.min.js" async></script>
-    <!-- endbuild -->
+<div class="grid__container">
 
-  </body>
+  <div class="grid__row">
+    <div class="grid__column--12 panel__padded">
+      <table class="table-perf table-perf--blue">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Item One</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Two</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Three</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Four</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Five</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>2.99</td>
+        </tr>
+        <tr>
+          <td>Item six</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>2.99</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="2"></td>
+          <td>100.00</td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--12 panel__padded">
+      <table class="table-perf table-perf--alternate">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Item One</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Two</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Three</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Four</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>9.99</td>
+        </tr>
+        <tr>
+          <td>Item Five</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>2.99</td>
+        </tr>
+        <tr>
+          <td>Item six</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+          <td>2.99</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="2"></td>
+          <td>100.00</td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid__container">
+
+  <h3 class="grid__row">Media</h3>
+
+</div>
+
+<div class="grid__container">
+
+  <div class="grid__row">
+    <div class="grid__column--5">
+      <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="lazy">
+      <noscript>
+        <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image">
+      </noscript>
+    </div>
+    <div class="grid__column--5">
+      <img data-original="images/sample-chicago.jpg" src="images/blank.gif" alt="sample image" class="img__wrap lazy">
+      <noscript>
+        <img src="images/sample-chicago.jpg" width="1240" height="550" alt="sample image" class="img__wrap">
+      </noscript>
+    </div>
+    <div class="grid__column--2">
+      <img data-original="images/avatar-chicago.jpg" src="images/blank.gif" alt="Avatar" class="img__avatar lazy">
+      <noscript>
+        <img src="images/avatar-chicago.jpg" width="550" height="550" alt="Avatar" class="img__avatar">
+      </noscript>
+    </div>
+  </div>
+
+</div>
+
+<noscript>
+  <style>
+    .lazy {
+      display: none;
+    }
+  </style>
+</noscript>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- build:js(dist/) /scripts/main.min.js -->
+<script src="scripts/main.min.js" async></script>
+<!-- endbuild -->
+
+</body>
 </html>

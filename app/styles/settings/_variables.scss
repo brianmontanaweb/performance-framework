@@ -4,48 +4,48 @@
 
 // Font Stacks
 
-$font-url-google: 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Merriweather:400,300italic,300,400italic,700,700italic,900,900italic' !default;
-$font-family-primary: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
-$font-family-secondary: 'Merriweather', Helvetica, Arial, sans-serif !default;
+$font-url-google: 'http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i';
+$font-family-primary: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-secondary: 'Merriweather', Helvetica, Arial, sans-serif;
 
 // Font Weights
 
-$font-weight-thin: 100 !default;
-$font-weight-light: 300 !default;
-$font-weight-medium: 400 !default;
-$font-weight-bold: 700 !default;
-$font-weight-ultra-bold: 900 !default;
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-medium: 400;
+$font-weight-bold: 700;
+$font-weight-ultra-bold: 900;
 
 //Media query sizes
-$small: 600px !default;
-$medium: 769px !default;
-$wide: 1024px !default;
-$huge: 1400px !default;
+$small: 600px;
+$medium: 769px;
+$wide: 1024px;
+$huge: 1400px;
 
 //Default em value
 
-$em-base: 16px !default;
+$em-base: 16px;
 
 // Descriptive Base Colors
 
-$white: #fff !default;
-$black: #0b0b0b !default;
-$grey: #797e83 !default;
+$white: #ffffff;
+$black: #0b0b0b;
+$grey: #797e83;
 
-$bc-lochmara: #008acd !default;
-$bc-mountain-meadow: #189b50 !default;
-$bc-carnation: #ee232d !default;
-$bc-candycorn: #FF7604 !default;
-$bc-siren: #87003F !default;
-$bc-siren-dark: darken($bc-siren, 10%) !default;
-$bc-orient: #005287 !default;
+$bc-lochmara: #008acd;
+$bc-mountain-meadow: #189b50;
+$bc-carnation: #ee232d;
+$bc-candycorn: #FF7604;
+$bc-siren: #87003F;
+$bc-siren-dark: darken($bc-siren, 10%);
+$bc-orient: #005287;
 
 // Color Usage
 
-$color-primary: $bc-lochmara !default;
-$color-secondary: $bc-candycorn !default;
-$color-accent: $bc-mountain-meadow !default;
-$color-shadow: rgba($black, .2) !default;
+$color-primary: $bc-lochmara;
+$color-secondary: $bc-candycorn;
+$color-accent: $bc-mountain-meadow;
+$color-shadow: rgba($black, .2);
 
 // Color Palette Modifiers
 
@@ -64,7 +64,7 @@ $color-palettes: (
                 base : $black,
                 dark : darken($black, 10%)
         )
-) !default;
+);
 
 // UI Colors
 
@@ -76,24 +76,21 @@ $ui-colors: (
         error : $bc-carnation,
         warning : $bc-candycorn,
         info : $bc-siren
-) !default;
+);
 
-$list-colors: (ordered-list, unordered-list, alternate-list) !default;
+$list-colors: (ordered-list, unordered-list, alternate-list);
 
 // Text
 
-$base-font-size: 16px !default;
-$base-line: 24px !default;
-$letter-space: 1px !default;
+$base-font-size: 16px;
+$base-line: 24px;
+$letter-space: 1px;
 
 // Border radius
 
-$border-radius-default: .4em !default;
-$border-radius-round: 50% !default;
+$border-radius-default: 0.4em;
+$border-radius-round: 50%;
 
 // Grid
 
-$column-width: 65px !default;
-$column-gutter-width: 20px !default;
-$column-count: 12 !default;
-$column-max-width: 1050px !default;
+$column-count: 12;

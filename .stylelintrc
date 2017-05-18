@@ -1,16 +1,22 @@
 {
+  "plugins": [
+    "stylelint-order"
+  ],
   "rules": {
     "block-no-empty": null,
     "color-no-invalid-hex": true,
+    "color-hex-length": "long",
     "comment-empty-line-before": ["always", {
       "ignore": ["stylelint-commands"]
     }],
+    "declaration-block-no-duplicate-properties": true,
     "declaration-colon-space-after": "always",
     "max-empty-lines": 2,
     "rule-empty-line-before": ["always", {
       "except": ["first-nested"],
       "ignore": ["after-comment"]
     }],
+    "selector-type-case": "lower",
     "unit-whitelist": ["em", "rem", "%", "s", "px"]
   }
 }

@@ -3,11 +3,9 @@
 // ==========================================================================
 
 .grid__row {
-  @extend .cf;
-  margin: 0 auto;
-  width: 90%;
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   // Make nested grid 100%
   @media (min-width: 801px) {
     margin-top: 1em;
@@ -16,19 +14,15 @@
   [class*='grid__column--'] > & {
     width: 100%;
   }
-
-  // Set a max-width for grid container
-  @media (min-width: 1100px) {
-    max-width: $column-max-width;
-  }
 }
 
 [class*='grid__column--'] {
+  flex-shrink: 0;
+  flex-grow: 1;
   @media (max-width: 800px) {
     margin-top: 2.5em;
   }
   @media (min-width: 801px) {
-    margin-left: percentage($column-gutter-width / $column-max-width);
     float: left;
   }
 }
@@ -47,33 +41,30 @@
 }
 
 @for $i from 1 through $column-count {
-  $context: gutter-context($column-width, $column-count, $column-gutter-width) !global;
-  $target: ($column-width * $i) + ($column-gutter-width * ($i - 1));
 
   // Generate column modifier classes that are compiled based on algorithms
   .grid__column--#{$i} {
     @media (max-width: 800px) {
-      width: 100%;
+      flex-basis: 100%;
     }
     @media (min-width: 801px) {
-      width: percentage($target / $context);
+      flex-basis: calc(#{$i} / #{$column-count} * 100%);
     }
   }
   //Margin left like an actual div is there
   .grid__pull--#{$i} {
     @media (min-width: 801px) {
-      margin-right: percentage($target / $context) + percentage($column-gutter-width / $context);
+      margin-right: calc(#{$i} / #{$column-count} * 100%);
     }
   }
 
   .grid__push--#{$i} {
     @media (min-width: 801px) {
       &:first-child {
-        margin-left: percentage($target / $context) + percentage($column-gutter-width / $context);
+        margin-left: calc(#{$i} / #{$column-count} * 100%);
       }
       //Updates variable for push value to include gutter it's missing
-      $target: ($column-width * $i) + ($column-gutter-width * ($i));
-      margin-left: percentage($target / $context) + percentage($column-gutter-width / $context);
+      margin-left: calc(#{$i} / #{$column-count} * 100%);
     }
   }
 }
@@ -82,7 +73,13 @@
 .grid__column--style-guide {
   text-align: center;
   padding: 1em 0;
-  background-color: aliceblue;
+  background-color: lighten($color-secondary, 40%);
+}
+
+.grid__container {
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
 // ==========================================================================
